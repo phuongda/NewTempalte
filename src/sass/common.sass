@@ -1,0 +1,3524 @@
+/* general style */
+@import "core/mixin/_mixin"
+@import "core/variable/_color"
+
+#main
+    @include box-100()
+
+/* header */
+.c-header
+    @include box-100()
+    height: 100px
+    justify-content: space-between
+    background: #ffffff
+    align-items: center
+    transition: .5s
+
+    &.fixed
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 100
+
+        &+.clear
+            width: 100%
+            margin-top: 100px
+
+    &.transparent
+        background: transparent
+
+        &+.clear
+            display: none
+
+        .c-header__logo
+            visibility: hidden
+
+            h1
+                color: white
+
+            img
+                display: none
+
+        .c-header__slogan
+            color: white
+
+        .c-header__menu
+
+            li
+
+                a
+                    color: white
+
+                    span
+                        color: white
+
+                &:hover
+                    color: white
+
+                    &::before
+                        opacity: 0.5
+
+                    a
+                        opacity: 0.5
+
+                &::before
+                    background: white
+
+        .c-header__contact
+
+            a
+                color: white
+
+        .btn-toggle
+            background: white
+
+            p
+                color: $color-blue
+
+            span
+                background-color: $color-blue
+
+            &:hover
+                background: $color-blue
+
+                p
+                    color: white
+
+                span
+                    background-color: white
+
+            &.change
+                background: $color-blue2
+
+                p
+                    color: white
+
+                span
+                    background-color: white
+
+    .l-container
+        @include box-100()
+
+    &__logo
+        font-family: "A-OTF-R"
+
+        &:hover
+            opacity: 0.5
+
+        h1
+            font-size: 3.2rem
+            font-weight: 500
+            line-height: 1
+            color: $color-green
+
+        span
+            font-size: 1.4rem
+            font-weight: 500
+            color: $color-green
+
+        img
+            width: auto
+            height: 100%
+
+            &.logo-active
+                display: none
+
+        i
+            display: block
+
+            &.ic-logo
+                width: 272px
+                height: 49px
+
+    &__action
+        height: 100%
+        flex: 1
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        padding: 0 0 0 30px
+
+    &__slogan
+        display: inline-block
+        margin-left: 30px
+        font-weight: 700
+        line-height: 1.4
+        color: $color-blue
+
+    &__contact
+        @include box()
+
+        a
+            font-size: 1.4rem
+            font-weight: 500
+            line-height: 1.4
+            color: $color-green
+            font-family: 'A-OTF-R'
+            transition: 0.4s
+
+            &:not(:last-child)
+                margin-right: 23px
+
+            span
+                //     margin-right: 10px
+
+                &:not(:last-child)
+                    margin-bottom: 2px
+
+                b
+                    margin-right: 15px
+
+            strong
+                font-size: 2.4rem
+                font-weight: 500
+
+                small
+                    margin-right: 20px
+                    font-size: 1.4rem
+
+            &:hover
+                opacity: 0.5
+
+    &__action
+        height: 100%
+        display: flex
+        flex: 1
+        justify-content: flex-end
+        align-items: center
+        padding: 0 10px
+
+    &__menu
+        width: 100%
+        height: 100vh
+        display: none
+        flex-direction: column
+        justify-content: center
+        padding: 100px 50px 50px 50px
+        background: $color-blue
+        font-family: 'A-OTF-R'
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: 0.4s
+
+        li
+            @include box-100()
+            flex-direction: column
+            align-items: center
+            padding: 12px 20px
+            font-size: 2.6rem
+            line-height: 1.4
+
+            &:not(:last-child)
+                border: 0
+                // border-bottom: 1px solid
+                // border-color: white!important
+
+            a,
+            span
+                color: white!important
+                transition: 0.4s
+
+                &::after
+                    content: unset
+
+                &:hover
+                    opacity: 0.5
+
+            ul
+                display: none
+                margin-bottom: 10px
+                padding: 2px 0
+                // transition: 0.4s
+
+                li
+                    padding: 4px 20px
+                    font-size: 2rem
+
+                // &:hover,
+                // &:active,
+                // &:focus
+                //     display: block
+
+            // a:hover,
+            // span:hover,
+            // a:active,
+            // span:active,
+            // a:focus,
+            // span:focus
+            //     opacity: .5
+
+            //     &~ul
+            //         display: block
+
+    &.is-show
+        color: white
+
+        .c-header
+
+            &__menu
+                display: flex
+
+    &.on
+
+        .c-header__action
+            padding-right: 0
+
+        .c-header__contact
+            width: calc(330px - 100px)
+            height: 100%
+            align-content: center
+            padding-left: 50px
+            background: $color-green
+
+            a
+                // visibility: hidden
+                display: none
+                flex-direction: row!important
+                margin-right: 0
+                font-size: 10px
+                color: $color-blue
+
+                &:not(:last-child)
+                    margin-bottom: 2px
+
+                &:last-child
+                    letter-spacing: 0
+
+                span
+
+                    &:not(:last-child)
+                        margin-right: 10px
+                        margin-bottom: 0
+
+                b
+                    margin-right: 0
+
+        // .btn-toggle
+        //     background: white!important
+
+        //     span
+        //         background-color: $color-green!important
+
+        //     p
+        //         color: $color-green!important
+
+// button toggle
+.btn-toggle
+    width: 100px
+    height: 100%
+    @include box()
+    flex-flow: row
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 20px
+    background: white
+    text-align: center
+    color: $color-green
+    font-family: 'A-OTF-R'
+    z-index: 2
+    transition: 0.4s
+    cursor: pointer
+
+    div
+        width: 100%
+        max-width: 30px
+        @include box()
+        flex-direction: column
+        align-items: center
+        margin: 0 auto
+
+    p
+        width: 100%
+        margin-bottom: 0
+        font-size: 1.1rem
+        font-weight: 500
+        // letter-spacing: 0
+        text-align: center
+        color: $color-green
+        text-transform: uppercase
+
+    span
+        content: ""
+        width: 100%
+        height: 1px
+        display: block
+        margin: 5px 0
+        background-color: $color-green
+        transition: 0.4s
+
+    &.change
+        background: $color-green
+
+        span
+            background-color: white
+
+            &:nth-of-type(1)
+                width: 37px
+                transform: rotate(-45deg) translate(-8px, 8px)
+
+            &:nth-of-type(2)
+                opacity: 0
+
+            &:nth-of-type(3)
+                width: 37px
+                transform: rotate(45deg) translate(-8px, -8px)
+
+        p
+            color: white
+
+        div
+            transform: translateX(-15%)
+
+    &:hover
+        background: $color-green
+        // opacity: 0.5
+
+        p
+            color: white
+
+        span
+            background-color: white
+
+.c-menu
+    width: 100%
+    max-width: 330px
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: flex-center
+    align-items: flex-start
+    visibility: hidden
+    background: $color-green
+    color: white
+    font-family: 'A-OTF-R'
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 99
+    transition: 0.5s
+    // transform: translateX(100%)
+    opacity: 0
+    pointer-events: none
+
+    li
+        @include box-100()
+        flex-direction: column
+        align-items: flex-start
+        padding: 10px 20px
+
+        &:not(:last-child)
+            border: 0
+            // border-bottom: 1px solid
+            // border-color: white!important
+
+        a
+            @include box-100()
+            flex-direction: column
+            padding-left: 40px
+            color: white
+            position: relative
+            transition: 0.4s
+
+            span
+                // margin-top: 2px
+                // padding-left: 10px
+                font-size: 1.2rem
+                line-height: 1.8
+
+            strong
+                font-size: 1.8rem
+                font-weight: 500
+                line-height: 1.4
+
+            &::after
+                content: ''
+                width: 20px
+                height: 1px
+                background: white
+                position: absolute
+                top: 15px
+                left: 0
+
+            &:hover
+                opacity: 0.5
+
+        ul
+            display: none
+            margin-bottom: 10px
+            padding: 2px 0
+
+            li
+                padding: 4px 20px
+                font-size: 2rem
+
+    &.is-show
+        visibility: visible
+        // transform: translateX(0)
+        opacity: 1
+        pointer-events: unset
+
+    .c-qr
+        max-width: 253px
+        margin-top: 68px
+
+        div
+
+            &>*
+                width: 100%
+                max-width: 141px
+
+    .l-contact
+        margin-top: 22px
+        font-size: 1.4rem
+        font-weight: 500
+
+        strong
+            margin-left: 20px
+            font-size: 2.4rem
+            font-weight: 500
+
+.c-action
+    width: 100px
+    height: 100%
+    @include box()
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: white
+    position: relative
+    bottom: 0
+    left: 0
+    z-index: 99
+
+    &::before
+        content: ""
+        width: 5px
+        height: 100%
+        background: linear-gradient(to bottom, #8EAC65, #85AC6A 60%, #65AC7F)
+        position: absolute
+        top: 0
+        left: 0
+
+    #Y_sclorebox
+        margin-bottom: 28px
+        position: unset
+        // transform: translateX(8px)
+
+    &__txt
+        // position: absolute
+        // top: 12%
+        // left: 50%
+        // transform: translate(-50%, 0)
+
+        h3
+            color: $color-green
+            font-weight: 500
+            font-family: 'A-OTF-R'
+            position: relative
+
+            p
+                display: flex
+                flex-direction: column
+
+                strong
+
+                    // &:not(last-child)
+                    //     margin-bottom: 6px
+
+            strong
+                font-size: 1.8rem
+                font-weight: 500
+                letter-spacing: 4px
+                writing-mode: vertical-rl
+
+            span
+                margin-left: 10px
+                font-size: 1rem
+                letter-spacing: 4px
+                white-space: nowrap
+                writing-mode: vertical-rl
+                position: absolute
+                top: 50%
+                left: 100%
+                transform: translateY(-50%)
+
+                small
+                    margin-top: 4px
+                    margin-left: -4px
+                    font-size: 0.9rem
+
+        h4
+            margin-top: 17px
+            font-size: 1.1rem
+            font-weight: 500
+            color: $color-gray3
+            font-family: 'G-OTF-R'
+            writing-mode: vertical-rl
+            letter-spacing: 5px
+
+/* footer */
+.c-info-footer
+    @include box-100()
+    font-family: 'A-OTF-R'
+
+    &.col-2
+
+        .item
+            width: calc( 100% / 2 )
+
+    &.col-3
+
+        .item
+            width: calc( 100% / 3 )
+
+    .item
+        height: 532px
+        position: relative
+        overflow: hidden
+
+        .content
+            @include box-100()
+            height: 100%
+            justify-content: center
+            align-items: center
+            background-color: rgba(6, 91, 142, 30%)
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 2
+
+            .btn
+                @include box-100()
+                height: 100%
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                padding: 25px 25px 30px 25px
+                color: white
+                // position: relative
+                text-align: center
+
+                &::before,
+                &::after
+                    content: ""
+                    width: 0%
+                    height: 0%
+                    opacity: 0
+                    transition: width 0.2s linear, height 0.15s 0.2s ease-out, opacity 0s 0.35s
+                    position: absolute
+
+                &::before
+                    bottom: 0
+                    left: -2px
+                    border-top: 2px solid rgb(255, 255, 255)
+                    border-left: 2px solid rgb(255, 255, 255)
+
+                &::after
+                    top: 0
+                    right: 0
+                    border-bottom: 2px solid rgb(255, 255, 255)
+                    border-right: 2px solid rgb(255, 255, 255)
+
+                div
+                    border: 2px solid
+
+            strong
+                // margin-bottom: 36px
+                padding-bottom: 18px
+                font-size: 2rem
+                font-weight: 500
+                line-height: 1.4
+                position: relative
+
+                &::after
+                    content: ""
+                    width: 30px
+                    height: 1px
+                    background: white
+                    position: absolute
+                    left: 50%
+                    bottom: 0
+                    transform: translateX(-50%)
+
+            span
+                margin-top: 16px
+                font-size: 1.4rem
+                font-weight: 500
+
+            img
+                width: 15px
+                @include img-cover()
+
+            p
+                width: 150px
+                height: 90px
+                @include box()
+                justify-content: center
+                align-items: center
+                margin-bottom: 0
+                border: 1px solid white
+                font-size: 2rem
+                font-weight: 500
+                color: white
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translate(-50%, 100%)
+                z-index: 3
+                transition: 0.4s
+                opacity: 0
+
+            div
+                width: 240px
+                min-height: 180px
+                @include box()
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                padding: 20px
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                transition: 0.4s
+                opacity: 1
+
+            &+img
+                @include img-cover()
+                transition: 0.4s
+
+        &:hover
+
+            // p
+            //     bottom: 50%
+            //     transform: translate(-50%, 50%)
+            //     opacity: 1
+
+            .content
+                // background-color: rgba(0, 0, 0, 70%)
+
+                // .btn
+
+                //     div
+                //         top: 100%
+                //         opacity: 0
+
+                &+img
+                    transform: scale(1.1)
+
+.c-footer
+    @include box-100()
+    background-size: cover
+    background-position: top center
+    background-repeat: no-repeat
+    color: white
+    position: relative
+    overflow: hidden
+
+    &::after
+        content: ""
+        width: 100%
+        height: 100%
+        // background: rgba(12, 37, 67, 94%)
+        // background: linear-gradient(to bottom, #0872B2, #065B8E)
+        background: $color-green
+        opacity: 0.9
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 0
+
+    a
+        color: white
+
+        &:hover
+            opacity: 0.5
+
+    [class*=l-container]
+        @include box()
+        justify-content: space-between
+        padding: 96px 0 89px 0
+        z-index: 2
+
+    &__left
+        @include box-100()
+        max-width: 530px
+        flex: 1
+        flex-direction: column
+        // justify-content: center
+        font-weight: 500
+        font-family: "A-OTF-R"
+
+    &__middle
+        @include box-100()
+        max-width: 464px
+        flex-direction: column
+        padding-top: 0
+        // font-family: 'A-OTF-R'
+
+        h3
+            margin-bottom: 14px
+            padding-left: 10px
+            font-size: 2.4rem
+            line-height: 1.8
+
+        img
+            max-width: 100%
+            margin-bottom: 30px
+            border-radius: 10px
+
+        a
+            @include box-100()
+            max-width: 176px
+            justify-content: space-between
+            align-items: center
+            margin-left: 10px
+
+            &:not(:last-child)
+                margin-bottom: 10px
+
+            // &:last-child
+            //     margin-bottom: 38px
+
+            i
+                width: 40px
+                height: 10px
+                margin-left: 10px
+
+        h4
+            padding-left: 10px
+            font-size: 1.6rem
+            line-height: 1.8
+            font-family: 'A-OTF-R'
+
+        p
+            margin-bottom: 0
+            padding-left: 10px
+            font-size: 1.5rem
+            line-height: 1.8
+            letter-spacing: 1.5px
+
+        span
+            font-size: 1.6rem
+            line-height: 1.8
+
+    &__right
+        @include box-100()
+        max-width: 375px
+        min-height: 500px
+        flex: 1
+        justify-content: flex-end
+        align-items: flex-start
+        align-content: space-between
+        // padding-top: 10px
+
+        .c-qr
+            padding: 19px 16px 19px 14px
+
+            figure
+                width: 82px
+                height: 82px
+
+            div
+                margin-left: 14px
+
+            h3
+                font-size: 2.3rem
+                font-family: "A-OTF-R"
+
+            hr
+                margin: 6.5px 0 5.5px 0
+
+            span
+                font-size: 1.3rem
+
+    &__logo
+        // @include box-100()
+        flex-direction: column
+        margin-bottom: 16px
+        font-family: "A-OTF-R"
+
+        h2
+            @include box()
+            flex-direction: column
+            font-size: 3.2rem
+            font-weight: 500
+
+            small
+                font-size: 1.4rem
+                line-height: 1.8
+
+            strong
+                font-weight: 300
+                line-height: 1
+
+        h3
+            margin-top: 15px
+            font-size: 3rem
+            font-weight: 300
+            line-height: 1.4
+
+        span
+            font-size: 1rem
+            font-weight: 500
+
+        img
+            width: auto
+            height: 100%
+
+        i
+            display: block
+
+            &.ic-logo
+                width: 272px
+                height: 49px
+
+    &__slogan
+        margin-bottom: 60px
+
+        p
+            margin-bottom: 5px
+            font-size: 1.5rem
+            line-height: 1.4
+
+    &__about
+        margin-bottom: 61px
+
+        p
+            font-size: 2rem
+            line-height: 1.4
+
+    &__contacts
+        @include box-100()
+        flex-direction: column
+
+        span
+            @include box-100()
+            flex-direction: column
+            margin-bottom: 22px
+            font-size: 1.6rem
+            line-height: 1.8
+
+            a
+                font-size: 2rem
+
+            &:last-child
+                margin-bottom: 0
+
+        p
+            font-size: 1.4rem
+            line-height: 1.8
+
+    &__address
+        @include box-100()
+        flex-direction: column
+        margin-bottom: 21px
+        line-height: 1.8
+
+        p
+            font-size: 1.8rem
+
+            &:last-child
+                margin-bottom: 0
+
+    &__menu
+        @include box()
+        flex-direction: column
+
+        a
+            width: auto
+            min-width: 200px
+            padding-left: 40px
+            font-size: 1.8rem
+            font-weight: 500
+            line-height: 1.8
+            font-family: "A-OTF-R"
+            position: relative
+
+            &:not(:last-child)
+                margin-bottom: 11px
+
+            &::before
+                content: ""
+                width: 20px
+                height: 1px
+                background-color: white
+                position: absolute
+                top: 15px
+                left: 0
+
+    &__menu2
+        min-height: 260px
+        @include box()
+        flex-direction: column
+        align-items: center
+        padding: 18px 58px
+        border-left: 1px solid
+
+        li
+            width: 100%
+            min-width: 111px
+            font-size: 1.4rem
+            line-height: 1.8
+            position: relative
+
+            &:not(:last-child)
+                margin-bottom: 20px
+
+    &__social
+        @include box-100()
+        margin-top: 20px
+        margin-bottom: -20px
+
+        a
+            @include box()
+            margin-bottom: 20px
+            align-items: center
+            font-size: 1.8rem
+
+            &:not(:last-child)
+                margin-right: 30px
+
+            i
+                margin-right: 10px
+
+            .c-icon
+                height: 18px
+
+                &.ic-facebook
+                    width: 18px
+
+                &.ic-youtube
+                    width: 24px
+
+    &-bottom
+        @include box-100()
+        justify-content: flex-end
+
+        .c-copyright
+            margin: 83px 0 0 0
+            font-size: 1.4rem
+            font-weight: 500
+            // font-family: 'A-OTF-R'
+            text-align: center
+
+    .bg
+        top: 0
+        z-index: 1
+
+/* mainvisual */
+.c-mainvisual
+    @include box-100()
+    height: calc(100vh - 120px)
+    position: relative
+    overflow: hidden
+
+    &__cnt
+        width: auto
+        font-family: 'A-OTF-R'
+        position: absolute
+        left: calc(100px + 60px)
+        bottom: 5.4%
+        z-index: 3
+        // transform: translateY(-50%)
+
+    h2.c-mainvisual__title
+        width: 100%
+        margin: 0 0 0 0
+        word-break: break-word
+        font-weight: 500
+        line-height: 1.8
+        letter-spacing: 8.6px
+        color: white
+
+        span
+            display: inline-block
+            position: relative
+
+        b
+            color: $color-blue
+
+        &:not(:first-child)
+            margin-top: -10px
+
+    img.c-mainvisual__title
+        width: calc(100% - 120px)
+        max-width: 700px
+        margin: 0 0 76px 21px
+
+    &__subtitle
+        font-weight: 500
+        line-height: 1.4
+
+    span.c-mainvisual__subtitle
+        display: block
+        padding: 10px 10px 8px 10px
+        font-size: 2rem
+        font-weight: bold
+        color: $color-blue
+        position: relative
+
+        &::before
+            content: ""
+            width: 100%
+            height: 100%
+            background: white
+            position: absolute
+            top: 2px
+            left: 0
+            z-index: -1
+
+    h3.c-mainvisual__subtitle
+        margin-top: 10px
+        // margin-bottom: 36px
+        color: white
+
+    &__description
+        display: inline-block
+        padding: 28px 21px 0 24px
+        border-top: 1px solid
+        font-size: 1.5rem
+        line-height: 1.8
+        color: white
+
+    .c-showmore2
+        font-size: 2.2rem
+        font-weight: 500
+        color: white
+
+        .c-icon
+            margin-left: 18px
+
+            &.ic-arrow-right6
+                width: 52px
+
+    &__bg
+        width: calc(100% - 100px)
+        height: 100%
+        position: absolute
+        top: 0
+        left: 100px
+        z-index: 0
+
+        img,
+        video
+            @include img-cover()
+
+        &::before
+            content: ""
+            width: 200px
+            height: 100%
+            background: #8EAC65
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 3
+
+        // &::after
+        //     content: ""
+        //     width: 100%
+        //     height: 100%
+        //     // background: rgba(255, 255, 255, 6%)
+        //     background: rgba(17, 17, 17, 17%)
+        //     position: absolute
+        //     top: 0
+        //     left: 0
+        //     z-index: 2
+
+    &__more
+        @include box-100()
+        margin-bottom: 45px
+
+        .item
+            @include box()
+            align-items: center
+            margin-bottom: 20px
+            font-size: 2rem
+            font-weight: 500
+
+            &:not(:last-child)
+                margin-right: 20px
+
+            .c-icon
+                width: 13px
+                height: 13px
+                display: block
+                margin-right: 10px
+
+    .swiper
+        width: 100%
+        max-width: 1620px
+        padding-right: 100px
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        overflow: unset
+
+        &-container
+            @include box-100()
+            height: 100%
+            padding: 0
+            overflow: hidden
+
+            &::after
+                content: ""
+                width: 100%
+                height: 100%
+                // background: rgba(255, 255, 255, 6%)
+                background: rgba(17, 17, 17, 17%)
+                position: absolute
+                top: 0
+                left: 0
+                z-index: 2
+
+        .image-container
+            height: 100%
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            transition: 10s ease-out
+            transform: scale(1)
+
+        .swiper-slide
+
+            &.swiper-slide-active
+
+                .image-container
+                    transform: scale(1.2)
+
+        .swiper-pagination
+            width: 100px
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            background: white
+            top: 0
+            right: 0
+            left: unset
+            z-index: 3
+
+            span
+                width: 9px
+                height: 9px
+
+                &:not(:last-child)
+                    margin-bottom: 11px
+
+            &-bullet
+
+                span
+                    background: $color-gray3
+
+                &-active
+                    background: $color-green
+
+    .triangle
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 900px 760px 435px
+        border-color: transparent transparent #191970 transparent
+        position: absolute
+        left: -325px
+        bottom: 0
+        z-index: 0
+
+    .l-triangle
+        width: 69%
+        height: 71%
+        max-height: 760px
+        position: absolute
+        left: -16.95%
+        bottom: 0
+        z-index: 0
+
+        img
+            @include img-contain()
+            object-position: bottom
+
+#Y_sclorebox
+    position: absolute
+    // right: 56px
+    right: calc((120px / 2) - 18px)
+    bottom: 0
+    z-index: 10
+
+#Y_sclore
+    max-width: 24px
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    // flex-direction: column
+    // align-items: center
+    margin: 0 auto
+
+    div
+        width: 1px
+        height: 150px
+        display: block
+        background: $color-gray3
+
+    span
+        // width: 2px
+        width: 1px
+        height: 20px
+        display: block
+        box-sizing: border-box
+        -webkit-box-sizing: border-box
+        margin: 0 auto
+        background: $color-green
+        text-align: center
+        -webkit-animation: sdb 1.5s infinite
+        animation: sdb 1.5s infinite
+
+    p
+        width: auto
+        margin: 0 0 0 5px
+        // margin: 6px 0 0 0
+        font-size: 0.9rem
+        font-weight: 500
+        line-height: 1.4
+        letter-spacing: 2px
+        font-family: 'A-OTF-R'
+        text-align: center
+        text-transform: uppercase
+        // text-transform: capitalize
+        color: $color-gray3
+        writing-mode: vertical-rl
+        z-index: 99
+        transform: rotate(0)
+
+@keyframes sdb
+    0%
+        transform: rotate(0deg) translate(0, 0)
+        opacity: 1
+    50%
+        opacity: 1
+    100%
+        transform: rotate(0deg) translate(0, 130px)
+        opacity: 1
+
+/* breadcrumb */
+.l-breadcrumb
+    width: 100%
+    height: 80px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+
+    &.breadcrumb-bg
+        background: rgb(17, 17, 17, 4%)
+
+.c-breadcrumbs
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    margin-top: 10px
+    font-size: 1.2rem
+    line-height: 1.4
+    color: #999999
+
+    li
+        float: left
+        margin-bottom: 10px
+
+        &:not(:last-child)
+            margin-right: 15px
+
+            &::after
+                content: "＞"
+                float: right
+                margin-left: 15px
+
+    &.first-icon
+
+        li
+
+            &:first-child
+
+                &::before
+                    content: ""
+                    width: 15px
+                    height: 15px
+                    float: left
+                    margin-right: 10px
+                    background-image: url("../img/common/ic-next-black.svg")
+                    background-size: contain
+                    background-position: center
+                    background-repeat: no-repeat
+
+/* block banner */
+.l-banner
+    @include box-100()
+    height: 540px
+    position: relative
+    overflow: hidden
+
+    .banner
+        width: calc(100% - 34.4%)
+        height: 100%
+        margin-left: auto
+
+        img
+            @include img-cover()
+            object-position: bottom right
+
+        &::before
+            content: ""
+            width: 100%
+            height: 100%
+            background: rgb(6, 91, 142, 15%)
+            position: absolute
+            top: 0
+            right: 0
+            z-index: 1
+
+        .parallax
+            width: calc(100% - 34.4%)!important
+            height: 1000px !important
+
+    .contents
+        width: 34.4%
+        @include box()
+        flex-direction: column
+        justify-content: center
+        justify-items: center
+        align-items: flex-start
+        padding: 50px 60px
+        background: linear-gradient(to bottom, #0A7FC4, #065B8E)
+        font-family: 'A-OTF-R'
+        color: white
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 1
+
+        .title
+            margin-bottom: 10px
+            font-size: 8.6rem
+            font-weight: 500
+            line-height: 1.4
+
+            b
+                color: $color-blue
+
+        .subtitle
+            font-size: 3.2rem
+            line-height: 1.4
+            color: $color-gray3
+
+        .description
+            margin-bottom: 0
+            padding-left: 36px
+            font-size: 2.4rem
+            font-weight: bold
+            line-height: 1.8
+            position: relative
+
+            &:after
+                content: ""
+                width: 26px
+                height: 1px
+                background: $color-black
+                position: absolute
+                top: 18px
+                left: 0
+
+.c-banner
+    @include box-100()
+    height: 500px
+    @include bg-img-cover()
+    position: relative
+
+    .cnt
+        font-weight: 500
+        line-height: 1.8
+        font-family: 'A-OTF-R'
+        position: absolute
+        left: 35px
+        bottom: 20px
+
+        span
+            margin-left: 5px
+            font-size: 1.6rem
+
+        p
+            margin-bottom: 0
+            font-size: 5.4rem
+            font-weight: 500
+            line-height: 1.8
+
+/* block */
+.l-block,
+.l-blocks
+    @include box-100()
+
+    &__titles
+        @include box-100()
+        justify-content: space-between
+        align-items: baseline
+
+    &__title
+        @include box-100()
+        flex-direction: column
+        justify-content: center
+
+    &__main
+        @include box-100()
+
+/* cols */
+.l-cols
+    @include box-100()
+
+    &.switch
+
+        .item
+
+            &:not(:last-child)
+                margin-bottom: 90px
+
+            &:nth-child(even)
+                flex-flow: row-reverse
+
+                .contents
+                    margin-left: 0
+                    margin-right: -10%
+
+.c-cols
+    @include box-100()
+
+    &[class*=c-col-]
+        @include box()
+        position: relative
+
+        .thumb
+            @include box()
+
+            figure
+                width: 100%
+                overflow: hidden
+
+                img
+                    width: 100%
+                    @include img-cover()
+
+        .contents
+            @include box()
+
+            &.max-width
+                max-width: 660px
+
+        .txt
+            width: 120px
+            height: 100%
+            display: flex
+            align-items: flex-end
+            font-size: 5.4rem
+            font-weight: 300
+            line-height: 1.1
+            color: rgba(17, 17, 17, 20%)
+            font-family: 'A-OTF-R'
+            writing-mode: vertical-rl
+            position: absolute
+            top: 0
+            left: -40px
+            z-index: 0
+
+    &.c-col-2
+
+        &.space40
+
+            .thumb
+                width: calc(50% - 20px)
+
+            .contents
+                width: calc(50% - 20px)
+
+            &:not(.justify-content-between)
+
+                .thumb
+                    margin-right: 40px
+
+        &.switch
+            flex-flow: row-reverse
+
+            &:not(.justify-content-between)
+
+                .thumb
+                    margin-left: 40px
+                    margin-right: 0
+
+/* block products */
+.c-date
+    min-width: 100px
+    display: block
+    font-size: 1.4rem
+    line-height: 1.4
+
+.c-cates
+    @include box()
+
+    .cate
+        width: auto
+        min-width: 74px
+        min-height: 30px
+        @include box()
+        justify-content: center
+        align-items: center
+        padding: 7px 11px 6px 11px
+        font-size: 1.1rem
+        line-height: 1
+        text-align: center
+
+        &:not(:last-child)
+            margin-right: 10px
+
+        span
+            font-weight: 500
+
+    &.cate-bg
+
+        .cate
+            background: $color-blue
+            color: white
+
+    &.cate-outline
+
+        .cate
+            border: 1px solid
+            color: $color-gray
+
+            &.cate-1
+                color: $color-blue
+
+            &.cate-2
+                color: $color-red3
+
+.c-stickers
+    @include box()
+    min-width: 60px
+
+    .sticker-new
+        min-width: 60px
+        min-height: 45px
+        @include box()
+        justify-content: center
+        align-items: center
+        background: #DE343F
+        font-size: 1.2rem
+        line-height: 1.8
+        color: white
+        text-transform: uppercase
+        text-align: center
+
+.c-figure
+    @include box-100()
+    margin-bottom: 30px
+    background-color: #EEEEEE
+    position: relative
+    overflow: hidden
+
+    &.height
+
+        &150
+            height: 150px!important
+
+        &180
+            height: 180px!important
+
+        &200
+            height: 200px!important
+
+        &220
+            height: 220px!important
+
+        &210
+            height: 210px!important
+
+        &240
+            height: 240px!important
+
+        &250
+            height: 250px!important
+
+        &300
+            height: 300px!important
+
+        &320
+            height: 320px!important
+
+        &330
+            height: 330px!important
+
+        &340
+            height: 300px!important
+
+        &350
+            height: 350px!important
+
+        &360
+            height: 360px!important
+
+        &380
+            height: 360px!important
+
+        &400
+            height: 400px!important
+
+        &420
+            height: 420px!important
+
+        &440
+            height: 440px!important
+
+        &450
+            height: 450px!important
+
+        &460
+            height: 460px!important
+
+        &480
+            height: 480px!important
+
+        &500
+            height: 500px!important
+
+        &540
+            height: 540px!important
+
+        &600
+            height: 600px!important
+
+        &640
+            height: 640px!important
+
+    img
+        @include img-cover()
+        transition: 0.4s
+
+    .cates
+        position: absolute
+        left: 0
+        bottom: 0
+
+.c-info
+    @include box-100()
+    padding: 0 10px
+
+.c-price
+    @include box()
+    align-items: center
+    font-size: 1.4rem
+    line-height: 1.8
+    position: relative
+
+    &.have-sticker
+
+        &::before
+            content: "価格"
+            min-width: 42px
+            min-height: 27px
+            @include box()
+            justify-content: center
+            align-items: center
+            float: left
+            margin-right: 10px
+            background: $color-black
+            font-size: 1.4rem
+            color: white
+
+.c-tabs-list
+    @include box-100()
+    justify-content: center
+    margin-bottom: -20px
+
+    li
+        @include box()
+        margin-bottom: 20px
+        background: transparent
+        text-align: center
+        transition: 0.5s
+
+        &:last-child
+            margin-right: 0!important
+
+        a
+            @include box-100()
+            height: 100%
+            justify-content: center
+            align-items: center
+
+    &.tabs-box
+
+        li
+            max-width: 160px
+            min-height: 54px
+            border: 1px solid #cccccc
+            font-size: 1.4rem
+            font-weight: 300
+            line-height: 1
+
+            a
+                padding: 12px 10px 10px 10px
+
+            &:hover,
+            &.is-active
+                border-color: $color-blue
+                background: $color-blue
+                color: white
+
+                a
+                    color: white
+
+    &.border-bottom
+
+        li
+            min-width: 120px
+            padding: 0 20px 5px 20px
+            border-bottom: 1px solid $color-black
+            font-size: 1.8rem
+            font-weight: bold
+            line-height: 1.8
+
+        &.border-lg
+
+            li
+                border-width: 2px
+
+        &.u-square
+
+            li
+                justify-content: center
+
+                a
+                    width: auto
+                    padding-left: 17px
+                    position: relative
+
+                    &::before
+                        content: ""
+                        width: 7px
+                        height: 7px
+                        background: $color-blue
+                        position: absolute
+                        top: 12px
+                        left: 0
+
+    &.tabs-radius
+
+        li
+            border-radius: 6px
+
+.c-tabs-child
+    @include box-100()
+    max-width: 1000px
+    justify-content: center
+    margin: 0 auto -20px auto
+
+    .item
+        @include box()
+        justify-content: center
+        margin-bottom: 20px
+        font-size: 1.7rem
+        font-weight: bold
+        line-height: 1.5
+        color: #191219
+        transition: 0.5s
+
+        span
+            padding-left: 30px
+            position: relative
+
+            &::before
+                content: "+"
+                width: 21px
+                height: 21px
+                box-sizing: border-box
+                @include box()
+                justify-content: center
+                align-items: center
+                padding: 1px 0 0 1px
+                border: 1px solid $color-orange
+                border-radius: 20px
+                font-size: 1.8rem
+                font-weight: bold
+                line-height: 1
+                letter-spacing: 0
+                text-align: center
+                color: $color-orange
+                position: absolute
+                top: 0
+                left: 0
+                transition: 0.5s
+
+        &:last-child
+            margin-right: 0!important
+
+        &:hover,
+        &.is-active
+            color: $color-orange
+
+            span
+
+                &::before
+                    background: $color-orange
+                    color: white
+
+.c-pagination
+    @include box-100()
+    justify-content: center
+    margin-bottom: -8px
+
+    .item
+        width: 36px
+        height: 36px
+        @include box()
+        justify-content: center
+        align-items: center
+        margin-bottom: 8px
+        // border: 1px solid $color-gray
+        border-radius: 50px
+        font-size: 1.2rem
+        transition: 0.5s
+
+        &:not(:last-child)
+            margin-right: 8px
+
+        i
+            width: 17px
+            height: 17px
+
+        &:hover,
+        &.current
+            background: $color-blue
+            color: white
+
+.c-products,
+.c-news
+
+    &.sliders
+        position: relative
+
+        .swiper
+            @include box-100()
+            padding: 0 50px
+            overflow: unset
+
+            &-container
+                @include box-100()
+                padding: 0
+                overflow: hidden
+
+            &-slide
+                height: auto
+
+            &-button-prev,
+            &-button-next
+                top: 50%
+                transform: translateY(-50%)
+
+                &::after
+                    display: none
+
+                img
+                    width: 20px
+                    height: 40px
+                    object-fit: contain
+                    object-position: center
+
+            &-button-prev
+                left: 0
+
+            &-button-next
+                right: 0
+
+            &-pagination
+                bottom: -8px!important
+
+                &-bullet
+                    width: 12px
+                    height: 12px
+                    background: $color-gray
+                    opacity: 1
+
+                    &-active
+                        background: $color-blue
+
+.l-products
+    @include box-100()
+
+.c-products
+    @include box-100()
+    margin-bottom: -40px
+
+    .item
+        @include box()
+        align-content: baseline
+        margin-bottom: 40px
+        transition: 0.4s
+
+        .c-figure
+            position: relative
+
+            .c-cates
+                position: absolute
+                bottom: 0
+                left: 0
+
+                .cate
+                    min-width: 60px
+                    min-height: 60px
+                    align-items: baseline
+                    align-content: center
+                    margin-bottom: 0
+                    padding: 10px 10px 10px 10px
+                    font-size: 1.3rem
+                    font-family: 'A-OTF-M'
+
+        .c-sticker
+            min-width: 84px
+            min-height: 56px
+            padding: 12px 5px 16px 5px
+            background: $color-green
+            font-size: 2rem
+            font-family: 'A-OTF-R'
+            position: absolute
+            left: 0
+            bottom: 0
+
+        .c-cates
+            @include box-100()
+
+            .cate
+                margin-bottom: 10px
+                padding: 7px 11px 6px 11px
+
+                &:not(:first-child)
+                    display: none
+
+        .c-title
+            width: 100%
+            margin-bottom: 20px
+
+        .c-button
+            max-width: 100%
+            height: 70px
+
+            .c-icon
+
+                &.ic
+
+                    &-cart,
+                    &-cart-orange
+                        width: 24px
+                        height: 23px
+
+    a.item:hover
+
+        figure
+
+            img
+                transform: scale(1.1)
+
+    &.product-box
+
+        .item
+            padding: 20px
+            background: white
+            box-shadow: 0 2px 4px rgb(0 0 0 / 16%)
+
+            .c-figure
+                margin-bottom: 20px
+
+            .c-title
+                margin-bottom: 20px
+
+            .c-button
+                width: calc(100% + 40px)
+                max-width: unset
+                min-height: 60px
+                margin: 30px -20px -20px -20px
+                font-size: 1.5rem
+
+    &.product-special
+
+        .c-figure
+            margin-bottom: -35px
+
+        .c-info
+            width: calc(100% - (20px * 2))
+            @include m-auto()
+            padding: 20px
+            background: white
+            box-shadow: 0 2px 4px rgb(0 0 0 / 16%)
+            z-index: 1
+
+.c-products
+
+    .item
+
+        .c-cates
+
+            .cate
+
+                &.counter
+                    min-width: 110px
+                    min-height: 50px
+
+/* block news */
+.c-bl-news
+    @include box-100()
+
+    &__title
+        @include box-100()
+        margin-bottom: 30px
+
+        [class*="l-container"]
+            @include box()
+            justify-content: space-between
+            align-items: center
+
+    &__left
+        @include box()
+        flex-direction: row
+        align-items: baseline
+
+    &__right
+        @include box()
+        flex: 1
+        padding-left: 20px
+
+        .c-tabs-list
+            justify-content: flex-end
+
+    &__content
+        @include box-100()
+
+.c-news
+    @include box-100()
+
+    &:not(.have-image)
+
+        .item
+            @include box-100()
+            justify-content: center
+            align-items: center
+            padding: 22px 20px
+
+            a
+                @include box()
+                width: 1000px
+                padding: 0 0
+                align-items: center
+                transition: .3s
+
+                &>*
+
+                    &:not(:last-child)
+                        margin-right: 30px
+
+                &:hover
+                    opacity: 0.6
+
+            .c-title
+                flex: 1
+
+            .c-date
+                margin-right: 45px!important
+
+            .c-cates
+                min-width: 82px
+
+                .cate
+                    min-width: 82px
+                    min-height: 34px
+                    padding: 9px 10px 7px 10px
+                    font-size: 1.2rem
+                    line-height: 1.4
+
+                    &:not(:first-child)
+                        display: none
+
+        &.news-bg
+
+            .item
+                border-bottom: 1px solid #EEEEEE
+
+                &:first-child
+                    border-top: 1px solid #EEEEEE
+
+                &:nth-child(odd)
+                    background: rgb(6, 91, 142, 5%)
+
+    &.have-image
+
+        .item
+            @include box()
+            align-content: baseline
+            position: relative
+            transition: .3s
+
+            .c-figure
+                @include box-100()
+                height: 240px
+                margin-bottom: 30px
+                background-color: #EEEEEE
+                overflow: hidden
+
+                img
+                    @include img-cover()
+                    transition: .4s
+
+            .c-stickers
+                position: absolute
+                top: 0
+                left: 0
+
+                .sticker-new
+                    min-height: 50px
+                    font-size: 1rem
+                    line-height: 1.4
+
+            .c-date
+                margin-bottom: 10px
+                font-size: 1.1rem
+                line-height: 1.4
+                color: #999999
+
+            .c-cates
+                width: 100%
+
+                .cate
+                    min-width: 80px
+                    min-height: 26px
+                    margin-bottom: 20px
+                    padding: 2px 10px 1px 10px
+
+            .c-title
+                width: 100%
+                margin-bottom: 20px
+
+            .c-description
+
+                p
+                    font-size: 1.3rem
+
+            &:hover
+
+                img
+                    transform: scale(1.1)
+
+        &.new-box
+
+            .item
+                padding: 20px
+                background: white
+                box-shadow: 0 2px 4px rgb(0 0 0 / 16%)
+
+                figure
+                    height: 210px
+                    margin-bottom: 20px
+
+                .c-title
+                    margin-bottom: 20px
+
+                .c-button
+                    width: calc(100% + 40px)
+                    max-width: unset
+                    min-height: 60px
+                    margin: 30px -20px -20px -20px
+                    font-size: 1.5rem
+
+        &.sliders
+
+            .swiper
+
+                &-button-prev,
+                &-button-next
+                    top: 37%
+
+/* block instagram */
+.c-instagram
+    @include box-100()
+    // border: 1px solid #CCCCCC
+    background: white
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%)
+
+    .left
+        width: 35.4%
+        @include box()
+        flex-direction: column
+        // justify-content: center
+        align-content: center
+        align-items: center
+        padding: 20px 10px
+        position: relative
+
+        &::before
+            content: ""
+            width: 100%
+            height: 100%
+            background: rgba(6, 91, 142, 94%)
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 0
+
+        .contents
+            @include box-100()
+            height: 100%
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            color: white
+            z-index: 1
+
+        img
+            height: 20px
+            margin: 0 0 10px 0
+
+        span
+            display: block
+            margin-bottom: 10px
+            font-size: 1.5rem
+            font-weight: 500
+            line-height: 1.8
+            font-family: 'A-OTF-R'
+
+        h3
+            margin-bottom: 11px
+            font-size: 2.8rem
+            font-weight: 500
+            line-height: 1.4
+            font-family: 'A-OTF-R'
+
+        p
+            margin-bottom: 25px
+            font-size: 1.1rem
+            line-height: 1.8
+            text-align: center
+
+            &.font-14
+                margin-bottom: 20px
+
+        .c-button
+            max-width: 240px
+            min-height: 60px
+            font-size: 1.5rem
+
+            i
+                width: 14px
+                height: 14px
+
+    .right
+        width: calc(100% - 35.4%)
+        padding: 25px
+
+        .c-imgs2
+            justify-content: flex-start
+            margin-bottom: -15px
+
+            img
+                width: calc((100% - (20px * 4)) / 5)
+                margin-bottom: 20px
+
+                &:not(:nth-of-type(5n))
+                    margin-right: 20px
+
+.c-contact
+    @include box-100()
+    min-height: 330px
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 43px 20px 35px 20px
+    border: 2px solid $color-green
+    border-radius: 10px
+
+    h3
+        margin-bottom: 5px
+        font-size: 2.8rem
+        font-weight: 500
+        line-height: 1.4
+        font-family: 'A-OTF-R'
+        color: $color-green
+
+    a
+        @include box()
+        justify-content: center
+        align-items: baseline
+        margin-bottom: 25px
+        font-size: 4.8rem
+        font-weight: 500
+        line-height: 1.4
+        font-family: 'A-OTF-R'
+        color: $color-green
+
+        i
+            width: 33px
+            height: 33px
+            margin-right: 10px
+
+    p
+        font-size: 1.4rem
+        line-height: 1.8
+
+.c-contacts
+    @include box-100()
+    justify-content: space-between
+
+    .item
+        width: calc(50% - 20px)
+        min-height: 360px
+        @include box()
+        flex-direction: column
+        justify-content: center
+        align-content: center
+        padding: 48px 40px 30px 40px
+        background: white
+        border: 1px solid #CCCCCC
+        font-family: 'A-OTF-R'
+        text-align: center
+
+        h3
+            margin-bottom: 7px
+            line-height: 1.4
+
+            strong
+                font-size: 3.2rem
+                font-weight: 500
+
+            small
+                font-size: 2.8rem
+
+        &>a
+            @include box()
+            justify-content: center
+            align-items: baseline
+            font-size: 3.2rem
+            font-weight: 500
+            line-height: 1.8
+
+            i
+                width: 26px
+                height: 26px
+                margin-right: 10px
+
+        .u-phone
+            margin-bottom: 12px
+
+        .u-print
+            margin-bottom: 8px
+
+            i
+                width: 20px
+
+        &>span
+            margin-bottom: 12px
+            line-height: 1.4
+
+        .c-gr-button
+            margin-top: 12px
+
+@media screen and (min-width: 1537px)
+    .c-header
+        height: 120px
+
+        &__logo
+            margin-left: 50px
+
+        &__mail
+            width: 120px
+
+            i
+                width: 32px
+                height: 25px
+
+        &__menu
+            padding-right: 17px
+
+        &.fixed
+
+            &+.clear
+                margin-top: 120px
+
+    .c-menu
+        padding: 26vh 22px 50px 50px
+
+    .c-mainvisual
+
+        &__title
+            font-size: 5.8rem
+
+            small
+                font-size: 4.8rem
+
+        h3.c-mainvisual__subtitle
+            font-size: 2.8rem
+
+        .swiper
+            padding-right: 120px
+
+            .swiper-pagination
+                width: 120px
+
+    .btn-toggle
+        width: 120px
+
+    .c-action
+        width: 100px
+
+@media screen and (max-width: 1536px)
+    .c-header
+        height: 100px
+
+        &.fixed
+
+            &+.clear
+                margin-top: 100px
+
+        &__menu
+            padding-right: 20px
+
+        &__logo
+            margin-left: 20px
+
+        &__mail
+            width: 100px
+
+    .c-mainvisual
+
+        &__cnt
+            max-width: calc(100% - (120px + (3.15% *2)))
+            left: calc(120px + 3.15%)
+
+        &__title
+            font-size: 6.6rem
+
+            small
+                font-size: 4.6rem
+
+        h3.c-mainvisual__subtitle
+            font-size: 2.2rem
+
+    .btn-toggle
+        width: 100px
+
+    .c-menu
+        justify-content: center
+        padding: 100px 50px 50px 50px
+
+    .c-action
+        width: 100px
+
+    .l-banner
+
+        .contents
+            padding: 46px
+
+        .banner
+            width: 70%
+
+@media screen and (max-width: 1440px)
+    .c-header
+
+        &__slogan
+            display: none
+
+    .c-mainvisual
+
+        &__title
+            font-size: 4.6rem
+
+            small
+                font-size: 3.4rem
+
+    .c-cols
+
+        .c-col
+
+            &-2
+
+                .contents
+
+                    &.ml40
+                        margin-left: 0!important
+
+                &:not(.justify-content-between)
+
+                    &:not(.space-40)
+
+                        .contents
+                            padding: 0 4vw
+
+                        .thumb
+                            margin-right: 0
+                            margin-left: 0
+
+                    &.space-40
+
+                        &.switch
+
+                            .contents
+                                padding-right: 4vw
+
+                            .thumb
+                                margin-right: 0
+                                margin-left: 0
+
+                        &:not(.switch)
+
+                            .contents
+                                padding-left: 4vw
+
+                            .thumb
+                                margin-right: 0
+                                margin-left: 0
+
+@media screen and (max-width: 1248px)
+    .c-cols
+
+        .c-col
+
+            &-2
+
+                .c-title,
+                .c-title-6
+                    display: flex
+                    flex-direction: column
+
+                    span
+                        margin-left: 0!important
+
+                .c-title-6
+                    margin-top: 50px
+
+                .c-subtitle
+                    margin-bottom: 30px
+
+                .c-gr-button
+                    margin-top: 30px
+                    margin-bottom: 50px
+
+@media screen and (min-width: 992px)
+    .c-tabs-list
+
+        li
+            width: calc((100% - (10px * 4)) / 5)
+
+            &:not(:nth-of-type(5n))
+                margin-right: 10px
+
+    .c-tabs-child
+
+        .item
+            width: calc((100% - (54px * 5)) / 6)
+
+            &:not(:nth-of-type(6n))
+                margin-right: 54px
+
+    .c-products,
+    .c-news
+
+        &.col-2
+            margin-bottom: -40px
+
+            .item
+                width: calc((100% - 40px) / 2)
+                margin-bottom: 40px
+
+                &:not(:nth-of-type(2n)):not(:last-child)
+                    margin-right: 40px
+
+        &.col-3
+            margin-bottom: -40px
+
+            .item
+                width: calc((100% - (40px * 2)) / 3)
+                margin-bottom: 40px
+
+                &:not(:nth-of-type(3n)):not(:last-child)
+                    margin-right: 40px
+
+        &.col-4
+            margin-bottom: -40px
+
+            .item
+                width: calc((100% - (40px * 3)) / 4)
+                margin-bottom: 40px
+
+                &:not(:nth-of-type(4n)):not(:last-child)
+                    margin-right: 40px
+
+@media screen and (max-width: 991px)
+    .c-action
+        display: none
+
+    .btn-toggle
+
+        p
+            margin-top: 5px
+
+    .c-header
+        height: 100px
+
+        &.fixed
+
+            &+.clear
+                margin-top: 100px
+
+        &__logo
+            // width: calc(100% - 100px)
+            // height: 100%
+            margin-left: 10px
+            padding: 10px 0
+
+    .c-header
+
+        &.transparent
+
+            .c-header__logo
+
+                h1,
+                span
+                    color: white
+
+        &__contact
+            display: none
+
+    .c-mainvisual
+        height: calc(100vh - 100px)
+
+        &__bg
+            width: 100%
+            max-width: unset
+            height: 100vh
+            top: 0
+            left: 0
+
+            &::before
+                width: 30%
+
+            // &.pc, &.sp
+            //     display: none
+
+            // &.tablet
+            //     display: block
+
+        &__cnt
+            width: 100%
+            max-width: unset
+            padding: 40px 40px 16vw 40px
+            top: unset
+            left: 0
+            right: unset
+            bottom: 0
+
+        &__title
+            margin-right: 0
+            // font-size: 7rem
+
+            .pc
+                display: none
+
+        &__subtitle
+            font-size: 2.4rem
+
+        &__description
+            margin: 45px 0 0 0
+            font-size: 1.8rem
+
+            .pc
+                display: none
+
+        .swiper
+            padding-left: 30%
+            padding-right: 0
+
+            .swiper-pagination
+                display: none
+
+    #Y_sclorebox
+        display: none
+
+    .c-info-footer
+
+        .item
+            height: 350px
+
+    .c-tabs-list
+
+        li
+            width: calc((100% - (20px * 3)) / 4)
+
+            &:not(:nth-of-type(4n))
+                margin-right: 20px
+
+        &.tabs-box
+
+            li
+                max-width: 100%
+
+    .c-tabs-child
+
+        .item
+            width: calc((100% - (20px * 3)) / 4)
+
+            &:not(:nth-of-type(4n))
+                margin-right: 20px
+
+    .l-banner
+        height: 300px
+
+        .contents
+            width: 100%
+            padding: 20px
+
+            .title
+                font-size: 4.2rem
+
+            .description
+                margin-top: 10px
+                padding-left: 40px
+                font-size: 2rem
+
+                &:after
+                    width: 25px
+                    top: 25px
+
+    .c-banner
+        height: 350px
+
+        .cnt
+
+            p
+                font-size: 3.4rem
+
+    .c-products,
+    .c-news
+
+        &[class*="col-"]
+            margin-bottom: -40px
+
+            .item
+                width: calc((100% - (40px * 1)) / 2)
+                margin-bottom: 40px
+
+                &:not(:nth-of-type(2n))
+                    margin-right: 40px
+
+                .c-figure
+
+                    &.height
+
+                        &210
+                            height: 33vw !important
+
+                        &240
+                            height: 34vw !important
+
+                        &330
+                            height: 34vw !important
+
+        &.sliders
+
+            .swiper
+                padding: 0 40px
+
+                &-slide
+
+                    .c-figure
+
+                        &.height
+
+                            &210
+                                height: 30vw !important
+
+                            &240
+                                height: 30vw !important
+
+                &-button-prev,
+                &-button-next
+                    top: 43%
+
+        &.product-special
+
+            .c-figure
+                margin-bottom: -25px
+
+    .c-products
+
+        .item
+
+            .c-button
+                height: 60px
+
+        &.product-box
+
+            .item
+
+                .c-figure
+
+                    &.height
+
+                        &210
+                            height: 31vw !important
+
+    .c-news
+
+        &.have-image
+
+            &.sliders
+
+                .swiper
+
+                    &-button-prev,
+                    &-button-next
+                        top: 42%
+
+            &.new-box
+
+                .c-figure
+
+                    &.height
+
+                        &210
+                            height: 31vw !important
+
+    .c-bl-news
+
+        &__left
+            width: 100%
+            margin-bottom: 20px
+
+        &__right
+            width: 100%
+            padding-left: 0
+
+            .c-tabs-list
+                justify-content: flex-start
+
+    .c-cols.c-col-2
+
+        &.justify-content-between
+
+            .thumb
+                width: calc(50% - 10px)
+
+            .contents
+                width: calc(50% - 10px)
+
+        &:not(.justify-content-between)
+
+            &.space-40
+
+                .thumb
+                    width: 50%
+
+                .contents
+                    width: 50%
+
+    .c-contact
+
+        h3
+            font-size: 2.8rem
+
+    .c-footer
+
+        .l-container-1520
+            flex-direction: column
+            padding: 70px 20px 70px 20px
+
+        &__left
+            width: 100%
+
+        &__middle
+            display: none
+
+        &__right
+            display: none
+            width: 100%
+            padding-top: 50px
+
+        &-bottom
+            min-height: auto
+            justify-content: center
+            padding: 0
+
+@media screen and (max-width: 768px)
+    [class*=l-container] [class*=l-container]
+        padding-left: 0
+        padding-right: 0
+
+    .btn-toggle
+        width: 80px
+        padding: 12px
+
+    .c-menu
+        padding-top: 80px
+
+    .c-header
+        height: 80px
+
+        &.fixed
+
+            &+.clear
+                margin-top: 80px
+
+        &__logo
+            // width: calc(100% - 80px)
+
+            h1
+                font-size: 2.4rem
+
+        &__action
+            padding-top: 80px
+
+    .c-menu
+        width: 100%
+        max-width: 100%
+        justify-content: center
+        align-items: center
+        padding: 100px 20px 20px 20px
+
+        .c-qr
+            margin-top: 30px
+
+        .l-contact
+            font-size: 1.2rem
+
+            strong
+                font-size: 2rem
+
+    .c-mainvisual
+        height: calc(100vh - 80px)
+
+        &__title
+            font-size: 3.4rem
+
+        &__bg
+
+            // &.pc, &.tablet
+            //     display: none
+
+            // &.sp
+            //     display: block
+
+        &__title
+            font-size: 3.4rem
+
+            small
+                font-size: 2.4rem
+
+        h3.c-mainvisual__subtitle
+            font-size: 1.8rem
+
+    .c-tabs-child
+
+        .item
+            width: calc((100% - (20px * 3)) / 4)
+
+            &:not(:nth-of-type(4n))
+                margin-right: 20px
+
+    .c-products,
+    .c-news
+
+        .item
+
+            .info
+                padding: 0 10px
+
+        &.col-2
+
+            .item
+                width: 100%
+
+                &:not(:nth-of-type(2n))
+                    margin-right: 0
+
+        &.col-3,
+        &.col-4
+
+            .item
+                width: calc((100% - 20px) / 2)
+
+                &:not(:nth-of-type(2n))
+                    margin-right: 20px
+
+                .c-figure
+
+                    &.height
+
+                        &210
+                            height: 34vw !important
+
+                        &330
+                            height: 34vw !important
+
+    .c-products
+
+        .item
+
+            .c-button
+                height: 50px
+                padding: 10px 5px
+                font-size: 1.1rem
+
+                .c-icon
+
+                    &.ic
+
+                        &-cart,
+                        &-cart-orange
+                            width: 20px
+                            height: 20px
+
+        &.product-box
+
+            .item
+                padding: 10px
+
+                .c-figure
+
+                    &.height
+
+                        &210
+                            height: 31vw !important
+
+                .c-button
+                    width: calc(100% + 20px)
+                    margin: 20px -10px -10px -10px
+                    padding: 10px 5px
+                    font-size: 1.3rem
+
+    .c-news
+
+        &:not(.have-image)
+
+            .item
+                padding: 20px 15px
+
+                a
+
+                    &>*:not(:last-child)
+                        margin-right: 20px
+
+                .c-stickers:empty
+                    display: none
+
+                .c-date
+                    margin-right: 20px !important
+
+                .c-title
+                    width: 100%
+                    flex: 100%
+                    margin-top: 20px
+
+        &.have-image
+
+            &.new-box
+
+                .c-figure
+
+                    &.height
+
+                        &210
+                            height: 30vw !important
+
+    .c-cols
+
+        &[class*=c-col-]
+            flex-direction: column!important
+
+            .thumb
+                width: 100%!important
+                max-width: 500px
+                margin-left: auto!important
+                margin-right: auto!important
+                margin-bottom: 30px
+
+                .radius
+
+                    &2
+                        border-radius: 2px
+
+                        &.radius-left
+                            border-radius: 2px
+
+                        &.radius-right
+                            border-radius: 2px
+
+                    &5
+                        border-radius: 5px
+
+                        &.radius-left
+                            border-radius: 5px
+
+                        &.radius-right
+                            border-radius: 5px
+
+                    &8
+                        border-radius: 8px
+
+                        &.radius-left
+                            border-radius: 8px
+
+                        &.radius-right
+                            border-radius: 8px
+
+                    &10
+                        border-radius: 10px
+
+                        &.radius-left
+                            border-radius: 10px
+
+                        &.radius-right
+                            border-radius: 10px
+
+            .contents
+                width: 100%!important
+                @include m-auto()
+                order: 1
+
+            // &.justify-content-between
+
+            //     &.space-40
+
+            //         .thumb
+            //             width: 100%
+
+            // &:not(.justify-content-between)
+
+            //     &.space-40
+
+            //         .thumb
+            //             width: 100%
+            //             margin-right: auto!important
+            //             margin-left: auto!important
+
+            //         .contents
+            //             padding: 0 0!important
+
+            //         &.switch
+            //             flex-flow: column
+
+            //     &:not(.space-40)
+
+            //         &.switch
+            //             flex-flow: column
+
+            //             .thumb
+            //                 margin-left: auto
+
+    .c-info-footer
+
+        .item
+            height: 250px
+
+@media screen and (max-width: 580px)
+    .c-header
+        height: 70px
+
+        &__logo
+            width: calc(100% - 100px)
+
+            h1
+                font-size: 1.8rem
+
+        &__action
+            display: none
+
+        &.fixed
+
+            &+.clear
+                margin-top: 70px
+
+    .btn-toggle
+        width: 70px
+        padding: 10px
+
+        span
+            margin: 3px 0
+
+        p
+            margin-top: 0
+            font-size: .8rem
+            letter-spacing: 0
+            line-height: 1.5
+
+        &.change
+
+            span
+
+                &:nth-of-type(1)
+                    width: 27px
+                    -webkit-transform: rotate(-45deg) translate(0,7px)
+                    transform: rotate(-45deg) translate(0,7px)
+
+                &:nth-of-type(3)
+                    width: 27px
+                    -webkit-transform: rotate(45deg) translate(-3px,-10px)
+                    transform: rotate(45deg) translate(-3px,-10px)
+
+    .c-menu
+        padding-top: 70px
+
+    .c-mainvisual
+        height: calc(100vh - 50px)
+
+        &__title
+            margin-right: 0
+            font-size: 2.4rem
+
+        &__subtitle
+            font-size: 1.2rem
+            margin-top: 10px
+
+        &__description
+            margin-top: 15px
+            font-size: 1.2rem
+            line-height: 1.4
+
+        &__cnt
+            padding: 20px 15px 30vw 15px
+            bottom: 0
+
+    #Y_sclorebox
+        display: none
+
+    .l-banner
+        height: 200px
+
+        .contents
+            padding: 20px
+
+            .title
+                font-size: 3.2rem
+
+            .description
+                padding-left: 40px
+                font-size: 1.4rem
+
+                &::after
+                    width: 25px
+                    top: 16px
+
+    .c-info-footer
+
+        .item
+            height: 160px!important
+            // width: 50%
+
+            // &:nth-of-type(n + 3)
+            //     display: none
+
+            .content
+
+                strong
+                    margin-bottom: 0
+                    font-size: 1.2rem
+                    line-height: 1
+
+                span
+                    margin-bottom: 15px
+                    line-height: 1
+                    font-size: 1rem
+
+                .btn
+                    padding: 15px
+
+                img
+                    display: none
+
+            &:hover
+
+                p
+                    font-size: 1.2rem
+
+    .c-footer
+
+        .l-container-1520
+            padding: 50px 20px 50px 20px
+
+        &__logo
+
+            h2
+                font-size: 2.4rem
+
+            h3
+                font-size: 1.8rem
+
+        &__about
+            margin-bottom: 40px
+
+            p
+                font-size: 1.4rem
+
+        &__address
+            margin-bottom: 20px
+
+        &-bottom
+
+            .c-copyrigh
+                margin-top: 60px
+
+    .c-tabs-list
+
+        li
+            width: calc((100% - (20px * 1)) / 2)
+
+            &:not(:nth-of-type(4n))
+                margin-right: 0
+
+            &:not(:nth-of-type(2n))
+                margin-right: 20px
+
+    .c-tabs-child
+
+        .item
+            width: calc((100% - (20px * 1)) / 2)
+
+            &:not(:nth-of-type(5n))
+                margin-right: 0
+
+            &:not(:nth-of-type(2n))
+                margin-right: 20px
+
+    .c-products,
+    .c-news
+
+        &.col-3,
+        &.col-4
+
+            .item
+
+                .c-figure
+
+                    &.height
+
+                        &240
+                            height: 33vw !important
+
+                        &330
+                            height: 33vw !important
+
+        &.sliders
+
+            .swiper
+
+                &-slide
+
+                    .c-figure
+
+                        &.height
+
+                            &210
+                                height: 59vw !important
+
+                            &240
+                                height: 59vw !important
+
+    .l-products
+
+        .c-button
+            width: calc(100% - 40px)!important
+
+        &__tags
+
+            .item
+                width: 100px!important
+
+    .c-products
+
+        .item
+
+            .c-figure
+
+                .c-cates
+
+                    .cate
+                        min-width: 80px
+                        min-height: 40px
+                        padding: 5px 5px 5px 5px
+                        font-size: 1.1rem
+
+        &.product-box
+
+            .item
+                padding: 10px
+
+                .c-price
+
+                    &.have-sticker
+                        flex-direction: column
+                        align-items: flex-start
+
+                        span
+                            margin-top: 10px
+
+    .c-news
+
+        &.have-image
+
+            &.new-box
+
+                .item
+                    padding: 10px
+
+            &.sliders
+
+                .swiper
+
+                    &-button-prev,
+                    &-button-next
+                        top: 45%
+
+    .c-banner
+        height: 250px
+
+        .cnt
+            left: 28px
+
+            p
+                font-size: 2.8rem
+
+@media screen and (max-width: 480px)
+    .c-header
+        height: 50px
+
+        &__logo
+            width: calc(100% - 60px)
+            line-height: 1.4
+
+            img
+                height: 30px
+
+            span
+                font-size: 1rem
+
+            h1
+                font-size: 1.4rem
+
+            .ml-3
+                margin-top: -7px
+
+        &.fixed
+
+            &+.clear
+                margin-top: 50px
+
+    .btn-toggle
+        width: 50px
+
+    .c-menu
+        padding-top: 50px

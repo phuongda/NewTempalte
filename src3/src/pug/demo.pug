@@ -1,0 +1,157 @@
+- const base = "."
+- const home = true
+- const canonical = "/"
+- const page = "demo"
+
+doctype html
+html(lang="ja")
+    include ./partials/_head
+    body
+        main#main.p-demo
+            section.l-blocks.l-demo-1.pt100.pb110
+                .l-container
+                    h2.c-title.title-center.title-border.title-border-short.bottom.mb50
+                        strong.font-weight-bold
+                            | D
+                            b E
+                            | MO
+                    .c-collapsible.show
+                        .header
+                            h2.c-title.title-border.title-border-bottom.bdgray.wfull
+                                strong Title
+                        .content
+                            .c-demos
+                                .c-demo
+                                    .name 
+                                        h3.c-title.text24
+                                            strong Basic title
+                                    .demo.radius10
+                                        h3.c-title.text32
+                                            strong
+                                                | コ
+                                                b.u-circle ン
+                                                | テン
+                                                small ツ
+                                    blockquote.c-blockquote.blockquote-bg.radius10.code
+                                        pre #{`<h3 class="c-title text32">\n\t<strong>コ<b class="u-circle">ン</b>テン<small>ツ</small></strong>\n</h3>`}
+                                .c-demo
+                                    .name 
+                                        h3.c-title.text24
+                                            strong Title with subtitle
+                                    .demo.radius10
+                                        h3.c-title.subtitle.text32
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                            span.c-subtitle.line.line-md.line-bottom subtitle
+                                    blockquote.c-blockquote.radius10.code
+                                        pre #{`<h3 class="c-title subtitle text32">\n\t<strong>コ<b>ン</b>テンツ</strong>\n\t<span class="c-subtitle line line-md line-bottom">subtitle</span>\n</h3>`}
+                                .c-demo
+                                    .name 
+                                        h3.c-title.text24
+                                            strong Title with border
+                                    .demo.flex-column.radius10
+                                        h3.c-title.title-center.title-border.title-border-short.border-lg.bottom.text32.wfull.mb50
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.title-center.title-border.title-border-left-right.text32.mb50.mxauto
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.title-center.title-border.title-border-left-right.rotate.border-lg.text32.mb50.mxauto
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.u-line.line-lg.line-top.bfgray.pt10.mb50
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.u-line.line-lg.line-center.bfgray.mb50
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.u-line.line-lg.line-bottom.bfgray.mb50
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.title-border.title-border-bottom.bdblack.text32.wfull.mb50.px10
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.title-border.title-border-left.border-lg.h45.afgreen.text32.mb50
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.text32.mb10
+                                            strong
+                                                | コンテンツ
+                                                b.u-highlight.highlight-sm.spill コンテンツ
+                                                | コンテンツ
+                                    blockquote.c-blockquote.radius10.code
+                                        pre
+                                            | #{`<h3 class="c-title title-center title-border title-border-short border-lg bottom text32 wfull mb50">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title title-center title-border title-border-left-right text32 mb50 mxauto">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title title-center title-border title-border-left-right rotate border-lg text32 mb50 mxauto">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title u-line line-lg line-top bfgray pt10 mb50">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title u-line line-lg line-center bfgray mb50">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title u-line line-lg line-bottom bfgray mb50">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title title-border title-border-bottom bdblack text32 wfull mb50 px10">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title title-border title-border-left border-lg h45 afgreen text32">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title text32 mb10">\n\t<strong>コンテンツ<b class="u-highlight highlight-sm spill">コンテンツ</b>コンテンツ</strong>\n</h3>`}
+                                .c-demo
+                                    .name 
+                                        h3.c-title.text24
+                                            strong Title with icon
+                                    .demo.flex-column.radius10
+                                        h3.c-title.title-border.title-border-bottom.bdblack.text32.wfull.u-square.square-lg.mb50.px10
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                        h3.c-title.title-border.title-border-bottom.bdblack.text32.wfull
+                                            i.c-icon.ic-arrow-right4
+                                            strong
+                                                | コ
+                                                b ン
+                                                | テンツ
+                                    blockquote.c-blockquote.radius10.code
+                                        pre
+                                            | #{`<h3 class="c-title title-border title-border-bottom bdblack text32 wfull u-square square-lg mb50 px10">\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}
+                                            br
+                                            br
+                                            | #{`<h3 class="c-title title-border title-border-bottom bdblack text32 wfull">\n\t<i class="c-icon ic-arrow-right4"></i>\n\t<strong>コ<b>ン</b>テンツ</strong>\n</h3>`}    
+        include ./partials/_script
+        if page == "top"
+            script.
+                $(function() {
+                    slideMainvisual();
+                    //- slide();
+                    //- slide2();
+                    slideHistorys();
+                });

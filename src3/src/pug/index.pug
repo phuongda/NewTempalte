@@ -1,0 +1,22 @@
+- const base = "."
+- const home = true
+- const canonical = "/"
+- const page = "top"
+
+doctype html
+html(lang="ja")
+    include ./partials/_head
+    body
+        include ./layouts/_header
+        main#main.p-top.c-counters
+            include ./components/_mainvisual
+            //- include ./components/_bl-news
+            //- include ./components/_bl-instagram
+            include ./components/_bl-top-1
+            //- include ./components/_info-footer-2
+            include ./components/_bl-top-2
+            include ./components/_bl-top-3
+            include ./components/_bl-top-4
+            //- include ./components/_bl-top-5
+            //- include ./components/_info-footer
+        include ./layouts/_footer

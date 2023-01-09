@@ -1,0 +1,79 @@
+footer.c-footer
+    //- .lazy(data-bg="assets/img/common/footer-bg.jpg")
+    .l-container-1520
+        .c-footer__left
+            a.c-footer__logo(href="index.html")
+                //- img.lazy(data-src="assets/img/common/logo2.svg", alt="")
+                h2 
+                    small 自然療法＆自然エステ
+                    strong SAORI BEAUTY DRESSING。
+                h3 
+                    | 赤ちゃんに喜ばれる
+                    br
+                    | 美しく健康になる子宝メソッド
+            .c-footer__about
+                p.mb-0 －3代に繋がる幸せな家族へ
+            .c-footer__address
+                p 
+                    | 〒630-0212
+                    br
+                    | 奈良県生駒市辻町
+            .c-footer__contacts
+                span.item
+                    | Tel
+                    a(href="tel:0743770456") 0743-77-0456
+                //- span.item
+                //-     | E-mail
+                //-     a(href="javascript:void(0)") saori_beauty_dress@docomo.ne.jp
+        .c-footer__middle
+            img.lazy(data-src="assets/img/common/img-footer.jpg")
+            a(href="#B")
+                span サロンメニュー
+                i.c-icon.ic-arrow-right9
+            a(href="#C")
+                span 商品を見る
+                i.c-icon.ic-arrow-right9
+        .c-footer__right
+            .c-footer__menu
+                a(href="index.html") ホーム
+                a(href="index.html#B") サロンメニュー
+                a(href="index.html#C") 商品紹介
+                a(href="index.html#D") サロン案内
+                a(href="index.html#E") 開業サポート
+                //- a(href="profile.html") お問合せ
+            .c-qr
+                figure 
+                    img(src="assets/img/common/qr.jpg")
+                div
+                    h3 
+                        | 公
+                        b.text-green 式
+                        | LINE
+                    hr
+                    span
+                        | SAORI BEAUTY DRESSING。の
+                        br
+                        | 公式LINEより友達登録お願いします
+        .c-footer-bottom
+            p.c-copyright #{"COPYRIGHTⒸ2022.SAORI BEAUTY DRESSING。. All Rights Reserved."}
+    .bg
+        img.img.img-cover.lazy(data-src="assets/img/common/footer-bg-2.png")
+include ../partials/_script
+if page == "top"
+    script.
+        $(function() {
+            slideMainvisual();
+            //- slide();
+            //- slide2();
+            slideHistorys();
+        });
+//- if page == "service_3"
+//-     script.
+//-         $(function() {
+//-             slide2();
+//-         });
+//- if page == "staff" || page == "profile"
+//-     script.
+//-         $(function() {  
+//-             slide3();
+//-         });

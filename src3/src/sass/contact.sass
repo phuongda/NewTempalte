@@ -1,0 +1,54 @@
+/* profile page */
+@import "core/mixin/_mixin"
+@import "core/variable/_color"
+
+.p-contact
+    @include box-100()
+
+    .l-contact
+
+        dl
+            @include box-100()
+            margin-bottom: 40px
+
+            dt
+                margin-bottom: 30px
+
+            dd
+                ul,
+                p
+                    margin-bottom: 30px
+                    font-size: 1.2rem
+                    line-height: 1.8
+
+@media screen and (min-width: 769px)
+    .p-contact
+
+        .l-contact
+            margin-bottom: 47px
+            padding-top: 28px
+
+            .c-title
+                margin-bottom: 60px
+
+            .c-form
+                margin-top: 52px
+
+            .c-form+blockquote
+                margin-bottom: 92px
+
+@media screen and (max-width: 768px)
+    .p-contact
+
+        .l-contact
+            margin-bottom: 30px
+            padding-top: 40px
+
+            .c-title
+                margin-bottom: 60px
+
+            .c-form
+                margin-top: 50px
+
+            .c-form+blockquote
+                margin-bottom: 70px

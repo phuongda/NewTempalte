@@ -1,0 +1,61 @@
+/* profile page */
+@import "core/mixin/_mixin"
+@import "core/variable/_color"
+
+.p-demo
+
+    .c-demos
+        @include box-100()
+
+        .c-demo
+            @include box-100()
+            flex-direction: column
+
+            .name
+                @include box-100()
+                margin-bottom: 30px
+
+            .demo
+                @include box-100()
+                margin-bottom: 30px
+                border: 1px solid #eeeeee
+                padding: 20px
+
+            .code
+                @include box-100()
+                min-height: 300px
+                padding: 50px 20px 20px 20px
+                background: #eeeeee
+                position: relative
+                overflow: hidden
+
+                .btncopy
+                    width: 100px
+                    height: 40px
+                    @include box()
+                    justify-content: center
+                    align-items: center
+                    border-radius: 0 0 0 5px
+                    background: #707070
+                    font-size: 1.4rem
+                    color: white
+                    position: absolute
+                    top: 0
+                    right: 0
+                    z-index: 10
+                    cursor: pointer
+
+            &:not(:last-child)
+                margin-bottom: 50px
+
+@media screen and (min-width: 992px)
+
+@media screen and (max-width: 991px)
+
+@media screen and (min-width: 769px)
+
+@media screen and (max-width: 768px)
+
+@media screen and (max-width: 580px)
+
+@media screen and (max-width: 480px)

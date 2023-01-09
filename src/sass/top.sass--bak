@@ -1,0 +1,339 @@
+/* top page */
+@import "core/mixin/_mixin"
+@import "core/variable/_color"
+
+.p-top
+    @include box-100()
+
+    .l-blocks
+
+        .c-title
+            margin-bottom: 37px
+
+        &.l-news
+            padding-top: 82px
+            padding-bottom: 94px
+            position: relative
+
+            .c-title
+                margin-bottom: 0
+
+            .bg
+                width: 100%
+                height: 1229px
+                @include bg-img-cover()
+                position: absolute
+                left: 0
+                bottom: -125px
+                z-index: -1
+
+        &.c-info-footers2
+            margin-bottom: 93px
+
+        &.l-top-1
+            position: relative
+
+            .l-contents
+                padding-top: 90px
+                padding-bottom: 90px
+
+            .l-block
+
+                &:not(:last-child)
+                    margin-bottom: 105px
+
+            .bg
+                top: 171px
+
+        &.l-top-2
+
+            .l-contents
+                padding-top: 0
+                padding-bottom: 110px
+
+                h2.c-title
+                    margin-bottom: 62px
+
+                .c-blockquote
+                    margin-bottom: 70px
+
+                .c-contact
+                    margin-top: 70px
+
+            .l-block
+                position: relative
+
+                &:not(:last-child)
+                    margin-bottom: 90px
+
+                h2.c-title
+                    margin-top: 90px
+
+            .l-container
+
+                .c-cols
+
+                    &.c-col-2
+                        margin-bottom: 70px
+
+            .bg
+
+                &.top
+                    bottom: 0
+
+                &.bottom
+                    top: 132px
+
+        &.l-top-3
+
+            .l-contents
+                padding-top: 0
+                padding-bottom: 110px
+
+                h2.c-title
+                    margin-bottom: 60px
+
+                .c-blockquote
+                    margin-bottom: 36px
+
+            .l-block
+                position: relative
+
+                &:not(:last-child)
+                    margin-bottom: 50px
+
+                h2.c-title
+                    margin-top: 90px
+
+            .c-gr-button
+                margin-top: 60px
+
+            .bg
+                top: 180px
+
+        &.l-top-4
+
+            .l-contents
+                padding-top: 0
+                padding-bottom: 110px
+
+                h2.c-title
+                    margin-bottom: 70px
+
+                .c-blockquote
+                    margin-bottom: 81px
+
+            .l-block
+                position: relative
+
+                &:not(:last-child)
+                    margin-bottom: 90px
+
+                h2.c-title
+                    margin-top: 90px
+
+            .c-gr-button
+                margin-top: 81px
+
+            .bg
+                top: 122px
+
+        &.l-instagram
+            padding-bottom: 110px
+            position: relative
+
+            .l-container
+                @include box()
+                justify-content: space-between
+
+            .bg
+                width: 100%
+                height: 1757px
+                @include bg-img-cover()
+                background-position: bottom center
+                position: absolute
+                left: 0
+                bottom: 14px
+                z-index: -1
+
+        .l-sliders
+            position: relative
+
+            &::before,
+            &::after
+                content: ""
+                width: calc((100% - 1400px) / 2)
+                height: 100%
+                position: absolute
+                top: 0
+                z-index: 10
+
+            &::before
+                background: linear-gradient(to left, transparent, rgba(255, 255, 255, 70%))
+                left: 0
+
+            &::after
+                right: 0
+                background: linear-gradient(to right, transparent, rgba(255, 255, 255, 70%))
+
+@media screen and (min-width: 992px)
+    .p-top
+
+        .l-blocks
+
+            &.l-top-1
+
+                .c-cols
+
+                    &.c-col-2
+
+                        &.special
+                            margin-bottom: 95px
+
+                            .contents
+
+                                .c-title
+
+                                    strong
+                                        font-size: 6.4rem
+
+@media screen and (max-width: 991px)
+    .p-top
+
+        .l-blocks
+
+            &.l-news
+                padding-top: 70px
+                margin-bottom: 53px
+
+            &.l-top-1
+
+                .l-contents
+                    padding-top: 70px
+                    padding-bottom: 70px
+
+                .l-block
+
+                    &:not(:last-child)
+                        margin-bottom: 50px
+
+                .c-blockquote
+                    margin-bottom: 50px
+
+                .c-cols
+
+                    &.c-col-2
+
+                        &.special
+                            margin-bottom: 20px
+
+                            .thumb
+                                width: 14%
+                                max-width: 159px
+
+                            .contents
+                                width: 100%
+
+            &.l-top-2
+
+                .l-contents
+                    padding-bottom: 70px
+
+                    .c-blockquote
+                        margin-bottom: 30px
+
+                    .c-contact
+                        margin-top: 70px
+
+                .l-block
+
+                    h2.c-title
+                        margin-top: 50px
+                        margin-bottom: 50px
+
+                    &:not(:last-child)
+                        margin-bottom: 70px
+
+                .l-container
+
+                    .c-cols.c-col-2
+                        margin-bottom: 50px
+
+            &.l-top-3
+
+                .l-contents
+                    padding-bottom: 70px
+
+                .l-block
+
+                    h2.c-title
+                        margin-top: 50px
+                        margin-bottom: 50px
+
+                    &:not(:last-child)
+                        margin-bottom: 70px
+
+                .c-gr-button
+                    margin-top: 50px
+
+            &.l-top-4
+
+                .l-contents
+                    padding-bottom: 70px
+
+                .l-block
+
+                    h2.c-title
+                        margin-top: 50px
+
+                .c-cols.c-col-2
+                    margin-top: -30px
+
+                    .c-title-4
+                        margin-top: 30px
+                        margin-left: auto!important
+                        margin-right: auto!important
+
+            &.l-instagram
+
+                .l-contents
+                    padding-bottom: 70px
+
+// @media screen and (min-width: 769px)
+
+@media screen and (max-width: 768px)
+    .p-top
+
+        .l-blocks
+
+            &.l-top-1
+
+                .l-contents
+                    padding-bottom: 50px
+
+            &.l-top-2
+
+                .l-contents
+                    padding-bottom: 50px
+
+                    .c-contact
+                        margin-top: 20px
+
+                        i
+                            width: 30px
+                            height: 30px
+
+                        a
+                            font-size: 3.4rem
+
+            &.l-top-3
+
+                .l-contents
+                    padding-bottom: 50px
+
+            &.l-top-4
+
+                .l-contents
+                    padding-bottom: 50px
+
+// @media screen and (max-width: 580px)

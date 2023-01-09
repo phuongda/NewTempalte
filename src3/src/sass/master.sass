@@ -1,0 +1,5340 @@
+@import "core/variable/_color"
+
+// https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.css
+@charset "UTF-8"
+
+/*------------------------------------------------------------
+ *  Layout
+ *------------------------------------------------------------
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap")
+
+*
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+    *behavior: url(/scripts/boxsizing.htc)
+
+// @font-face
+//     font-family: Futura
+//     font-style: normal
+//     font-weight: 500
+//     src: url(../font/futura-light-bt.ttf)
+
+// @font-face
+//     font-family: A-OTF-R
+//     font-style: normal
+//     font-weight: 400
+//     src: url(../font/A-OTF-RyuminPro-Regular.otf)
+
+// @font-face
+//     font-family: 'Meiryo'
+//     font-style: normal
+//     font-weight: 400
+//     src: url(../font/meiryo.ttc)
+
+// @font-face
+//     font-family: Yu Gothic
+//     font-style: normal
+//     font-weight: 400
+//     src: url(../font/YuGothM.ttc)
+
+/* 全体構成
+ *----------------------------------------------------------------
+html
+    // font-size: 62.5%
+    /*ベースを10pxにしています
+
+body
+    margin: 0 auto
+    padding: 0
+    height: auto
+    width: 100%
+    font-size: 14px
+    color: #111
+    min-width: 320px
+    line-height: 160%
+    font-weight: 500
+    /* background: #FFFBF7;
+    /*スマホ対応
+    /* font-family: 'Noto Serif JP', serif;
+    font-family: 'メイリオ', 'Meiryo', sans-serif
+
+    /* font-family: 'Meiryo';
+    -webkit-text-size-adjust: 100%
+    -moz-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+    text-size-adjust: 100%
+    // overflow-y: scroll
+
+    /*ローディングのガタツキ防止
+    letter-spacing: 2px
+
+html
+    height: 100%
+
+img
+    margin: 0
+    padding: 0
+    vertical-align: bottom
+    line-height: 0px
+
+ul
+    margin: 0
+    padding: 0
+
+li
+    margin: 0
+    padding: 0
+    list-style: none
+
+dl
+    margin: 0
+    padding: 0
+
+dd
+    margin: 0
+    padding: 0
+    list-style: none
+
+figure
+    margin: 0
+
+p
+    margin: 0
+    padding: 0
+    vertical-align: bottom
+
+a
+    outline: none
+    -webkit-transition: 0.5s
+    transition: 0.5s
+
+.ovh
+    overflow: hidden
+
+.h-nav-wrap .bg-logo
+    background: none
+
+.container-16
+    width: 100%
+    max-width: 1600px
+    margin: 0 auto
+
+/* h系
+ *---------------------------------------------------
+
+h1, h2, h3, h4, h5
+    margin: 0
+    padding: 0
+
+.bold
+    font-weight: bold
+
+.bold-none
+    font-weight: normal
+
+/*fontsize-style
+ *---------------------------------------
+
+.text8
+    font-size: 0.8rem
+
+.text9
+    font-size: 0.9rem
+
+.text10
+    font-size: 1rem
+
+.text11
+    font-size: 1.1rem
+
+.text12
+    font-size: 1.2rem
+
+.text13
+    font-size: 1.3rem
+
+.text14
+    font-size: 1.4rem
+
+.text15
+    font-size: 1.5rem
+
+.text16
+    font-size: 1.6rem
+
+.text18
+    font-size: 1.8rem
+
+.text20
+    font-size: 2rem
+
+.text22
+    font-size: 2.2rem
+
+.text24
+    font-size: 2.4rem
+
+.text25
+    font-size: 2.5rem
+
+.text26
+    font-size: 2.6rem
+
+.text28
+    font-size: 2.8rem
+
+.text30
+    font-size: 3rem
+
+.text32
+    font-size: 3.2rem
+
+.text34
+    font-size: 3.4rem
+
+.text36
+    font-size: 3.6rem
+
+.text38
+    font-size: 3.8rem
+
+.text40
+    font-size: 4rem
+
+.text42
+    font-size: 4.2rem
+
+.text43
+    font-size: 4.3rem
+
+.text44
+    font-size: 4.4rem
+
+.text45
+    font-size: 4.5rem
+
+.text46
+    font-size: 4.6rem
+
+.text48
+    font-size: 4.8rem
+
+.text50
+    font-size: 5rem
+
+.text52
+    font-size: 5.2rem
+
+.text54
+    font-size: 5.4rem
+
+.text58
+    font-size: 5.8rem
+
+.text60
+    font-size: 6rem
+
+.text62
+    font-size: 6.2rem
+
+.text64
+    font-size: 6.4rem
+
+.text68
+    font-size: 6.8rem
+
+.text70
+    font-size: 7rem
+
+.text72
+    font-size: 7.2rem
+
+.text74
+    font-size: 7.4rem
+
+.text80
+    font-size: 8rem
+
+.text82
+    font-size: 8.2rem
+
+.text84
+    font-size: 8.4rem
+
+.text90
+    font-size: 9rem
+
+.text91
+    font-size: 9.1rem
+
+.text96
+    font-size: 9.6rem
+
+.text8i
+    font-size: 0.8rem!important
+
+.text9i
+    font-size: 0.9rem!important
+
+.text10i
+    font-size: 1rem!important
+
+.text11i
+    font-size: 1.1rem!important
+
+.text12i
+    font-size: 1.2rem!important
+
+.text13i
+    font-size: 1.3rem!important
+
+.text14i
+    font-size: 1.4rem!important
+
+.text15i
+    font-size: 1.5rem!important
+
+.text16i
+    font-size: 1.6rem!important
+
+.text18i
+    font-size: 1.8rem!important
+
+.text20i
+    font-size: 2rem!important
+
+.text22i
+    font-size: 2.2rem!important
+
+.text24i
+    font-size: 2.4rem!important
+
+.text25i
+    font-size: 2.5rem!important
+
+.text26i
+    font-size: 2.6rem!important
+
+.text28i
+    font-size: 2.8rem!important
+
+.text30i
+    font-size: 3rem!important
+
+.text32i
+    font-size: 3.2rem!important
+
+.text34i
+    font-size: 3.4rem!important
+
+.text36i
+    font-size: 3.6rem!important
+
+.text38i
+    font-size: 3.8rem!important
+
+.text40i
+    font-size: 4rem!important
+
+.text42i
+    font-size: 4.2rem!important
+
+.text43i
+    font-size: 4.3rem!important
+
+.text44i
+    font-size: 4.4rem!important
+
+.text45i
+    font-size: 4.5rem!important
+
+.text46i
+    font-size: 4.6rem!important
+
+.text48i
+    font-size: 4.8rem!important
+
+.text50i
+    font-size: 5rem!important
+
+.text52i
+    font-size: 5.2rem!important
+
+.text54i
+    font-size: 5.4rem!important
+
+.text58i
+    font-size: 5.8rem!important
+
+.text60i
+    font-size: 6rem!important
+
+.text62i
+    font-size: 6.2rem!important
+
+.text64i
+    font-size: 6.4rem!important
+
+.text68i
+    font-size: 6.8rem!important
+
+.text70i
+    font-size: 7rem!important
+
+.text72i
+    font-size: 7.2rem!important
+
+.text74i
+    font-size: 7.4rem!important
+
+.text80i
+    font-size: 8rem!important
+
+.text82i
+    font-size: 8.2rem!important
+
+.text84i
+    font-size: 8.4rem!important
+
+.text90i
+    font-size: 9rem!important
+
+.text91i
+    font-size: 9.1rem!important
+
+.text96i
+    font-size: 9.6rem!important
+
+.lineheight10
+    line-height: 1
+
+.lineheight12
+    line-height: 1.2
+
+.lineheight14
+    line-height: 1.4
+
+.lineheight15
+    line-height: 1.5
+
+.lineheight16
+    line-height: 1.6
+
+.lineheight18
+    line-height: 1.8
+
+.lineheight20
+    line-height: 2
+
+.lineheight10i
+    line-height: 1!important
+
+.lineheight12i
+    line-height: 1.2!important
+
+.lineheight14i
+    line-height: 1.4!important
+
+.lineheight15i
+    line-height: 1.5!important
+
+.lineheight16i
+    line-height: 1.6!important
+
+.lineheight18i
+    line-height: 1.8!important
+
+.lineheight20i
+    line-height: 2!important
+
+/*color-style
+ *---------------------------------------
+
+.red
+    color: #990000
+
+.blue
+    color: #000099
+
+.green
+    color: #009900
+
+.yellow
+    color: #ffff00
+
+.clgray
+    color: $color-gray!important
+
+.clblack
+    color: $color-black!important
+
+.clred
+    color: $color-red!important
+
+.clblue
+    color: $color-blue!important
+
+.clgreen
+    color: $color-green!important
+
+.clorange
+    color: $color-orange!important
+
+.bggray
+    background: $color-gray!important
+
+.bgblack
+    background: $color-black!important
+
+.bgred
+    background: $color-red!important
+
+.bgblue
+    background: $color-blue!important
+
+.bggreen
+    background: $color-green!important
+
+.bgorange
+    background: $color-orange!important
+
+.bfgray
+
+    &::before
+        background: $color-gray!important
+
+.bfblack
+
+    &::before
+        background: $color-black!important
+
+.bfred
+
+    &::before
+        background: $color-red!important
+
+.bfblue
+
+    &::before
+        background: $color-blue!important
+
+.bfgreen
+
+    &::before
+        background: $color-green!important
+
+.bforange
+
+    &::before
+        background: $color-orange!important
+
+.afgray
+
+    &::after
+        background: $color-gray!important
+
+.afblack
+
+    &::after
+        background: $color-black!important
+
+.afred
+
+    &::after
+        background: $color-red!important
+
+.afblue
+
+    &::after
+        background: $color-blue!important
+
+.afgreen
+
+    &::after
+        background: $color-green!important
+
+.aforange
+
+    &::after
+        background: $color-orange!important
+
+.bafgray
+
+    &::before,
+    &::after
+        background: $color-gray!important
+
+.bafblack
+
+    &::before,
+    &::after
+        background: $color-black!important
+
+.bafred
+
+    &::before,
+    &::after
+        background: $color-red!important
+
+.bafblue
+
+    &::before,
+    &::after
+        background: $color-blue!important
+
+.bafgreen
+
+    &::before,
+    &::after
+        background: $color-green!important
+
+.baforange
+
+    &::before,
+    &::after
+        background: $color-orange!important
+
+.bdgray
+    border-color: $color-gray !important
+
+.bdblack
+    border-color: $color-black !important
+
+.bdred
+    border-color: $color-red !important
+
+.bdblue
+    border-color: $color-blue !important
+
+.bdgreen
+    border-color: $color-green !important
+
+.bdorange
+    border-color: $color-orange !important
+
+/*link-style
+ *---------------------------------------
+
+a
+    color: inherit
+
+    &:hover
+        text-decoration: none
+
+/*** CLEAR-FIX **
+
+.clearfix
+    zoom: 1
+
+    &:after
+        clear: both
+        content: "."
+        display: block
+        height: 0
+        line-height: 0
+        visibility: hidden
+
+/*** ROLL-OVER  **
+
+.alphaOver a:hover img
+    opacity: 0.7
+    filter: alpha(opacity = 70)
+    -moz-opacity: 0.7
+
+.alphaOver_png a:hover img
+    opacity: 0.7
+    -moz-opacity: 0.7
+
+.none
+    opacity: 0.4
+    filter: alpha(opacity = 40)
+    -moz-opacity: 0.4
+
+/*** FLOAT **
+
+.fr
+    float: right
+
+.fl
+    float: left
+
+.fn
+    float: none
+
+.tcm
+    text-align: center
+
+img
+    max-width: 100%
+
+.cb
+    clear: both
+
+/*** PADDING **
+
+.pt0
+    padding-top: 0 !important
+
+.pt1
+    padding-top: 1px !important
+
+.pt2
+    padding-top: 2px !important
+
+.pt3
+    padding-top: 3px !important
+
+.pt4
+    padding-top: 4px !important
+
+.pt5
+    padding-top: 5px !important
+
+.pt6
+    padding-top: 6px !important
+
+.pt7
+    padding-top: 7px !important
+
+.pt8
+    padding-top: 8px !important
+
+.pt9
+    padding-top: 9px !important
+
+.pt10
+    padding-top: 10px !important
+
+.pt15
+    padding-top: 15px !important
+
+.pt20
+    padding-top: 20px !important
+
+.pt25
+    padding-top: 25px !important
+
+.pt30
+    padding-top: 30px !important
+
+.pt35
+    padding-top: 35px !important
+
+.pt40
+    padding-top: 40px !important
+
+.pt45
+    padding-top: 45px !important
+
+.pt50
+    padding-top: 50px !important
+
+.pt55
+    padding-top: 55px !important
+
+.pt60
+    padding-top: 60px !important
+
+.pt65
+    padding-top: 65px !important
+
+.pt70
+    padding-top: 70px !important
+
+.pt75
+    padding-top: 75px !important
+
+.pt80
+    padding-top: 80px !important
+
+.pt85
+    padding-top: 85px !important
+
+.pt90
+    padding-top: 90px !important
+
+.pt95
+    padding-top: 95px !important
+
+.pt100
+    padding-top: 100px !important
+
+.pt105
+    padding-top: 105px !important
+
+.pt110
+    padding-top: 110px !important
+
+.pt115
+    padding-top: 115px !important
+
+.pt120
+    padding-top: 120px !important
+
+.pr0
+    padding-right: 0 !important
+
+.pr1
+    padding-right: 1px !important
+
+.pr2
+    padding-right: 2px !important
+
+.pr3
+    padding-right: 3px !important
+
+.pr4
+    padding-right: 4px !important
+
+.pr5
+    padding-right: 5px !important
+
+.pr6
+    padding-right: 6px !important
+
+.pr7
+    padding-right: 7px !important
+
+.pr8
+    padding-right: 8px !important
+
+.pr9
+    padding-right: 9px !important
+
+.pr10
+    padding-right: 10px !important
+
+.pr15
+    padding-right: 15px !important
+
+.pr20
+    padding-right: 20px !important
+
+.pr25
+    padding-right: 25px !important
+
+.pr30
+    padding-right: 30px !important
+
+.pr35
+    padding-right: 35px !important
+
+.pr40
+    padding-right: 40px !important
+
+.pr45
+    padding-right: 45px !important
+
+.pr50
+    padding-right: 50px !important
+
+.pr55
+    padding-right: 55px !important
+
+.pr60
+    padding-right: 60px !important
+
+.pr65
+    padding-right: 65px !important
+
+.pr70
+    padding-right: 70px !important
+
+.pr75
+    padding-right: 75px !important
+
+.pr80
+    padding-right: 80px !important
+
+.pr85
+    padding-right: 85px !important
+
+.pr90
+    padding-right: 90px !important
+
+.pr95
+    padding-right: 95px !important
+
+.pr100
+    padding-right: 100px !important
+
+.pl0
+    padding-left: 0 !important
+
+.pl1
+    padding-left: 1px !important
+
+.pl2
+    padding-left: 2px !important
+
+.pl3
+    padding-left: 3px !important
+
+.pl4
+    padding-left: 4px !important
+
+.pl5
+    padding-left: 5px !important
+
+.pl6
+    padding-left: 6px !important
+
+.pl7
+    padding-left: 7px !important
+
+.pl8
+    padding-left: 8px !important
+
+.pl9
+    padding-left: 9px !important
+
+.pl10
+    padding-left: 10px !important
+
+.pl15
+    padding-left: 15px !important
+
+.pl20
+    padding-left: 20px !important
+
+.pl25
+    padding-left: 25px !important
+
+.pl30
+    padding-left: 30px !important
+
+.pl35
+    padding-left: 35px !important
+
+.pl40
+    padding-left: 40px !important
+
+.pl45
+    padding-left: 45px !important
+
+.pl50
+    padding-left: 50px !important
+
+.pl55
+    padding-left: 55px !important
+
+.pl60
+    padding-left: 60px !important
+
+.pl65
+    padding-left: 65px !important
+
+.pl70
+    padding-left: 70px !important
+
+.pl75
+    padding-left: 75px !important
+
+.pl80
+    padding-left: 80px !important
+
+.pl85
+    padding-left: 85px !important
+
+.pl90
+    padding-left: 90px !important
+
+.pl95
+    padding-left: 95px !important
+
+.pl100
+    padding-left: 100px !important
+
+.pb0
+    padding-bottom: 0 !important
+
+.pb1
+    padding-bottom: 1px !important
+
+.pb2
+    padding-bottom: 2px !important
+
+.pb3
+    padding-bottom: 3px !important
+
+.pb4
+    padding-bottom: 4px !important
+
+.pb5
+    padding-bottom: 5px !important
+
+.pb6
+    padding-bottom: 6px !important
+
+.pb7
+    padding-bottom: 7px !important
+
+.pb8
+    padding-bottom: 8px !important
+
+.pb9
+    padding-bottom: 9px !important
+
+.pb10
+    padding-bottom: 10px !important
+
+.pb15
+    padding-bottom: 15px !important
+
+.pb20
+    padding-bottom: 20px !important
+
+.pb25
+    padding-bottom: 25px !important
+
+.pb30
+    padding-bottom: 30px !important
+
+.pb35
+    padding-bottom: 35px !important
+
+.pb40
+    padding-bottom: 40px !important
+
+.pb45
+    padding-bottom: 45px !important
+
+.pb50
+    padding-bottom: 50px !important
+
+.pb55
+    padding-bottom: 55px !important
+
+.pb60
+    padding-bottom: 60px !important
+
+.pb65
+    padding-bottom: 65px !important
+
+.pb70
+    padding-bottom: 70px !important
+
+.pb75
+    padding-bottom: 75px !important
+
+.pb80
+    padding-bottom: 80px !important
+
+.pb85
+    padding-bottom: 85px !important
+
+.pb90
+    padding-bottom: 90px !important
+
+.pb95
+    padding-bottom: 95px !important
+
+.pb100
+    padding-bottom: 100px !important
+
+.pb105
+    padding-bottom: 105px !important
+
+.pb110
+    padding-bottom: 110px !important
+
+.pb115
+    padding-bottom: 115px !important
+
+.pb120
+    padding-bottom: 120px !important
+
+.px0
+    padding-left: 0 !important
+    padding-right: 0!important
+
+.px1
+    padding-left: 1px !important
+    padding-right: 1px !important
+
+.px2
+    padding-left: 2px !important
+    padding-right: 2px !important
+
+.px3
+    padding-left: 3px !important
+    padding-right: 3px !important
+
+.px4
+    padding-left: 4px !important
+    padding-right: 4px !important
+
+.px5
+    padding-left: 5px !important
+    padding-right: 5px !important
+
+.px6
+    padding-left: 6px !important
+    padding-right: 6px !important
+
+.px7
+    padding-left: 7px !important
+    padding-right: 7px !important
+
+.px8
+    padding-left: 8px !important
+    padding-right: 8px !important
+
+.px9
+    padding-left: 9px !important
+    padding-right: 9px !important
+
+.px10
+    padding-left: 10px !important
+    padding-right: 10px !important
+
+.px15
+    padding-left: 15px !important
+    padding-right: 15px !important
+
+.px20
+    padding-left: 20px !important
+    padding-right: 20px !important
+
+.px25
+    padding-left: 25px !important
+    padding-right: 25px !important
+
+.px30
+    padding-left: 30px !important
+    padding-right: 30px !important
+
+.px35
+    padding-left: 35px !important
+    padding-right: 35px !important
+
+.px40
+    padding-left: 40px !important
+    padding-right: 40px !important
+
+.px45
+    padding-left: 45px !important
+    padding-right: 45px !important
+
+.px50
+    padding-left: 50px !important
+    padding-right: 50px !important
+
+.px55
+    padding-left: 55px !important
+    padding-right: 55px !important
+
+.px60
+    padding-left: 60px !important
+    padding-right: 60px !important
+
+.px65
+    padding-left: 65px !important
+    padding-right: 65px !important
+
+.px70
+    padding-left: 70px !important
+    padding-right: 70px !important
+
+.px75
+    padding-left: 75px !important
+    padding-right: 75px !important
+
+.px80
+    padding-left: 80px !important
+    padding-right: 80px !important
+
+.px85
+    padding-left: 85px !important
+    padding-right: 85px !important
+
+.px90
+    padding-left: 90px !important
+    padding-right: 90px !important
+
+.px95
+    padding-left: 95px !important
+    padding-right: 95px !important
+
+.px100
+    padding-left: 100px !important
+    padding-right: 100px !important
+
+.py0
+    padding-top: 0 !important
+    padding-bottom: 0!important
+
+.py1
+    padding-top: 1px !important
+    padding-bottom: 1px !important
+
+.py2
+    padding-top: 2px !important
+    padding-bottom: 2px !important
+
+.py3
+    padding-top: 3px !important
+    padding-bottom: 3px !important
+
+.py4
+    padding-top: 4px !important
+    padding-bottom: 4px !important
+
+.py5
+    padding-top: 5px !important
+    padding-bottom: 5px !important
+
+.py6
+    padding-top: 6px !important
+    padding-bottom: 6px !important
+
+.py7
+    padding-top: 7px !important
+    padding-bottom: 7px !important
+
+.py8
+    padding-top: 8px !important
+    padding-bottom: 8px !important
+
+.py9
+    padding-top: 9px !important
+    padding-bottom: 9px !important
+
+.py10
+    padding-top: 10px !important
+    padding-bottom: 10px !important
+
+.py15
+    padding-top: 15px !important
+    padding-bottom: 15px !important
+
+.py20
+    padding-top: 20px !important
+    padding-bottom: 20px !important
+
+.py25
+    padding-top: 25px !important
+    padding-bottom: 25px !important
+
+.py30
+    padding-top: 30px !important
+    padding-bottom: 30px !important
+
+.py35
+    padding-top: 35px !important
+    padding-bottom: 35px !important
+
+.py40
+    padding-top: 40px !important
+    padding-bottom: 40px !important
+
+.py45
+    padding-top: 45px !important
+    padding-bottom: 45px !important
+
+.py50
+    padding-top: 50px !important
+    padding-bottom: 50px !important
+
+.py55
+    padding-top: 55px !important
+    padding-bottom: 55px !important
+
+.py60
+    padding-top: 60px !important
+    padding-bottom: 60px !important
+
+.py65
+    padding-top: 65px !important
+    padding-bottom: 65px !important
+
+.py70
+    padding-top: 70px !important
+    padding-bottom: 70px !important
+
+.py75
+    padding-top: 75px !important
+    padding-bottom: 75px !important
+
+.py80
+    padding-top: 80px !important
+    padding-bottom: 80px !important
+
+.py85
+    padding-top: 85px !important
+    padding-bottom: 85px !important
+
+.py90
+    padding-top: 90px !important
+    padding-bottom: 90px !important
+
+.py95
+    padding-top: 95px !important
+    padding-bottom: 95px !important
+
+.py100
+    padding-top: 100px !important
+    padding-bottom: 100px !important
+
+/*** MARGIN **
+
+.mt0
+    margin-top: 0 !important
+
+.mt1
+    margin-top: 1px !important
+
+.mt2
+    margin-top: 2px !important
+
+.mt3
+    margin-top: 3px !important
+
+.mt4
+    margin-top: 4px !important
+
+.mt5
+    margin-top: 5px !important
+
+.mt6
+    margin-top: 6px !important
+
+.mt7
+    margin-top: 7px !important
+
+.mt8
+    margin-top: 8px !important
+
+.mt9
+    margin-top: 9px !important
+
+.mt10
+    margin-top: 10px !important
+
+.mt15
+    margin-top: 15px !important
+
+.mt20
+    margin-top: 20px !important
+
+.mt25
+    margin-top: 25px !important
+
+.mt30
+    margin-top: 30px !important
+
+.mt35
+    margin-top: 35px !important
+
+.mt40
+    margin-top: 40px !important
+
+.mt45
+    margin-top: 45px !important
+
+.mt50
+    margin-top: 50px !important
+
+.mt55
+    margin-top: 55px !important
+
+.mt60
+    margin-top: 60px !important
+
+.mt65
+    margin-top: 65px !important
+
+.mt70
+    margin-top: 70px !important
+
+.mt75
+    margin-top: 75px !important
+
+.mt80
+    margin-top: 80px !important
+
+.mt85
+    margin-top: 85px !important
+
+.mt90
+    margin-top: 90px !important
+
+.mt95
+    margin-top: 95px !important
+
+.mt100
+    margin-top: 100px !important
+
+.mr0
+    margin-right: 0 !important
+
+.mr1
+    margin-right: 1px !important
+
+.mr2
+    margin-right: 2px !important
+
+.mr3
+    margin-right: 3px !important
+
+.mr4
+    margin-right: 4px !important
+
+.mr5
+    margin-right: 5px !important
+
+.mr6
+    margin-right: 6px !important
+
+.mr7
+    margin-right: 7px !important
+
+.mr8
+    margin-right: 8px !important
+
+.mr9
+    margin-right: 9px !important
+
+.mr10
+    margin-right: 10px !important
+
+.mr15
+    margin-right: 15px !important
+
+.mr20
+    margin-right: 20px !important
+
+.mr25
+    margin-right: 25px !important
+
+.mr30
+    margin-right: 30px !important
+
+.mr35
+    margin-right: 35px !important
+
+.mr40
+    margin-right: 40px !important
+
+.mr45
+    margin-right: 45px !important
+
+.mr50
+    margin-right: 50px !important
+
+.mr55
+    margin-right: 55px !important
+
+.mr60
+    margin-right: 60px !important
+
+.mr65
+    margin-right: 65px !important
+
+.mr70
+    margin-right: 70px !important
+
+.mr75
+    margin-right: 75px !important
+
+.mr80
+    margin-right: 80px !important
+
+.mr85
+    margin-right: 85px !important
+
+.mr90
+    margin-right: 90px !important
+
+.mr95
+    margin-right: 95px !important
+
+.mr100
+    margin-right: 100px !important
+
+.ml0
+    margin-left: 0 !important
+
+.ml1
+    margin-left: 1px !important
+
+.ml2
+    margin-left: 2px !important
+
+.ml3
+    margin-left: 3px !important
+
+.ml4
+    margin-left: 4px !important
+
+.ml5
+    margin-left: 5px !important
+
+.ml6
+    margin-left: 6px !important
+
+.ml7
+    margin-left: 7px !important
+
+.ml8
+    margin-left: 8px !important
+
+.ml9
+    margin-left: 9px !important
+
+.ml10
+    margin-left: 10px !important
+
+.ml15
+    margin-left: 15px !important
+
+.ml20
+    margin-left: 20px !important
+
+.ml25
+    margin-left: 25px !important
+
+.ml30
+    margin-left: 30px !important
+
+.ml35
+    margin-left: 35px !important
+
+.ml40
+    margin-left: 40px !important
+
+.ml45
+    margin-left: 45px !important
+
+.ml50
+    margin-left: 50px !important
+
+.ml55
+    margin-left: 55px !important
+
+.ml60
+    margin-left: 60px !important
+
+.ml65
+    margin-left: 65px !important
+
+.ml70
+    margin-left: 70px !important
+
+.ml75
+    margin-left: 75px !important
+
+.ml80
+    margin-left: 80px !important
+
+.ml85
+    margin-left: 85px !important
+
+.ml90
+    margin-left: 90px !important
+
+.ml95
+    margin-left: 95px !important
+
+.ml100
+    margin-left: 100px !important
+
+.mb0
+    margin-bottom: 0 !important
+
+.mb1
+    margin-bottom: 1px !important
+
+.mb2
+    margin-bottom: 2px !important
+
+.mb3
+    margin-bottom: 3px !important
+
+.mb4
+    margin-bottom: 4px !important
+
+.mb5
+    margin-bottom: 5px !important
+
+.mb6
+    margin-bottom: 6px !important
+
+.mb7
+    margin-bottom: 7px !important
+
+.mb8
+    margin-bottom: 8px !important
+
+.mb9
+    margin-bottom: 9px !important
+
+.mb10
+    margin-bottom: 10px !important
+
+.mb15
+    margin-bottom: 15px !important
+
+.mb20
+    margin-bottom: 20px !important
+
+.mb25
+    margin-bottom: 25px !important
+
+.mb30
+    margin-bottom: 30px !important
+
+.mb35
+    margin-bottom: 35px !important
+
+.mb40
+    margin-bottom: 40px !important
+
+.mb45
+    margin-bottom: 45px !important
+
+.mb50
+    margin-bottom: 50px !important
+
+.mb55
+    margin-bottom: 55px !important
+
+.mb60
+    margin-bottom: 60px !important
+
+.mb65
+    margin-bottom: 65px !important
+
+.mb70
+    margin-bottom: 70px !important
+
+.mb75
+    margin-bottom: 75px !important
+
+.mb80
+    margin-bottom: 80px !important
+
+.mb85
+    margin-bottom: 85px !important
+
+.mb90
+    margin-bottom: 90px !important
+
+.mb95
+    margin-bottom: 95px !important
+
+.mb100
+    margin-bottom: 100px !important
+
+.mb110
+    margin-bottom: 110px !important
+
+.mb120
+    margin-bottom: 120px !important
+
+.mx0
+    margin-left: 0 !important
+    margin-right: 0!important
+
+.mx1
+    margin-left: 1px !important
+    margin-right: 1px !important
+
+.mx2
+    margin-left: 2px !important
+    margin-right: 2px !important
+
+.mx3
+    margin-left: 3px !important
+    margin-right: 3px !important
+
+.mx4
+    margin-left: 4px !important
+    margin-right: 4px !important
+
+.mx5
+    margin-left: 5px !important
+    margin-right: 5px !important
+
+.mx6
+    margin-left: 6px !important
+    margin-right: 6px !important
+
+.mx7
+    margin-left: 7px !important
+    margin-right: 7px !important
+
+.mx8
+    margin-left: 8px !important
+    margin-right: 8px !important
+
+.mx9
+    margin-left: 9px !important
+    margin-right: 9px !important
+
+.mx10
+    margin-left: 10px !important
+    margin-right: 10px !important
+
+.mx15
+    margin-left: 15px !important
+    margin-right: 15px !important
+
+.mx20
+    margin-left: 20px !important
+    margin-right: 20px !important
+
+.mx25
+    margin-left: 25px !important
+    margin-right: 25px !important
+
+.mx30
+    margin-left: 30px !important
+    margin-right: 30px !important
+
+.mx35
+    margin-left: 35px !important
+    margin-right: 35px !important
+
+.mx40
+    margin-left: 40px !important
+    margin-right: 40px !important
+
+.mx45
+    margin-left: 45px !important
+    margin-right: 45px !important
+
+.mx50
+    margin-left: 50px !important
+    margin-right: 50px !important
+
+.mx55
+    margin-left: 55px !important
+    margin-right: 55px !important
+
+.mx60
+    margin-left: 60px !important
+    margin-right: 60px !important
+
+.mx65
+    margin-left: 65px !important
+    margin-right: 65px !important
+
+.mx70
+    margin-left: 70px !important
+    margin-right: 70px !important
+
+.mx75
+    margin-left: 75px !important
+    margin-right: 75px !important
+
+.mx80
+    margin-left: 80px !important
+    margin-right: 80px !important
+
+.mx85
+    margin-left: 85px !important
+    margin-right: 85px !important
+
+.mx90
+    margin-left: 90px !important
+    margin-right: 90px !important
+
+.mx95
+    margin-left: 95px !important
+    margin-right: 95px !important
+
+.mx100
+    margin-left: 100px !important
+    margin-right: 100px !important
+
+.my0
+    margin-top: 0 !important
+    margin-bottom: 0!important
+
+.my1
+    margin-top: 1px !important
+    margin-bottom: 1px !important
+
+.my2
+    margin-top: 2px !important
+    margin-bottom: 2px !important
+
+.my3
+    margin-top: 3px !important
+    margin-bottom: 3px !important
+
+.my4
+    margin-top: 4px !important
+    margin-bottom: 4px !important
+
+.my5
+    margin-top: 5px !important
+    margin-bottom: 5px !important
+
+.my6
+    margin-top: 6px !important
+    margin-bottom: 6px !important
+
+.my7
+    margin-top: 7px !important
+    margin-bottom: 7px !important
+
+.my8
+    margin-top: 8px !important
+    margin-bottom: 8px !important
+
+.my9
+    margin-top: 9px !important
+    margin-bottom: 9px !important
+
+.my10
+    margin-top: 10px !important
+    margin-bottom: 10px !important
+
+.my15
+    margin-top: 15px !important
+    margin-bottom: 15px !important
+
+.my20
+    margin-top: 20px !important
+    margin-bottom: 20px !important
+
+.my25
+    margin-top: 25px !important
+    margin-bottom: 25px !important
+
+.my30
+    margin-top: 30px !important
+    margin-bottom: 30px !important
+
+.my35
+    margin-top: 35px !important
+    margin-bottom: 35px !important
+
+.my40
+    margin-top: 40px !important
+    margin-bottom: 40px !important
+
+.my45
+    margin-top: 45px !important
+    margin-bottom: 45px !important
+
+.my50
+    margin-top: 50px !important
+    margin-bottom: 50px !important
+
+.my55
+    margin-top: 55px !important
+    margin-bottom: 55px !important
+
+.my60
+    margin-top: 60px !important
+    margin-bottom: 60px !important
+
+.my65
+    margin-top: 65px !important
+    margin-bottom: 65px !important
+
+.my70
+    margin-top: 70px !important
+    margin-bottom: 70px !important
+
+.my75
+    margin-top: 75px !important
+    margin-bottom: 75px !important
+
+.my80
+    margin-top: 80px !important
+    margin-bottom: 80px !important
+
+.my85
+    margin-top: 85px !important
+    margin-bottom: 85px !important
+
+.my90
+    margin-top: 90px !important
+    margin-bottom: 90px !important
+
+.my95
+    margin-top: 95px !important
+    margin-bottom: 95px !important
+
+.my100
+    margin-top: 100px !important
+    margin-bottom: 100px !important
+
+.mlauto
+    margin-left: auto !important
+
+.mrauto
+    margin-right: auto !important
+
+.mxauto
+    margin-left: auto !important
+    margin-right: auto !important
+
+/*** WIDTH **
+
+.w100
+    width: 100px
+
+.w105
+    width: 105px
+
+.w110
+    width: 110px
+
+.w115
+    width: 115px
+
+.w120
+    width: 120px
+
+.w125
+    width: 125px
+
+.w130
+    width: 130px
+
+.w135
+    width: 135px
+
+.w140
+    width: 140px
+
+.w145
+    width: 145px
+
+.w150
+    width: 150px
+
+.w155
+    width: 155px
+
+.w160
+    width: 160px
+
+.w165
+    width: 165px
+
+.w170
+    width: 170px
+
+.w175
+    width: 175px
+
+.w180
+    width: 180px
+
+.w185
+    width: 185px
+
+.w190
+    width: 190px
+
+.w195
+    width: 195px
+
+.w200
+    width: 200px
+
+.w205
+    width: 205px
+
+.w210
+    width: 210px
+
+.w215
+    width: 215px
+
+.w220
+    width: 220px
+
+.w225
+    width: 225px
+
+.w230
+    width: 230px
+
+.w235
+    width: 235px
+
+.w240
+    width: 240px
+
+.w245
+    width: 245px
+
+.w250
+    width: 250px
+
+.w255
+    width: 255px
+
+.w260
+    width: 260px
+
+.w265
+    width: 265px
+
+.w270
+    width: 270px
+
+.w275
+    width: 275px
+
+.w280
+    width: 280px
+
+.w285
+    width: 285px
+
+.w290
+    width: 290px
+
+.w295
+    width: 295px
+
+.w300
+    width: 300px
+
+.w305
+    width: 305px
+
+.w310
+    width: 310px
+
+.w315
+    width: 315px
+
+.w320
+    width: 320px
+
+.w325
+    width: 325px
+
+.w330
+    width: 330px
+
+.w335
+    width: 335px
+
+.w340
+    width: 340px
+
+.w345
+    width: 345px
+
+.w350
+    width: 350px
+
+.w355
+    width: 355px
+
+.w360
+    width: 360px
+
+.w365
+    width: 365px
+
+.w370
+    width: 370px
+
+.w375
+    width: 375px
+
+.w380
+    width: 380px
+
+.w385
+    width: 385px
+
+.w390
+    width: 390px
+
+.w395
+    width: 395px
+
+.w400
+    width: 400px
+
+.w405
+    width: 405px
+
+.w410
+    width: 410px
+
+.w415
+    width: 415px
+
+.w420
+    width: 420px
+
+.w425
+    width: 425px
+
+.w430
+    width: 430px
+
+.w435
+    width: 435px
+
+.w440
+    width: 440px
+
+.w445
+    width: 445px
+
+.w450
+    width: 450px
+
+.w455
+    width: 455px
+
+.w460
+    width: 460px
+
+.w465
+    width: 465px
+
+.w470
+    width: 470px
+
+.w475
+    width: 475px
+
+.w480
+    width: 480px
+
+.w485
+    width: 485px
+
+.w490
+    width: 490px
+
+.w495
+    width: 495px
+
+.w500
+    width: 500px
+
+.w505
+    width: 505px
+
+.w510
+    width: 510px
+
+.w515
+    width: 515px
+
+.w520
+    width: 520px
+
+.w525
+    width: 525px
+
+.w530
+    width: 530px
+
+.w535
+    width: 535px
+
+.w540
+    width: 540px
+
+.w545
+    width: 545px
+
+.w550
+    width: 550px
+
+.w555
+    width: 555px
+
+.w560
+    width: 560px
+
+.w565
+    width: 565px
+
+.w570
+    width: 570px
+
+.w575
+    width: 575px
+
+.w580
+    width: 580px
+
+.w585
+    width: 585px
+
+.w590
+    width: 590px
+
+.w595
+    width: 595px
+
+.w600
+    max-width: 600px
+    width: 100%
+    margin: auto
+
+.w605
+    width: 605px
+
+.w610
+    width: 610px
+
+.w615
+    width: 615px
+
+.w620
+    width: 620px
+
+.w625
+    width: 625px
+
+.w630
+    width: 630px
+
+.w635
+    width: 635px
+
+.w640
+    width: 640px
+
+.w645
+    width: 645px
+
+.w650
+    width: 650px
+
+.w655
+    width: 655px
+
+.w660
+    width: 660px
+
+.w665
+    width: 665px
+
+.w670
+    width: 670px
+
+.w675
+    width: 675px
+
+.w680
+    width: 680px
+
+.w685
+    width: 685px
+
+.w690
+    width: 690px
+
+.w695
+    width: 695px
+
+.w700
+    width: 700px
+
+.w705
+    width: 705px
+
+.w710
+    width: 710px
+
+.w715
+    width: 715px
+
+.w720
+    width: 720px
+
+.w725
+    width: 725px
+
+.w730
+    width: 730px
+
+.w735
+    width: 735px
+
+.w740
+    width: 740px
+
+.w745
+    width: 745px
+
+.w750
+    width: 750px
+
+.w755
+    width: 755px
+
+.w760
+    width: 760px
+
+.w765
+    width: 765px
+
+.w770
+    width: 770px
+
+.w775
+    width: 775px
+
+.w780
+    width: 780px
+
+.w785
+    width: 785px
+
+.w790
+    width: 790px
+
+.w795
+    width: 795px
+
+.w800
+    width: 100%
+    max-width: 800px
+    margin: auto
+
+.w805
+    width: 805px
+
+.w810
+    width: 810px
+
+.w815
+    width: 815px
+
+.w820
+    width: 820px
+
+.w825
+    width: 825px
+
+.w830
+    width: 830px
+
+.w835
+    width: 835px
+
+.w840
+    width: 840px
+
+.w845
+    width: 845px
+
+.w850
+    width: 100%
+    margin: auto
+    max-width: 850px
+
+.w855
+    width: 855px
+
+.w860
+    width: 860px
+
+.w865
+    width: 865px
+
+.w870
+    width: 870px
+
+.w875
+    width: 875px
+
+.w880
+    width: 880px
+
+.w885
+    width: 885px
+
+.w890
+    width: 890px
+
+.w895
+    width: 895px
+
+.w900
+    max-width: 900px
+    width: 100%
+    margin: auto
+
+.w905
+    width: 905px
+
+.w910
+    width: 910px
+
+.w915
+    width: 915px
+
+.w920
+    width: 920px
+
+.w925
+    width: 925px
+
+.w930
+    width: 930px
+
+.w935
+    width: 935px
+
+.w940
+    width: 940px
+
+.w945
+    width: 945px
+
+.w950
+    width: 950px
+
+.w955
+    width: 955px
+
+.w960
+    width: 960px
+
+.w1k
+    width: 100%
+    max-width: 1000px
+    margin: 0 auto
+
+.w1k160
+    width: 100%
+    max-width: 1160px
+    margin: 0 auto
+
+.w1k2
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+
+.w1
+    width: 100%
+
+.wfull
+    width: 100%
+
+.wauto
+    width: auto
+
+.hfull
+    height: 100%
+
+.hauto
+    height: auto
+
+.center
+    margin-left: auto !important
+    margin-right: auto !important
+
+/*** ALIGN **
+
+.tc
+    text-align: center
+
+.tr
+    text-align: right
+
+.tl
+    text-align: left
+
+.tci
+    text-align: center
+
+img
+    max-width: 100%
+
+/*** Center middle **
+
+.ce
+    position: absolute
+    top: 50%
+    left: 50%
+    -webkit-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+
+.vegas-animation-mykenburns
+    -webkit-animation: mykenburns cubic-bezier(0, 0, 0.58, 1) 1s
+    animation: mykenburns cubic-bezier(0, 0, 0.58, 1) 1s
+
+@-webkit-keyframes mykenburns
+  0%
+    -webkit-transform: scale(1.2) translate(0, -5%)
+    transform: scale(1.2) translate(0, -5%)
+
+  100%
+    -webkit-transform: scale(1) translate(0, 0)
+    transform: scale(1) translate(0, 0)
+
+@keyframes mykenburns
+    0%
+        -webkit-transform: scale(1.2) translate(0, -5%)
+        transform: scale(1.2) translate(0, -5%)
+
+    100%
+        -webkit-transform: scale(1) translate(0, 0)
+        transform: scale(1) translate(0, 0)
+
+#Y_sclorebox
+    position: absolute
+    bottom: 0
+    right: 50px
+    z-index: 100
+
+#Y_sclore
+    max-width: 35px
+    margin: 0 auto
+    display: flex
+    align-items: flex-start
+
+    div
+        background: #fff
+        height: 172px
+        display: block
+        width: 1px
+
+    span
+        display: block
+        margin: 0 auto
+        -webkit-animation: sdb 1.5s infinite
+        animation: sdb 1.5s infinite
+        text-align: center
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+
+        /* padding-left: 13px;
+        background: #c71c20
+        width: 2px
+        height: 20px
+
+    p
+        text-align: center
+        color: #fff
+        margin-top: 17px
+        margin-left: -6px
+        z-index: 99
+        font-size: 11px
+        letter-spacing: 2px
+
+        /* font-weight: bold;
+        -webkit-transform: rotate(90deg)
+        -moz-transform: rotate(90deg)
+        -ms-transform: rotate(90deg)
+        -o-transform: rotate(90deg)
+        transform: rotate(90deg)
+
+@-webkit-keyframes sdb
+  0%
+    -webkit-transform: rotate(0deg) translate(0, 0)
+    opacity: 1
+
+  50%
+    opacity: 1
+
+  100%
+    -webkit-transform: rotate(0deg) translate(0, 127px)
+    opacity: 1
+
+@keyframes sdb
+    0%
+        -webkit-transform: rotate(0deg) translate(0, 0)
+        transform: rotate(0deg) translate(0, 0)
+        opacity: 1
+
+    50%
+        opacity: 1
+
+    100%
+        -webkit-transform: rotate(0deg) translate(0, 127px)
+        transform: rotate(0deg) translate(0, 127px)
+        opacity: 1
+
+.ibg
+    text-indent: 100%
+    white-space: nowrap
+    overflow: hidden
+    background-repeat: no-repeat
+    background-position: center
+    -webkit-box-sizing: content-box
+    box-sizing: content-box
+
+.l-flex
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+
+.f-ce
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    -ms-flex-line-pack: center
+    align-content: center
+
+.l-2
+    width: 50%
+
+.l-3
+    width: calc(100% / 3)
+
+.l-4
+    width: 25%
+
+.l-5
+    width: 20%
+
+.p-delay_1s
+    -webkit-animation-delay: 0.1s !important
+    animation-delay: 0.1s !important
+
+.p-delay_2s
+    -webkit-animation-delay: 0.2s !important
+    animation-delay: 0.2s !important
+
+.p-delay_3s
+    -webkit-animation-delay: 0.3s !important
+    animation-delay: 0.3s !important
+
+.p-delay_4s
+    -webkit-animation-delay: 0.4s !important
+    animation-delay: 0.4s !important
+
+.p-delay_5s
+    -webkit-animation-delay: 0.5s !important
+    animation-delay: 0.5s !important
+
+.p-delay_6s
+    -webkit-animation-delay: 0.6s !important
+    animation-delay: 0.6s !important
+
+.p-delay_7s
+    -webkit-animation-delay: 0.7s !important
+    animation-delay: 0.7s !important
+
+.p-delay_8s
+    -webkit-animation-delay: 0.8s !important
+    animation-delay: 0.8s !important
+
+.p-delay_9s
+    -webkit-animation-delay: 0.9s !important
+    animation-delay: 0.9s !important
+
+.p-delay_10s
+    -webkit-animation-delay: 1s !important
+    animation-delay: 1s !important
+
+.p-delay_11s
+    -webkit-animation-delay: 1.1s !important
+    animation-delay: 1.1s !important
+
+.p-delay_12s
+    -webkit-animation-delay: 1.2s !important
+    animation-delay: 1.2s !important
+
+.p-delay_13s
+    -webkit-animation-delay: 1.3s !important
+    animation-delay: 1.3s !important
+
+.p-delay_14s
+    -webkit-animation-delay: 1.4s !important
+    animation-delay: 1.4s !important
+
+.p-delay_15s
+    -webkit-animation-delay: 1.5s !important
+    animation-delay: 1.5s !important
+
+.p-delay_16s
+    -webkit-animation-delay: 1.6s !important
+    animation-delay: 1.6s !important
+
+.p-delay_17s
+    -webkit-animation-delay: 1.7s !important
+    animation-delay: 1.7s !important
+
+.p-delay_18s
+    -webkit-animation-delay: 1.8s !important
+    animation-delay: 1.8s !important
+
+.p-delay_19s
+    -webkit-animation-delay: 1.9s !important
+    animation-delay: 1.9s !important
+
+.p-delay_20s
+    -webkit-animation-delay: 2s !important
+    animation-delay: 2s !important
+
+.p-ani-fadeInUp
+    -webkit-animation: p-ani-fadeInUp 1.5s ease 0s both 1 normal
+    animation: p-ani-fadeInUp 1.5s ease 0s both 1 normal
+    visibility: visible !important
+
+.p-ani-fadeIn
+    -webkit-animation: p-ani-fadeIn 1.5s ease 0s both 1 normal
+    animation: p-ani-fadeIn 1.5s ease 0s both 1 normal
+    visibility: visible !important
+
+.p-ani-fadeInBlur
+    -webkit-animation: p-ani-fadeInBlur 2s ease 0s backwards 1 normal
+    animation: p-ani-fadeInBlur 2s ease 0s backwards 1 normal
+    visibility: visible !important
+
+.p-ani-fadeInScale
+    -webkit-animation: p-ani-fadeInScale 2s ease 0s backwards 1 normal
+    animation: p-ani-fadeInScale 2s ease 0s backwards 1 normal
+    visibility: visible !important
+
+.p-ani-fadeInLeft
+    -webkit-animation: p-ani-fadeInLeft 1.5s ease 0s backwards 1 normal
+    animation: p-ani-fadeInLeft 1.5s ease 0s backwards 1 normal
+    visibility: visible !important
+
+.p-ani-fadeOut
+    -webkit-animation: p-ani-fadeOut 1.5s ease 0s both 1 normal
+    animation: p-ani-fadeOut 1.5s ease 0s both 1 normal
+    visibility: hidden !important
+
+.p-ani-width
+    -webkit-animation-name: p-ani-width
+    animation-name: p-ani-width
+    -webkit-animation-duration: 1s
+    animation-duration: 1s
+    -webkit-animation-timing-function: ease
+    animation-timing-function: ease
+    -webkit-animation-delay: 0s
+    animation-delay: 0s
+    -webkit-animation-iteration-count: 1
+    animation-iteration-count: 1
+    -webkit-animation-direction: normal
+    animation-direction: normal
+    -webkit-animation-fill-mode: both
+    animation-fill-mode: both
+    -webkit-animation-play-state: running
+    animation-play-state: running
+    visibility: visible !important
+
+.p-ani-height
+    -webkit-animation: p-ani-height 1s ease 0s both 1 normal
+    animation: p-ani-height 1s ease 0s both 1 normal
+    visibility: visible !important
+
+.p-animation__dummybox-gray
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    background-color: #eee
+    width: 100%
+    height: 100%
+
+.p-animation__dummybox-white
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    background-color: #fff
+    width: 100%
+    height: 100%
+
+.p-ani-slide-scaleUp
+    -webkit-animation-name: p-ani-slide-scaleUp
+    animation-name: p-ani-slide-scaleUp
+    -webkit-animation-duration: 15s
+    animation-duration: 15s
+    -webkit-animation-timing-function: linear
+    animation-timing-function: linear
+    -webkit-animation-delay: 0s
+    animation-delay: 0s
+    -webkit-animation-iteration-count: 1
+    animation-iteration-count: 1
+    -webkit-animation-direction: normal
+    animation-direction: normal
+    -webkit-animation-fill-mode: both
+    animation-fill-mode: both
+    -webkit-animation-play-state: running
+    animation-play-state: running
+
+@-webkit-keyframes p-ani-fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes p-ani-fadeIn
+    0%
+        opacity: 0
+
+    100%
+        opacity: 1
+
+@-webkit-keyframes p-ani-fadeOut
+  0%
+    opacity: 1
+
+  100%
+    display: none
+    opacity: 0.5
+
+@keyframes p-ani-fadeOut
+    0%
+        opacity: 1
+
+    100%
+        display: none
+        opacity: 0.5
+
+@-webkit-keyframes p-ani-fadeInUp
+  0%
+    opacity: 0
+    -webkit-transform: translateY(20px)
+    transform: translateY(20px)
+
+  100%
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+@keyframes p-ani-fadeInUp
+    0%
+        opacity: 0
+        -webkit-transform: translateY(20px)
+        transform: translateY(20px)
+
+    100%
+        opacity: 1
+        -webkit-transform: none
+        transform: none
+
+@-webkit-keyframes p-ani-fadeInBlur
+  0%
+    opacity: 0
+    -webkit-filter: blur(5px)
+    filter: blur(5px)
+    -webkit-transform: scale(1.03)
+    transform: scale(1.03)
+
+  100%
+    opacity: 1
+    -webkit-filter: none
+    filter: none
+    -webkit-transform: none
+    transform: none
+
+@keyframes p-ani-fadeInBlur
+    0%
+        opacity: 0
+        -webkit-filter: blur(5px)
+        filter: blur(5px)
+        -webkit-transform: scale(1.03)
+        transform: scale(1.03)
+
+    100%
+        opacity: 1
+        -webkit-filter: none
+        filter: none
+        -webkit-transform: none
+        transform: none
+
+@-webkit-keyframes p-ani-fadeInScale
+  0%
+    opacity: 0
+    -webkit-transform: scale(1.04)
+    transform: scale(1.04)
+
+  100%
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+@keyframes p-ani-fadeInScale
+    0%
+        opacity: 0
+        -webkit-transform: scale(1.04)
+        transform: scale(1.04)
+
+    100%
+        opacity: 1
+        -webkit-transform: none
+        transform: none
+
+@-webkit-keyframes p-ani-fadeInLeft
+  0%
+    opacity: 0
+    -webkit-transform: translateX(-20px)
+    transform: translateX(-20px)
+
+  100%
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+@keyframes p-ani-fadeInLeft
+    0%
+        opacity: 0
+        -webkit-transform: translateX(-20px)
+        transform: translateX(-20px)
+
+    100%
+        opacity: 1
+        -webkit-transform: none
+        transform: none
+
+@-webkit-keyframes p-ani-width
+  0%
+    width: 0%
+
+  100%
+    width: 100%
+
+@keyframes p-ani-width
+    0%
+        width: 0%
+
+    100%
+        width: 100%
+
+@-webkit-keyframes p-ani-height
+  0%
+    height: 0%
+
+  100%
+    height: 100%
+
+@keyframes p-ani-height
+    0%
+        height: 0%
+
+    100%
+        height: 100%
+
+@-webkit-keyframes p-ani-slide-scaleUp
+//   0%
+
+  100%
+    -webkit-transform: scaleX(1.2) scaleY(1.2)
+    transform: scaleX(1.2) scaleY(1.2)
+
+@keyframes p-ani-slide-scaleUp
+    // 0%
+
+    100%
+        -webkit-transform: scaleX(1.2) scaleY(1.2)
+        transform: scaleX(1.2) scaleY(1.2)
+
+.radius2
+    border-radius: 2px
+
+    &.left
+        border-radius: 0 2px 2px 0
+
+    &.right
+        border-radius: 2px 0 0 2px
+
+.radius5
+    border-radius: 5px
+
+    &.left
+        border-radius: 0 5px 5px 0
+
+    &.right
+        border-radius: 5px 0 0 5px
+
+.radius8
+    border-radius: 8px
+
+    &.left
+        border-radius: 0 8px 8px 0
+
+    &.right
+        border-radius: 8px 0 0 8px
+
+.radius10
+    border-radius: 10px
+
+    &.left
+        border-radius: 0 10px 10px 0
+
+    &.right
+        border-radius: 10px 0 0 10px
+
+/* new master */
+.align-baseline
+    vertical-align: baseline !important
+
+.align-top
+    vertical-align: top !important
+
+.align-middle
+    vertical-align: middle !important
+
+.align-bottom
+    vertical-align: bottom !important
+
+.align-text-bottom
+    vertical-align: text-bottom !important
+
+.align-text-top
+    vertical-align: text-top !important
+
+.bg-primary
+    background-color: #007bff !important
+
+a.bg-primary
+    &:hover, &:focus
+        background-color: #0062cc !important
+
+    button.bg-primary
+        &:hover, &:focus
+            background-color: #0062cc !important
+
+.bg-secondary
+    background-color: #6c757d !important
+
+a.bg-secondary
+    &:hover, &:focus
+        background-color: #545b62 !important
+
+    button.bg-secondary
+        &:hover, &:focus
+            background-color: #545b62 !important
+
+.bg-success
+    background-color: #28a745 !important
+
+a.bg-success
+    &:hover, &:focus
+        background-color: #1e7e34 !important
+
+    button.bg-success
+        &:hover, &:focus
+            background-color: #1e7e34 !important
+
+.bg-info
+    background-color: #17a2b8 !important
+
+a.bg-info
+    &:hover, &:focus
+        background-color: #117a8b !important
+
+    button.bg-info
+        &:hover, &:focus
+            background-color: #117a8b !important
+
+.bg-warning
+    background-color: #ffc107 !important
+
+a.bg-warning
+    &:hover, &:focus
+        background-color: #d39e00 !important
+
+    button.bg-warning
+        &:hover, &:focus
+            background-color: #d39e00 !important
+
+.bg-danger
+    background-color: #dc3545 !important
+
+a.bg-danger
+    &:hover, &:focus
+        background-color: #bd2130 !important
+
+    button.bg-danger
+        &:hover, &:focus
+            background-color: #bd2130 !important
+
+.bg-light
+    background-color: #f8f9fa !important
+
+a.bg-light
+    &:hover, &:focus
+        background-color: #dae0e5 !important
+
+    button.bg-light
+        &:hover, &:focus
+            background-color: #dae0e5 !important
+
+.bg-dark
+    background-color: #343a40 !important
+
+a.bg-dark
+    &:hover, &:focus
+        background-color: #1d2124 !important
+
+    button.bg-dark
+        &:hover, &:focus
+            background-color: #1d2124 !important
+
+.bg-white
+    background-color: #fff !important
+
+.bg-transparent
+    background-color: transparent !important
+
+.border
+    border: 1px solid #dee2e6 !important
+
+.border-top
+    border-top: 1px solid #dee2e6 !important
+
+.border-right
+    border-right: 1px solid #dee2e6 !important
+
+.border-bottom
+    border-bottom: 1px solid #dee2e6 !important
+
+.border-left
+    border-left: 1px solid #dee2e6 !important
+
+.border-0
+    border: 0 !important
+
+.border-top-0
+    border-top: 0 !important
+
+.border-right-0
+    border-right: 0 !important
+
+.border-bottom-0
+    border-bottom: 0 !important
+
+.border-left-0
+    border-left: 0 !important
+
+.border-primary
+    border-color: #007bff !important
+
+.border-secondary
+    border-color: #6c757d !important
+
+.border-success
+    border-color: #28a745 !important
+
+.border-info
+    border-color: #17a2b8 !important
+
+.border-warning
+    border-color: #ffc107 !important
+
+.border-danger
+    border-color: #dc3545 !important
+
+.border-light
+    border-color: #f8f9fa !important
+
+.border-dark
+    border-color: #343a40 !important
+
+.border-white
+    border-color: #fff !important
+
+.rounded
+    border-radius: 0.25rem !important
+
+.rounded-top
+    border-top-left-radius: 0.25rem !important
+    border-top-right-radius: 0.25rem !important
+
+.rounded-right
+    border-top-right-radius: 0.25rem !important
+    border-bottom-right-radius: 0.25rem !important
+
+.rounded-bottom
+    border-bottom-right-radius: 0.25rem !important
+    border-bottom-left-radius: 0.25rem !important
+
+.rounded-left
+    border-top-left-radius: 0.25rem !important
+    border-bottom-left-radius: 0.25rem !important
+
+.rounded-circle
+    border-radius: 50% !important
+
+.rounded-0
+    border-radius: 0 !important
+
+.clearfix::after
+    display: block
+    clear: both
+    content: ""
+
+.d-none
+    display: none !important
+
+.d-inline
+    display: inline !important
+
+.d-inline-block
+    display: inline-block !important
+
+.d-block
+    display: block !important
+
+.d-table
+    display: table !important
+
+.d-table-row
+    display: table-row !important
+
+.d-table-cell
+    display: table-cell !important
+
+.d-flex
+    display: -webkit-box !important
+    display: -ms-flexbox !important
+    display: flex !important
+
+.d-inline-flex
+    display: -webkit-inline-box !important
+    display: -ms-inline-flexbox !important
+    display: inline-flex !important
+
+@media (min-width: 576px)
+.d-sm-none
+    display: none !important
+
+.d-sm-inline
+    display: inline !important
+
+.d-sm-inline-block
+    display: inline-block !important
+
+.d-sm-block
+    display: block !important
+
+.d-sm-table
+    display: table !important
+
+.d-sm-table-row
+    display: table-row !important
+
+.d-sm-table-cell
+    display: table-cell !important
+
+.d-sm-flex
+    display: -webkit-box !important
+    display: -ms-flexbox !important
+    display: flex !important
+
+.d-sm-inline-flex
+    display: -webkit-inline-box !important
+    display: -ms-inline-flexbox !important
+    display: inline-flex !important
+
+@media (min-width: 768px)
+.d-md-none
+    display: none !important
+
+.d-md-inline
+    display: inline !important
+
+.d-md-inline-block
+    display: inline-block !important
+
+.d-md-block
+    display: block !important
+
+.d-md-table
+    display: table !important
+
+.d-md-table-row
+    display: table-row !important
+
+.d-md-table-cell
+    display: table-cell !important
+
+.d-md-flex
+    display: -webkit-box !important
+    display: -ms-flexbox !important
+    display: flex !important
+
+.d-md-inline-flex
+    display: -webkit-inline-box !important
+    display: -ms-inline-flexbox !important
+    display: inline-flex !important
+
+@media (min-width: 992px)
+.d-lg-none
+    display: none !important
+
+.d-lg-inline
+    display: inline !important
+
+.d-lg-inline-block
+    display: inline-block !important
+
+.d-lg-block
+    display: block !important
+
+.d-lg-table
+    display: table !important
+
+.d-lg-table-row
+    display: table-row !important
+
+.d-lg-table-cell
+    display: table-cell !important
+
+.d-lg-flex
+    display: -webkit-box !important
+    display: -ms-flexbox !important
+    display: flex !important
+
+.d-lg-inline-flex
+    display: -webkit-inline-box !important
+    display: -ms-inline-flexbox !important
+    display: inline-flex !important
+
+@media (min-width: 1200px)
+.d-xl-none
+    display: none !important
+
+.d-xl-inline
+    display: inline !important
+
+.d-xl-inline-block
+    display: inline-block !important
+
+.d-xl-blocks
+    display: block !important
+
+.d-xl-table
+    display: table !important
+
+.d-xl-table-row
+    display: table-row !important
+
+.d-xl-table-cell
+    display: table-cell !important
+
+.d-xl-flex
+    display: -webkit-box !important
+    display: -ms-flexbox !important
+    display: flex !important
+
+.d-xl-inline-flex
+    display: -webkit-inline-box !important
+    display: -ms-inline-flexbox !important
+    display: inline-flex !important
+
+@media print
+.d-print-none
+    display: none !important
+
+.d-print-inline
+    display: inline !important
+
+.d-print-inline-block
+    display: inline-block !important
+
+.d-print-block
+    display: block !important
+
+.d-print-table
+    display: table !important
+
+.d-print-table-row
+    display: table-row !important
+
+.d-print-table-cell
+    display: table-cell !important
+
+.d-print-flex
+    display: -webkit-box !important
+    display: -ms-flexbox !important
+    display: flex !important
+
+.d-print-inline-flex
+    display: -webkit-inline-box !important
+    display: -ms-inline-flexbox !important
+    display: inline-flex !important
+
+.embed-responsive
+    position: relative
+    display: block
+    width: 100%
+    padding: 0
+    overflow: hidden
+
+    &::before
+        display: block
+        content: ""
+
+// .embed-responsive-item, iframe, embed, object, video
+.embed-responsive-item, embed, object, video
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 0
+
+.embed-responsive-21by9::before
+    padding-top: 42.857143%
+
+.embed-responsive-16by9::before
+    padding-top: 56.25%
+
+.embed-responsive-4by3::before
+    padding-top: 75%
+
+.embed-responsive-1by1::before
+    padding-top: 100%
+
+.flex-row
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: row !important
+    flex-direction: row !important
+
+.flex-column
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: column !important
+    flex-direction: column !important
+
+.flex-row-reverse
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: row-reverse !important
+    flex-direction: row-reverse !important
+
+.flex-column-reverse
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: column-reverse !important
+    flex-direction: column-reverse !important
+
+.flex-wrap
+    -ms-flex-wrap: wrap !important
+    flex-wrap: wrap !important
+
+.flex-nowrap
+    -ms-flex-wrap: nowrap !important
+    flex-wrap: nowrap !important
+
+.flex-wrap-reverse
+    -ms-flex-wrap: wrap-reverse !important
+    flex-wrap: wrap-reverse !important
+
+.justify-content-start
+    -webkit-box-pack: start !important
+    -ms-flex-pack: start !important
+    justify-content: flex-start !important
+
+.justify-content-end
+    -webkit-box-pack: end !important
+    -ms-flex-pack: end !important
+    justify-content: flex-end !important
+
+.justify-content-center
+    -webkit-box-pack: center !important
+    -ms-flex-pack: center !important
+    justify-content: center !important
+
+.justify-content-between
+    -webkit-box-pack: justify !important
+    -ms-flex-pack: justify !important
+    justify-content: space-between !important
+
+.justify-content-around
+    -ms-flex-pack: distribute !important
+    justify-content: space-around !important
+
+.align-items-start
+    -webkit-box-align: start !important
+    -ms-flex-align: start !important
+    align-items: flex-start !important
+
+.align-items-end
+    -webkit-box-align: end !important
+    -ms-flex-align: end !important
+    align-items: flex-end !important
+
+.align-items-center
+    -webkit-box-align: center !important
+    -ms-flex-align: center !important
+    align-items: center !important
+
+.align-items-baseline
+    -webkit-box-align: baseline !important
+    -ms-flex-align: baseline !important
+    align-items: baseline !important
+
+.align-items-stretch
+    -webkit-box-align: stretch !important
+    -ms-flex-align: stretch !important
+    align-items: stretch !important
+
+.align-content-start
+    -ms-flex-line-pack: start !important
+    align-content: flex-start !important
+
+.align-content-end
+    -ms-flex-line-pack: end !important
+    align-content: flex-end !important
+
+.align-content-center
+    -ms-flex-line-pack: center !important
+    align-content: center !important
+
+.align-content-between
+    -ms-flex-line-pack: justify !important
+    align-content: space-between !important
+
+.align-content-around
+    -ms-flex-line-pack: distribute !important
+    align-content: space-around !important
+
+.align-content-stretch
+    -ms-flex-line-pack: stretch !important
+    align-content: stretch !important
+
+.align-self-auto
+    -ms-flex-item-align: auto !important
+    align-self: auto !important
+
+.align-self-start
+    -ms-flex-item-align: start !important
+    align-self: flex-start !important
+
+.align-self-end
+    -ms-flex-item-align: end !important
+    align-self: flex-end !important
+
+.align-self-center
+    -ms-flex-item-align: center !important
+    align-self: center !important
+
+.align-self-baseline
+    -ms-flex-item-align: baseline !important
+    align-self: baseline !important
+
+.align-self-stretch
+    -ms-flex-item-align: stretch !important
+    align-self: stretch !important
+
+@media (min-width: 576px)
+.flex-sm-row
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: row !important
+    flex-direction: row !important
+
+.flex-sm-column
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: column !important
+    flex-direction: column !important
+
+.flex-sm-row-reverse
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: row-reverse !important
+    flex-direction: row-reverse !important
+
+.flex-sm-column-reverse
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: column-reverse !important
+    flex-direction: column-reverse !important
+
+.flex-sm-wrap
+    -ms-flex-wrap: wrap !important
+    flex-wrap: wrap !important
+
+.flex-sm-nowrap
+    -ms-flex-wrap: nowrap !important
+    flex-wrap: nowrap !important
+
+.flex-sm-wrap-reverse
+    -ms-flex-wrap: wrap-reverse !important
+    flex-wrap: wrap-reverse !important
+
+.justify-content-sm-start
+    -webkit-box-pack: start !important
+    -ms-flex-pack: start !important
+    justify-content: flex-start !important
+
+.justify-content-sm-end
+    -webkit-box-pack: end !important
+    -ms-flex-pack: end !important
+    justify-content: flex-end !important
+
+.justify-content-sm-center
+    -webkit-box-pack: center !important
+    -ms-flex-pack: center !important
+    justify-content: center !important
+
+.justify-content-sm-between
+    -webkit-box-pack: justify !important
+    -ms-flex-pack: justify !important
+    justify-content: space-between !important
+
+.justify-content-sm-around
+    -ms-flex-pack: distribute !important
+    justify-content: space-around !important
+
+.align-items-sm-start
+    -webkit-box-align: start !important
+    -ms-flex-align: start !important
+    align-items: flex-start !important
+
+.align-items-sm-end
+    -webkit-box-align: end !important
+    -ms-flex-align: end !important
+    align-items: flex-end !important
+
+.align-items-sm-center
+    -webkit-box-align: center !important
+    -ms-flex-align: center !important
+    align-items: center !important
+
+.align-items-sm-baseline
+    -webkit-box-align: baseline !important
+    -ms-flex-align: baseline !important
+    align-items: baseline !important
+
+.align-items-sm-stretch
+    -webkit-box-align: stretch !important
+    -ms-flex-align: stretch !important
+    align-items: stretch !important
+
+.align-content-sm-start
+    -ms-flex-line-pack: start !important
+    align-content: flex-start !important
+
+.align-content-sm-end
+    -ms-flex-line-pack: end !important
+    align-content: flex-end !important
+
+.align-content-sm-center
+    -ms-flex-line-pack: center !important
+    align-content: center !important
+
+.align-content-sm-between
+    -ms-flex-line-pack: justify !important
+    align-content: space-between !important
+
+.align-content-sm-around
+    -ms-flex-line-pack: distribute !important
+    align-content: space-around !important
+
+.align-content-sm-stretch
+    -ms-flex-line-pack: stretch !important
+    align-content: stretch !important
+
+.align-self-sm-auto
+    -ms-flex-item-align: auto !important
+    align-self: auto !important
+
+.align-self-sm-start
+    -ms-flex-item-align: start !important
+    align-self: flex-start !important
+
+.align-self-sm-end
+    -ms-flex-item-align: end !important
+    align-self: flex-end !important
+
+.align-self-sm-center
+    -ms-flex-item-align: center !important
+    align-self: center !important
+
+.align-self-sm-baseline
+    -ms-flex-item-align: baseline !important
+    align-self: baseline !important
+
+.align-self-sm-stretch
+    -ms-flex-item-align: stretch !important
+    align-self: stretch !important
+
+@media (min-width: 768px)
+.flex-md-row
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: row !important
+    flex-direction: row !important
+
+.flex-md-column
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: column !important
+    flex-direction: column !important
+
+.flex-md-row-reverse
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: row-reverse !important
+    flex-direction: row-reverse !important
+
+.flex-md-column-reverse
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: column-reverse !important
+    flex-direction: column-reverse !important
+
+.flex-md-wrap
+    -ms-flex-wrap: wrap !important
+    flex-wrap: wrap !important
+
+.flex-md-nowrap
+    -ms-flex-wrap: nowrap !important
+    flex-wrap: nowrap !important
+
+.flex-md-wrap-reverse
+    -ms-flex-wrap: wrap-reverse !important
+    flex-wrap: wrap-reverse !important
+
+.justify-content-md-start
+    -webkit-box-pack: start !important
+    -ms-flex-pack: start !important
+    justify-content: flex-start !important
+
+.justify-content-md-end
+    -webkit-box-pack: end !important
+    -ms-flex-pack: end !important
+    justify-content: flex-end !important
+
+.justify-content-md-center
+    -webkit-box-pack: center !important
+    -ms-flex-pack: center !important
+    justify-content: center !important
+
+.justify-content-md-between
+    -webkit-box-pack: justify !important
+    -ms-flex-pack: justify !important
+    justify-content: space-between !important
+
+.justify-content-md-around
+    -ms-flex-pack: distribute !important
+    justify-content: space-around !important
+
+.align-items-md-start
+    -webkit-box-align: start !important
+    -ms-flex-align: start !important
+    align-items: flex-start !important
+
+.align-items-md-end
+    -webkit-box-align: end !important
+    -ms-flex-align: end !important
+    align-items: flex-end !important
+
+.align-items-md-center
+    -webkit-box-align: center !important
+    -ms-flex-align: center !important
+    align-items: center !important
+
+.align-items-md-baseline
+    -webkit-box-align: baseline !important
+    -ms-flex-align: baseline !important
+    align-items: baseline !important
+
+.align-items-md-stretch
+    -webkit-box-align: stretch !important
+    -ms-flex-align: stretch !important
+    align-items: stretch !important
+
+.align-content-md-start
+    -ms-flex-line-pack: start !important
+    align-content: flex-start !important
+
+.align-content-md-end
+    -ms-flex-line-pack: end !important
+    align-content: flex-end !important
+
+.align-content-md-center
+    -ms-flex-line-pack: center !important
+    align-content: center !important
+
+.align-content-md-between
+    -ms-flex-line-pack: justify !important
+    align-content: space-between !important
+
+.align-content-md-around
+    -ms-flex-line-pack: distribute !important
+    align-content: space-around !important
+
+.align-content-md-stretch
+    -ms-flex-line-pack: stretch !important
+    align-content: stretch !important
+
+.align-self-md-auto
+    -ms-flex-item-align: auto !important
+    align-self: auto !important
+
+.align-self-md-start
+    -ms-flex-item-align: start !important
+    align-self: flex-start !important
+
+.align-self-md-end
+    -ms-flex-item-align: end !important
+    align-self: flex-end !important
+
+.align-self-md-center
+    -ms-flex-item-align: center !important
+    align-self: center !important
+
+.align-self-md-baseline
+    -ms-flex-item-align: baseline !important
+    align-self: baseline !important
+
+.align-self-md-stretch
+    -ms-flex-item-align: stretch !important
+    align-self: stretch !important
+
+@media (min-width: 992px)
+.flex-lg-row
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: row !important
+    flex-direction: row !important
+
+.flex-lg-column
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: column !important
+    flex-direction: column !important
+
+.flex-lg-row-reverse
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: row-reverse !important
+    flex-direction: row-reverse !important
+
+.flex-lg-column-reverse
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: column-reverse !important
+    flex-direction: column-reverse !important
+
+.flex-lg-wrap
+    -ms-flex-wrap: wrap !important
+    flex-wrap: wrap !important
+
+.flex-lg-nowrap
+    -ms-flex-wrap: nowrap !important
+    flex-wrap: nowrap !important
+
+.flex-lg-wrap-reverse
+    -ms-flex-wrap: wrap-reverse !important
+    flex-wrap: wrap-reverse !important
+
+.justify-content-lg-start
+    -webkit-box-pack: start !important
+    -ms-flex-pack: start !important
+    justify-content: flex-start !important
+
+.justify-content-lg-end
+    -webkit-box-pack: end !important
+    -ms-flex-pack: end !important
+    justify-content: flex-end !important
+
+.justify-content-lg-center
+    -webkit-box-pack: center !important
+    -ms-flex-pack: center !important
+    justify-content: center !important
+
+.justify-content-lg-between
+    -webkit-box-pack: justify !important
+    -ms-flex-pack: justify !important
+    justify-content: space-between !important
+
+.justify-content-lg-around
+    -ms-flex-pack: distribute !important
+    justify-content: space-around !important
+
+.align-items-lg-start
+    -webkit-box-align: start !important
+    -ms-flex-align: start !important
+    align-items: flex-start !important
+
+.align-items-lg-end
+    -webkit-box-align: end !important
+    -ms-flex-align: end !important
+    align-items: flex-end !important
+
+.align-items-lg-center
+    -webkit-box-align: center !important
+    -ms-flex-align: center !important
+    align-items: center !important
+
+.align-items-lg-baseline
+    -webkit-box-align: baseline !important
+    -ms-flex-align: baseline !important
+    align-items: baseline !important
+
+.align-items-lg-stretch
+    -webkit-box-align: stretch !important
+    -ms-flex-align: stretch !important
+    align-items: stretch !important
+
+.align-content-lg-start
+    -ms-flex-line-pack: start !important
+    align-content: flex-start !important
+
+.align-content-lg-end
+    -ms-flex-line-pack: end !important
+    align-content: flex-end !important
+
+.align-content-lg-center
+    -ms-flex-line-pack: center !important
+    align-content: center !important
+
+.align-content-lg-between
+    -ms-flex-line-pack: justify !important
+    align-content: space-between !important
+
+.align-content-lg-around
+    -ms-flex-line-pack: distribute !important
+    align-content: space-around !important
+
+.align-content-lg-stretch
+    -ms-flex-line-pack: stretch !important
+    align-content: stretch !important
+
+.align-self-lg-auto
+    -ms-flex-item-align: auto !important
+    align-self: auto !important
+
+.align-self-lg-start
+    -ms-flex-item-align: start !important
+    align-self: flex-start !important
+
+.align-self-lg-end
+    -ms-flex-item-align: end !important
+    align-self: flex-end !important
+
+.align-self-lg-center
+    -ms-flex-item-align: center !important
+    align-self: center !important
+
+.align-self-lg-baseline
+    -ms-flex-item-align: baseline !important
+    align-self: baseline !important
+
+.align-self-lg-stretch
+    -ms-flex-item-align: stretch !important
+    align-self: stretch !important
+
+@media (min-width: 1200px)
+.flex-xl-row
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: row !important
+    flex-direction: row !important
+
+.flex-xl-column
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: normal !important
+    -ms-flex-direction: column !important
+    flex-direction: column !important
+
+.flex-xl-row-reverse
+    -webkit-box-orient: horizontal !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: row-reverse !important
+    flex-direction: row-reverse !important
+
+.flex-xl-column-reverse
+    -webkit-box-orient: vertical !important
+    -webkit-box-direction: reverse !important
+    -ms-flex-direction: column-reverse !important
+    flex-direction: column-reverse !important
+
+.flex-xl-wrap
+    -ms-flex-wrap: wrap !important
+    flex-wrap: wrap !important
+
+.flex-xl-nowrap
+    -ms-flex-wrap: nowrap !important
+    flex-wrap: nowrap !important
+
+.flex-xl-wrap-reverse
+    -ms-flex-wrap: wrap-reverse !important
+    flex-wrap: wrap-reverse !important
+
+.justify-content-xl-start
+    -webkit-box-pack: start !important
+    -ms-flex-pack: start !important
+    justify-content: flex-start !important
+
+.justify-content-xl-end
+    -webkit-box-pack: end !important
+    -ms-flex-pack: end !important
+    justify-content: flex-end !important
+
+.justify-content-xl-center
+    -webkit-box-pack: center !important
+    -ms-flex-pack: center !important
+    justify-content: center !important
+
+.justify-content-xl-between
+    -webkit-box-pack: justify !important
+    -ms-flex-pack: justify !important
+    justify-content: space-between !important
+
+.justify-content-xl-around
+    -ms-flex-pack: distribute !important
+    justify-content: space-around !important
+
+.align-items-xl-start
+    -webkit-box-align: start !important
+    -ms-flex-align: start !important
+    align-items: flex-start !important
+
+.align-items-xl-end
+    -webkit-box-align: end !important
+    -ms-flex-align: end !important
+    align-items: flex-end !important
+
+.align-items-xl-center
+    -webkit-box-align: center !important
+    -ms-flex-align: center !important
+    align-items: center !important
+
+.align-items-xl-baseline
+    -webkit-box-align: baseline !important
+    -ms-flex-align: baseline !important
+    align-items: baseline !important
+
+.align-items-xl-stretch
+    -webkit-box-align: stretch !important
+    -ms-flex-align: stretch !important
+    align-items: stretch !important
+
+.align-content-xl-start
+    -ms-flex-line-pack: start !important
+    align-content: flex-start !important
+
+.align-content-xl-end
+    -ms-flex-line-pack: end !important
+    align-content: flex-end !important
+
+.align-content-xl-center
+    -ms-flex-line-pack: center !important
+    align-content: center !important
+
+.align-content-xl-between
+    -ms-flex-line-pack: justify !important
+    align-content: space-between !important
+
+.align-content-xl-around
+    -ms-flex-line-pack: distribute !important
+    align-content: space-around !important
+
+.align-content-xl-stretch
+    -ms-flex-line-pack: stretch !important
+    align-content: stretch !important
+
+.align-self-xl-auto
+    -ms-flex-item-align: auto !important
+    align-self: auto !important
+
+.align-self-xl-start
+    -ms-flex-item-align: start !important
+    align-self: flex-start !important
+
+.align-self-xl-end
+    -ms-flex-item-align: end !important
+    align-self: flex-end !important
+
+.align-self-xl-center
+    -ms-flex-item-align: center !important
+    align-self: center !important
+
+.align-self-xl-baseline
+    -ms-flex-item-align: baseline !important
+    align-self: baseline !important
+
+.align-self-xl-stretch
+    -ms-flex-item-align: stretch !important
+    align-self: stretch !important
+
+.float-left
+    float: left !important
+
+.float-right
+    float: right !important
+
+.float-none
+    float: none !important
+
+@media (min-width: 576px)
+.float-sm-left
+    float: left !important
+
+.float-sm-right
+    float: right !important
+
+.float-sm-none
+    float: none !important
+
+@media (min-width: 768px)
+.float-md-left
+    float: left !important
+
+.float-md-right
+    float: right !important
+
+.float-md-none
+    float: none !important
+
+@media (min-width: 992px)
+.float-lg-left
+    float: left !important
+
+.float-lg-right
+    float: right !important
+
+.float-lg-none
+    float: none !important
+
+@media (min-width: 1200px)
+.float-xl-left
+    float: left !important
+
+.float-xl-right
+    float: right !important
+
+.float-xl-none
+    float: none !important
+
+.position-static
+    position: static !important
+
+.position-relative
+    position: relative !important
+
+.position-absolute
+    position: absolute !important
+
+.position-fixed
+    position: fixed !important
+
+.position-sticky
+    position: -webkit-sticky !important
+    position: sticky !important
+
+.fixed-top
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 1030
+
+.fixed-bottom
+    position: fixed
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1030
+
+@supports (position: -webkit-sticky) or (position: sticky)
+.sticky-top
+    position: -webkit-sticky
+    position: sticky
+    top: 0
+    z-index: 1020
+
+.sr-only
+    position: absolute
+    width: 1px
+    height: 1px
+    padding: 0
+    overflow: hidden
+    clip: rect(0, 0, 0, 0)
+    white-space: nowrap
+    -webkit-clip-path: inset(50%)
+    clip-path: inset(50%)
+    border: 0
+
+.sr-only-focusable
+    &:active, &:focus
+        position: static
+        width: auto
+        height: auto
+        overflow: visible
+        clip: auto
+        white-space: normal
+        -webkit-clip-path: none
+        clip-path: none
+
+.w-25
+    width: 25% !important
+
+.w-50
+    width: 50% !important
+
+.w-75
+    width: 75% !important
+
+.w-100
+    width: 100% !important
+
+.h-25
+    height: 25% !important
+
+.h-50
+    height: 50% !important
+
+.h-75
+    height: 75% !important
+
+.h-100
+    height: 100% !important
+
+.mw-100
+    max-width: 100% !important
+
+.mh-100
+    max-height: 100% !important
+
+.m-0
+    margin: 0 !important
+
+.mt-0, .my-0
+    margin-top: 0 !important
+
+.mr-0, .mx-0
+    margin-right: 0 !important
+
+.mb-0, .my-0
+    margin-bottom: 0 !important
+
+.ml-0, .mx-0
+    margin-left: 0 !important
+
+.m-1
+    margin: 0.25rem !important
+
+.mt-1, .my-1
+    margin-top: 0.25rem !important
+
+.mr-1, .mx-1
+    margin-right: 0.25rem !important
+
+.mb-1, .my-1
+    margin-bottom: 0.25rem !important
+
+.ml-1, .mx-1
+    margin-left: 0.25rem !important
+
+.m-2
+    margin: 0.5rem !important
+
+.mt-2, .my-2
+    margin-top: 0.5rem !important
+
+.mr-2, .mx-2
+    margin-right: 0.5rem !important
+
+.mb-2, .my-2
+    margin-bottom: 0.5rem !important
+
+.ml-2, .mx-2
+    margin-left: 0.5rem !important
+
+.m-3
+    margin: 1rem !important
+
+.mt-3, .my-3
+    margin-top: 1rem !important
+
+.mr-3, .mx-3
+    margin-right: 1rem !important
+
+.mb-3, .my-3
+    margin-bottom: 1rem !important
+
+.ml-3, .mx-3
+    margin-left: 1rem !important
+
+.m-4
+    margin: 1.5rem !important
+
+.mt-4, .my-4
+    margin-top: 1.5rem !important
+
+.mr-4, .mx-4
+    margin-right: 1.5rem !important
+
+.mb-4, .my-4
+    margin-bottom: 1.5rem !important
+
+.ml-4, .mx-4
+    margin-left: 1.5rem !important
+
+.m-5
+    margin: 3rem !important
+
+.mt-5, .my-5
+    margin-top: 3rem !important
+
+.mr-5, .mx-5
+    margin-right: 3rem !important
+
+.mb-5, .my-5
+    margin-bottom: 3rem !important
+
+.ml-5, .mx-5
+    margin-left: 3rem !important
+
+.p-0
+    padding: 0 !important
+
+.pt-0, .py-0
+    padding-top: 0 !important
+
+.pr-0, .px-0
+    padding-right: 0 !important
+
+.pb-0, .py-0
+    padding-bottom: 0 !important
+
+.pl-0, .px-0
+    padding-left: 0 !important
+
+.p-1
+    padding: 0.25rem !important
+
+.pt-1, .py-1
+    padding-top: 0.25rem !important
+
+.pr-1, .px-1
+    padding-right: 0.25rem !important
+
+.pb-1, .py-1
+    padding-bottom: 0.25rem !important
+
+.pl-1, .px-1
+    padding-left: 0.25rem !important
+
+.p-2
+    padding: 0.5rem !important
+
+.pt-2, .py-2
+    padding-top: 0.5rem !important
+
+.pr-2, .px-2
+    padding-right: 0.5rem !important
+
+.pb-2, .py-2
+    padding-bottom: 0.5rem !important
+
+.pl-2, .px-2
+    padding-left: 0.5rem !important
+
+.p-3
+    padding: 1rem !important
+
+.pt-3, .py-3
+    padding-top: 1rem !important
+
+.pr-3, .px-3
+    padding-right: 1rem !important
+
+.pb-3, .py-3
+    padding-bottom: 1rem !important
+
+.pl-3, .px-3
+    padding-left: 1rem !important
+
+.p-4
+    padding: 1.5rem !important
+
+.pt-4, .py-4
+    padding-top: 1.5rem !important
+
+.pr-4, .px-4
+    padding-right: 1.5rem !important
+
+.pb-4, .py-4
+    padding-bottom: 1.5rem !important
+
+.pl-4, .px-4
+    padding-left: 1.5rem !important
+
+.p-5
+    padding: 3rem !important
+
+.pt-5, .py-5
+    padding-top: 3rem !important
+
+.pr-5, .px-5
+    padding-right: 3rem !important
+
+.pb-5, .py-5
+    padding-bottom: 3rem !important
+
+.pl-5, .px-5
+    padding-left: 3rem !important
+
+.m-auto
+    margin: auto !important
+
+.mt-auto, .my-auto
+    margin-top: auto !important
+
+.mr-auto, .mx-auto
+    margin-right: auto !important
+
+.mb-auto, .my-auto
+    margin-bottom: auto !important
+
+.ml-auto, .mx-auto
+    margin-left: auto !important
+
+@media (min-width: 576px)
+.m-sm-0
+    margin: 0 !important
+
+.mt-sm-0, .my-sm-0
+    margin-top: 0 !important
+
+.mr-sm-0, .mx-sm-0
+    margin-right: 0 !important
+
+.mb-sm-0, .my-sm-0
+    margin-bottom: 0 !important
+
+.ml-sm-0, .mx-sm-0
+    margin-left: 0 !important
+
+.m-sm-1
+    margin: 0.25rem !important
+
+.mt-sm-1, .my-sm-1
+    margin-top: 0.25rem !important
+
+.mr-sm-1, .mx-sm-1
+    margin-right: 0.25rem !important
+
+.mb-sm-1, .my-sm-1
+    margin-bottom: 0.25rem !important
+
+.ml-sm-1, .mx-sm-1
+    margin-left: 0.25rem !important
+
+.m-sm-2
+    margin: 0.5rem !important
+
+.mt-sm-2, .my-sm-2
+    margin-top: 0.5rem !important
+
+.mr-sm-2, .mx-sm-2
+    margin-right: 0.5rem !important
+
+.mb-sm-2, .my-sm-2
+    margin-bottom: 0.5rem !important
+
+.ml-sm-2, .mx-sm-2
+    margin-left: 0.5rem !important
+
+.m-sm-3
+    margin: 1rem !important
+
+.mt-sm-3, .my-sm-3
+    margin-top: 1rem !important
+
+.mr-sm-3, .mx-sm-3
+    margin-right: 1rem !important
+
+.mb-sm-3, .my-sm-3
+    margin-bottom: 1rem !important
+
+.ml-sm-3, .mx-sm-3
+    margin-left: 1rem !important
+
+.m-sm-4
+    margin: 1.5rem !important
+
+.mt-sm-4, .my-sm-4
+    margin-top: 1.5rem !important
+
+.mr-sm-4, .mx-sm-4
+    margin-right: 1.5rem !important
+
+.mb-sm-4, .my-sm-4
+    margin-bottom: 1.5rem !important
+
+.ml-sm-4, .mx-sm-4
+    margin-left: 1.5rem !important
+
+.m-sm-5
+    margin: 3rem !important
+
+.mt-sm-5, .my-sm-5
+    margin-top: 3rem !important
+
+.mr-sm-5, .mx-sm-5
+    margin-right: 3rem !important
+
+.mb-sm-5, .my-sm-5
+    margin-bottom: 3rem !important
+
+.ml-sm-5, .mx-sm-5
+    margin-left: 3rem !important
+
+.p-sm-0
+    padding: 0 !important
+
+.pt-sm-0, .py-sm-0
+    padding-top: 0 !important
+
+.pr-sm-0, .px-sm-0
+    padding-right: 0 !important
+
+.pb-sm-0, .py-sm-0
+    padding-bottom: 0 !important
+
+.pl-sm-0, .px-sm-0
+    padding-left: 0 !important
+
+.p-sm-1
+    padding: 0.25rem !important
+
+.pt-sm-1, .py-sm-1
+    padding-top: 0.25rem !important
+
+.pr-sm-1, .px-sm-1
+    padding-right: 0.25rem !important
+
+.pb-sm-1, .py-sm-1
+    padding-bottom: 0.25rem !important
+
+.pl-sm-1, .px-sm-1
+    padding-left: 0.25rem !important
+
+.p-sm-2
+    padding: 0.5rem !important
+
+.pt-sm-2, .py-sm-2
+    padding-top: 0.5rem !important
+
+.pr-sm-2, .px-sm-2
+    padding-right: 0.5rem !important
+
+.pb-sm-2, .py-sm-2
+    padding-bottom: 0.5rem !important
+
+.pl-sm-2, .px-sm-2
+    padding-left: 0.5rem !important
+
+.p-sm-3
+    padding: 1rem !important
+
+.pt-sm-3, .py-sm-3
+    padding-top: 1rem !important
+
+.pr-sm-3, .px-sm-3
+    padding-right: 1rem !important
+
+.pb-sm-3, .py-sm-3
+    padding-bottom: 1rem !important
+
+.pl-sm-3, .px-sm-3
+    padding-left: 1rem !important
+
+.p-sm-4
+    padding: 1.5rem !important
+
+.pt-sm-4, .py-sm-4
+    padding-top: 1.5rem !important
+
+.pr-sm-4, .px-sm-4
+    padding-right: 1.5rem !important
+
+.pb-sm-4, .py-sm-4
+    padding-bottom: 1.5rem !important
+
+.pl-sm-4, .px-sm-4
+    padding-left: 1.5rem !important
+
+.p-sm-5
+    padding: 3rem !important
+
+.pt-sm-5, .py-sm-5
+    padding-top: 3rem !important
+
+.pr-sm-5, .px-sm-5
+    padding-right: 3rem !important
+
+.pb-sm-5, .py-sm-5
+    padding-bottom: 3rem !important
+
+.pl-sm-5, .px-sm-5
+    padding-left: 3rem !important
+
+.m-sm-auto
+    margin: auto !important
+
+.mt-sm-auto, .my-sm-auto
+    margin-top: auto !important
+
+.mr-sm-auto, .mx-sm-auto
+    margin-right: auto !important
+
+.mb-sm-auto, .my-sm-auto
+    margin-bottom: auto !important
+
+.ml-sm-auto, .mx-sm-auto
+    margin-left: auto !important
+
+@media (min-width: 768px)
+.m-md-0
+    margin: 0 !important
+
+.mt-md-0, .my-md-0
+    margin-top: 0 !important
+
+.mr-md-0, .mx-md-0
+    margin-right: 0 !important
+
+.mb-md-0, .my-md-0
+    margin-bottom: 0 !important
+
+.ml-md-0, .mx-md-0
+    margin-left: 0 !important
+
+.m-md-1
+    margin: 0.25rem !important
+
+.mt-md-1, .my-md-1
+    margin-top: 0.25rem !important
+
+.mr-md-1, .mx-md-1
+    margin-right: 0.25rem !important
+
+.mb-md-1, .my-md-1
+    margin-bottom: 0.25rem !important
+
+.ml-md-1, .mx-md-1
+    margin-left: 0.25rem !important
+
+.m-md-2
+    margin: 0.5rem !important
+
+.mt-md-2, .my-md-2
+    margin-top: 0.5rem !important
+
+.mr-md-2, .mx-md-2
+    margin-right: 0.5rem !important
+
+.mb-md-2, .my-md-2
+    margin-bottom: 0.5rem !important
+
+.ml-md-2, .mx-md-2
+    margin-left: 0.5rem !important
+
+.m-md-3
+    margin: 1rem !important
+
+.mt-md-3, .my-md-3
+    margin-top: 1rem !important
+
+.mr-md-3, .mx-md-3
+    margin-right: 1rem !important
+
+.mb-md-3, .my-md-3
+    margin-bottom: 1rem !important
+
+.ml-md-3, .mx-md-3
+    margin-left: 1rem !important
+
+.m-md-4
+    margin: 1.5rem !important
+
+.mt-md-4, .my-md-4
+    margin-top: 1.5rem !important
+
+.mr-md-4, .mx-md-4
+    margin-right: 1.5rem !important
+
+.mb-md-4, .my-md-4
+    margin-bottom: 1.5rem !important
+
+.ml-md-4, .mx-md-4
+    margin-left: 1.5rem !important
+
+.m-md-5
+    margin: 3rem !important
+
+.mt-md-5, .my-md-5
+    margin-top: 3rem !important
+
+.mr-md-5, .mx-md-5
+    margin-right: 3rem !important
+
+.mb-md-5, .my-md-5
+    margin-bottom: 3rem !important
+
+.ml-md-5, .mx-md-5
+    margin-left: 3rem !important
+
+.p-md-0
+    padding: 0 !important
+
+.pt-md-0, .py-md-0
+    padding-top: 0 !important
+
+.pr-md-0, .px-md-0
+    padding-right: 0 !important
+
+.pb-md-0, .py-md-0
+    padding-bottom: 0 !important
+
+.pl-md-0, .px-md-0
+    padding-left: 0 !important
+
+.p-md-1
+    padding: 0.25rem !important
+
+.pt-md-1, .py-md-1
+    padding-top: 0.25rem !important
+
+.pr-md-1, .px-md-1
+    padding-right: 0.25rem !important
+
+.pb-md-1, .py-md-1
+    padding-bottom: 0.25rem !important
+
+.pl-md-1, .px-md-1
+    padding-left: 0.25rem !important
+
+.p-md-2
+    padding: 0.5rem !important
+
+.pt-md-2, .py-md-2
+    padding-top: 0.5rem !important
+
+.pr-md-2, .px-md-2
+    padding-right: 0.5rem !important
+
+.pb-md-2, .py-md-2
+    padding-bottom: 0.5rem !important
+
+.pl-md-2, .px-md-2
+    padding-left: 0.5rem !important
+
+.p-md-3
+    padding: 1rem !important
+
+.pt-md-3, .py-md-3
+    padding-top: 1rem !important
+
+.pr-md-3, .px-md-3
+    padding-right: 1rem !important
+
+.pb-md-3, .py-md-3
+    padding-bottom: 1rem !important
+
+.pl-md-3, .px-md-3
+    padding-left: 1rem !important
+
+.p-md-4
+    padding: 1.5rem !important
+
+.pt-md-4, .py-md-4
+    padding-top: 1.5rem !important
+
+.pr-md-4, .px-md-4
+    padding-right: 1.5rem !important
+
+.pb-md-4, .py-md-4
+    padding-bottom: 1.5rem !important
+
+.pl-md-4, .px-md-4
+    padding-left: 1.5rem !important
+
+.p-md-5
+    padding: 3rem !important
+
+.pt-md-5, .py-md-5
+    padding-top: 3rem !important
+
+.pr-md-5, .px-md-5
+    padding-right: 3rem !important
+
+.pb-md-5, .py-md-5
+    padding-bottom: 3rem !important
+
+.pl-md-5, .px-md-5
+    padding-left: 3rem !important
+
+.m-md-auto
+    margin: auto !important
+
+.mt-md-auto, .my-md-auto
+    margin-top: auto !important
+
+.mr-md-auto, .mx-md-auto
+    margin-right: auto !important
+
+.mb-md-auto, .my-md-auto
+    margin-bottom: auto !important
+
+.ml-md-auto, .mx-md-auto
+    margin-left: auto !important
+
+@media (min-width: 992px)
+.m-lg-0
+    margin: 0 !important
+
+.mt-lg-0, .my-lg-0
+    margin-top: 0 !important
+
+.mr-lg-0, .mx-lg-0
+    margin-right: 0 !important
+
+.mb-lg-0, .my-lg-0
+    margin-bottom: 0 !important
+
+.ml-lg-0, .mx-lg-0
+    margin-left: 0 !important
+
+.m-lg-1
+    margin: 0.25rem !important
+
+.mt-lg-1, .my-lg-1
+    margin-top: 0.25rem !important
+
+.mr-lg-1, .mx-lg-1
+    margin-right: 0.25rem !important
+
+.mb-lg-1, .my-lg-1
+    margin-bottom: 0.25rem !important
+
+.ml-lg-1, .mx-lg-1
+    margin-left: 0.25rem !important
+
+.m-lg-2
+    margin: 0.5rem !important
+
+.mt-lg-2, .my-lg-2
+    margin-top: 0.5rem !important
+
+.mr-lg-2, .mx-lg-2
+    margin-right: 0.5rem !important
+
+.mb-lg-2, .my-lg-2
+    margin-bottom: 0.5rem !important
+
+.ml-lg-2, .mx-lg-2
+    margin-left: 0.5rem !important
+
+.m-lg-3
+    margin: 1rem !important
+
+.mt-lg-3, .my-lg-3
+    margin-top: 1rem !important
+
+.mr-lg-3, .mx-lg-3
+    margin-right: 1rem !important
+
+.mb-lg-3, .my-lg-3
+    margin-bottom: 1rem !important
+
+.ml-lg-3, .mx-lg-3
+    margin-left: 1rem !important
+
+.m-lg-4
+    margin: 1.5rem !important
+
+.mt-lg-4, .my-lg-4
+    margin-top: 1.5rem !important
+
+.mr-lg-4, .mx-lg-4
+    margin-right: 1.5rem !important
+
+.mb-lg-4, .my-lg-4
+    margin-bottom: 1.5rem !important
+
+.ml-lg-4, .mx-lg-4
+    margin-left: 1.5rem !important
+
+.m-lg-5
+    margin: 3rem !important
+
+.mt-lg-5, .my-lg-5
+    margin-top: 3rem !important
+
+.mr-lg-5, .mx-lg-5
+    margin-right: 3rem !important
+
+.mb-lg-5, .my-lg-5
+    margin-bottom: 3rem !important
+
+.ml-lg-5, .mx-lg-5
+    margin-left: 3rem !important
+
+.p-lg-0
+    padding: 0 !important
+
+.pt-lg-0, .py-lg-0
+    padding-top: 0 !important
+
+.pr-lg-0, .px-lg-0
+    padding-right: 0 !important
+
+.pb-lg-0, .py-lg-0
+    padding-bottom: 0 !important
+
+.pl-lg-0, .px-lg-0
+    padding-left: 0 !important
+
+.p-lg-1
+    padding: 0.25rem !important
+
+.pt-lg-1, .py-lg-1
+    padding-top: 0.25rem !important
+
+.pr-lg-1, .px-lg-1
+    padding-right: 0.25rem !important
+
+.pb-lg-1, .py-lg-1
+    padding-bottom: 0.25rem !important
+
+.pl-lg-1, .px-lg-1
+    padding-left: 0.25rem !important
+
+.p-lg-2
+    padding: 0.5rem !important
+
+.pt-lg-2, .py-lg-2
+    padding-top: 0.5rem !important
+
+.pr-lg-2, .px-lg-2
+    padding-right: 0.5rem !important
+
+.pb-lg-2, .py-lg-2
+    padding-bottom: 0.5rem !important
+
+.pl-lg-2, .px-lg-2
+    padding-left: 0.5rem !important
+
+.p-lg-3
+    padding: 1rem !important
+
+.pt-lg-3, .py-lg-3
+    padding-top: 1rem !important
+
+.pr-lg-3, .px-lg-3
+    padding-right: 1rem !important
+
+.pb-lg-3, .py-lg-3
+    padding-bottom: 1rem !important
+
+.pl-lg-3, .px-lg-3
+    padding-left: 1rem !important
+
+.p-lg-4
+    padding: 1.5rem !important
+
+.pt-lg-4, .py-lg-4
+    padding-top: 1.5rem !important
+
+.pr-lg-4, .px-lg-4
+    padding-right: 1.5rem !important
+
+.pb-lg-4, .py-lg-4
+    padding-bottom: 1.5rem !important
+
+.pl-lg-4, .px-lg-4
+    padding-left: 1.5rem !important
+
+.p-lg-5
+    padding: 3rem !important
+
+.pt-lg-5, .py-lg-5
+    padding-top: 3rem !important
+
+.pr-lg-5, .px-lg-5
+    padding-right: 3rem !important
+
+.pb-lg-5, .py-lg-5
+    padding-bottom: 3rem !important
+
+.pl-lg-5, .px-lg-5
+    padding-left: 3rem !important
+
+.m-lg-auto
+    margin: auto !important
+
+.mt-lg-auto, .my-lg-auto
+    margin-top: auto !important
+
+.mr-lg-auto, .mx-lg-auto
+    margin-right: auto !important
+
+.mb-lg-auto, .my-lg-auto
+    margin-bottom: auto !important
+
+.ml-lg-auto, .mx-lg-auto
+    margin-left: auto !important
+
+@media (min-width: 1200px)
+.m-xl-0
+    margin: 0 !important
+
+.mt-xl-0, .my-xl-0
+    margin-top: 0 !important
+
+.mr-xl-0, .mx-xl-0
+    margin-right: 0 !important
+
+.mb-xl-0, .my-xl-0
+    margin-bottom: 0 !important
+
+.ml-xl-0, .mx-xl-0
+    margin-left: 0 !important
+
+.m-xl-1
+    margin: 0.25rem !important
+
+.mt-xl-1, .my-xl-1
+    margin-top: 0.25rem !important
+
+.mr-xl-1, .mx-xl-1
+    margin-right: 0.25rem !important
+
+.mb-xl-1, .my-xl-1
+    margin-bottom: 0.25rem !important
+
+.ml-xl-1, .mx-xl-1
+    margin-left: 0.25rem !important
+
+.m-xl-2
+    margin: 0.5rem !important
+
+.mt-xl-2, .my-xl-2
+    margin-top: 0.5rem !important
+
+.mr-xl-2, .mx-xl-2
+    margin-right: 0.5rem !important
+
+.mb-xl-2, .my-xl-2
+    margin-bottom: 0.5rem !important
+
+.ml-xl-2, .mx-xl-2
+    margin-left: 0.5rem !important
+
+.m-xl-3
+    margin: 1rem !important
+
+.mt-xl-3, .my-xl-3
+    margin-top: 1rem !important
+
+.mr-xl-3, .mx-xl-3
+    margin-right: 1rem !important
+
+.mb-xl-3, .my-xl-3
+    margin-bottom: 1rem !important
+
+.ml-xl-3, .mx-xl-3
+    margin-left: 1rem !important
+
+.m-xl-4
+    margin: 1.5rem !important
+
+.mt-xl-4, .my-xl-4
+    margin-top: 1.5rem !important
+
+.mr-xl-4, .mx-xl-4
+    margin-right: 1.5rem !important
+
+.mb-xl-4, .my-xl-4
+    margin-bottom: 1.5rem !important
+
+.ml-xl-4, .mx-xl-4
+    margin-left: 1.5rem !important
+
+.m-xl-5
+    margin: 3rem !important
+
+.mt-xl-5, .my-xl-5
+    margin-top: 3rem !important
+
+.mr-xl-5, .mx-xl-5
+    margin-right: 3rem !important
+
+.mb-xl-5, .my-xl-5
+    margin-bottom: 3rem !important
+
+.ml-xl-5, .mx-xl-5
+    margin-left: 3rem !important
+
+.p-xl-0
+    padding: 0 !important
+
+.pt-xl-0, .py-xl-0
+    padding-top: 0 !important
+
+.pr-xl-0, .px-xl-0
+    padding-right: 0 !important
+
+.pb-xl-0, .py-xl-0
+    padding-bottom: 0 !important
+
+.pl-xl-0, .px-xl-0
+    padding-left: 0 !important
+
+.p-xl-1
+    padding: 0.25rem !important
+
+.pt-xl-1, .py-xl-1
+    padding-top: 0.25rem !important
+
+.pr-xl-1, .px-xl-1
+    padding-right: 0.25rem !important
+
+.pb-xl-1, .py-xl-1
+    padding-bottom: 0.25rem !important
+
+.pl-xl-1, .px-xl-1
+    padding-left: 0.25rem !important
+
+.p-xl-2
+    padding: 0.5rem !important
+
+.pt-xl-2, .py-xl-2
+    padding-top: 0.5rem !important
+
+.pr-xl-2, .px-xl-2
+    padding-right: 0.5rem !important
+
+.pb-xl-2, .py-xl-2
+    padding-bottom: 0.5rem !important
+
+.pl-xl-2, .px-xl-2
+    padding-left: 0.5rem !important
+
+.p-xl-3
+    padding: 1rem !important
+
+.pt-xl-3, .py-xl-3
+    padding-top: 1rem !important
+
+.pr-xl-3, .px-xl-3
+    padding-right: 1rem !important
+
+.pb-xl-3, .py-xl-3
+    padding-bottom: 1rem !important
+
+.pl-xl-3, .px-xl-3
+    padding-left: 1rem !important
+
+.p-xl-4
+    padding: 1.5rem !important
+
+.pt-xl-4, .py-xl-4
+    padding-top: 1.5rem !important
+
+.pr-xl-4, .px-xl-4
+    padding-right: 1.5rem !important
+
+.pb-xl-4, .py-xl-4
+    padding-bottom: 1.5rem !important
+
+.pl-xl-4, .px-xl-4
+    padding-left: 1.5rem !important
+
+.p-xl-5
+    padding: 3rem !important
+
+.pt-xl-5, .py-xl-5
+    padding-top: 3rem !important
+
+.pr-xl-5, .px-xl-5
+    padding-right: 3rem !important
+
+.pb-xl-5, .py-xl-5
+    padding-bottom: 3rem !important
+
+.pl-xl-5, .px-xl-5
+    padding-left: 3rem !important
+
+.m-xl-auto
+    margin: auto !important
+
+.mt-xl-auto, .my-xl-auto
+    margin-top: auto !important
+
+.mr-xl-auto, .mx-xl-auto
+    margin-right: auto !important
+
+.mb-xl-auto, .my-xl-auto
+    margin-bottom: auto !important
+
+.ml-xl-auto, .mx-xl-auto
+    margin-left: auto !important
+
+.text-justify
+    text-align: justify !important
+
+.text-nowrap
+    white-space: nowrap !important
+
+.text-truncate
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.text-left
+    text-align: left !important
+
+.text-right
+    text-align: right !important
+
+.text-center
+    text-align: center !important
+
+@media (min-width: 576px)
+.text-sm-left
+    text-align: left !important
+
+.text-sm-right
+    text-align: right !important
+
+.text-sm-center
+    text-align: center !important
+
+@media (min-width: 768px)
+.text-md-left
+    text-align: left !important
+
+.text-md-right
+    text-align: right !important
+
+.text-md-center
+    text-align: center !important
+
+@media (min-width: 992px)
+.text-lg-left
+    text-align: left !important
+
+.text-lg-right
+    text-align: right !important
+
+.text-lg-center
+    text-align: center !important
+
+@media (min-width: 1200px)
+.text-xl-left
+    text-align: left !important
+
+.text-xl-right
+    text-align: right !important
+
+.text-xl-center
+    text-align: center !important
+
+.text-lowercase
+    text-transform: lowercase !important
+
+.text-uppercase
+    text-transform: uppercase !important
+
+.text-capitalize
+    text-transform: capitalize !important
+
+.textweight-light
+    font-weight: 300 !important
+
+.textweight-normal
+    font-weight: 400 !important
+
+.textweight-bold
+    font-weight: 700 !important
+
+.textitalic
+    font-style: italic !important
+
+.text-white
+    color: #fff !important
+
+.text-primary
+    color: #007bff !important
+
+a.text-primary
+    &:hover, &:focus
+        color: #0062cc !important
+
+.text-secondary
+    color: #6c757d !important
+
+a.text-secondary
+    &:hover, &:focus
+        color: #545b62 !important
+
+.text-success
+    color: #28a745 !important
+
+a.text-success
+    &:hover, &:focus
+        color: #1e7e34 !important
+
+.text-info
+    color: #17a2b8 !important
+
+a.text-info
+    &:hover, &:focus
+        color: #117a8b !important
+
+.text-warning
+    color: #ffc107 !important
+
+a.text-warning
+    &:hover, &:focus
+        color: #d39e00 !important
+
+.text-danger
+    color: #dc3545 !important
+
+a.text-danger
+    &:hover, &:focus
+        color: #bd2130 !important
+
+.text-light
+    color: #f8f9fa !important
+
+a.text-light
+    &:hover, &:focus
+        color: #dae0e5 !important
+
+.text-dark
+    color: #343a40 !important
+
+a.text-dark
+    &:hover, &:focus
+        color: #1d2124 !important
+
+.text-muted
+    color: #6c757d !important
+
+.text-hide
+    font: 0/0 a
+    color: transparent
+    text-shadow: none
+    background-color: transparent
+    border: 0
+
+.visible
+    visibility: visible !important
+
+.invisible
+    visibility: hidden !important

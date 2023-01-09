@@ -1,0 +1,19 @@
+mixin blockBanner(title, description, img, breadcrumb)
+    - let number = 1
+
+    section.l-banner
+        .banner
+            img.lazy(data-src=img)
+        .contents
+            h2.title
+                if title.length >= 15
+                    - number = 2
+
+                each char, index in title
+                    if index == number
+                        b=char
+                    else 
+                        =char
+            p.description= description
+    include _breadcrumb
+    +blockBreadcrumb(breadcrumb)
