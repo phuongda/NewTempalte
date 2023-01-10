@@ -23,183 +23,6 @@ let parallax = new universalParallax().init({
     speed: 8.0
 });
 
-function slideMainvisual() {
-    var swiper = new Swiper(".c-mainvisual .swiper .swiper-container", {
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false
-        },
-        speed: 2000,
-        pagination: {
-            el: ".c-mainvisual .swiper .swiper-pagination",
-            clickable: true,
-        },
-        // loop: true,
-        // loopFillGroupWithBlank: true,
-        effect: "fade",
-        direction: 'horizontal',
-        lazy: {
-            loadPrevNext: true,
-        },
-        allowTouchMove: false
-    });
-}
-
-function slideHistorys() {
-    var swiper = new Swiper(".c-historys .swiper .swiper-container", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        slidesPerGroup: 1,
-        centeredSlides: false,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        lazy: {
-            loadPrevNext: true,
-        },
-        navigation: {
-            nextEl: '.c-historys .swiper .swiper-button-next',
-            prevEl: '.c-historys .swiper .swiper-button-prev',
-        },
-        pagination: {
-            el: '.c-historys .swiper .swiper-pagination',
-            type: 'fraction'
-        },
-        allowTouchMove: true
-    });
-}
-
-function slide() {
-    let arr_slides = $('.sliders .swiper .swiper-container');
-
-    arr_slides.each(function (index, value) {
-        let slides = `.sliders[data-index="${index}"] .swiper`,
-            slide_length = $(slides + ' .swiper-container .swiper-wrapper .swiper-slide').length;
-
-        let slide = new Swiper(slides + ' .swiper-container', {
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            spaceBetween: 20,
-            loop: slide_length < 4 ? false : true,
-            loopFillGroupWithBlank: false,
-            lazy: {
-                loadPrevNext: true,
-            },
-            navigation: {
-                nextEl: slides + ' .swiper-button-next',
-                prevEl: slides + ' .swiper-button-prev',
-            },
-            pagination: {
-                el: slides + " .swiper-pagination",
-                clickable: true,
-            },
-            allowTouchMove: true,
-            breakpoints: {
-                992: {
-                    slidesPerView: 4,
-                    slidesPerGroup: 4,
-                    spaceBetween: 40,
-                },
-                769: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 40,
-                },
-                581: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 20,
-                },
-            },
-        });
-    });
-}
-
-function slide3() {
-    let slide = new Swiper('.c-renter__thumb .swiper', {
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-        },
-        loop: true,
-        loopFillGroupWithBlank: true,
-        spaceBetween: 20,
-        lazy: {
-            loadPrevNext: true,
-        },
-        pagination: {
-            el: ".c-renter__thumb .swiper .swiper-pagination",
-            clickable: true,
-        }
-    });
-}
-
-function slide4() {
-    let slide = new Swiper('.c-imgs3.swiper', {
-        spaceBetween: 1,
-        slidesPerView: 1,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        spaceBetween: 10,
-        centeredSlides: true,
-        roundLengths: true,
-        lazy: {
-            loadPrevNext: true,
-        },
-        pagination: {
-            el: ".c-imgs3.swiper .swiper-pagination",
-            clickable: true,
-        },
-        // navigation: {
-        //     nextEl: ".c-imgs3.swiper .swiper-button-next",
-        //     prevEl: ".c-imgs3.swiper .swiper-button-prev",
-        // },
-    });
-}
-
-// function slide5() {
-//     let slide = new Swiper('.c-products.sliders.c-products--special .swiper .swiper-container', {
-//         slidesPerView: 3,
-//         slidesPerGroup: 1,
-//         spaceBetween: 70,
-//         centeredSlides: true,
-//         roundLengths: true,
-//         loop: true,
-//         loopFillGroupWithBlank: false,
-//         loopAdditionalSlides: 30,
-//         lazy: {
-//             loadPrevNext: true,
-//         },
-//         navigation: {
-//             nextEl: '.c-products.sliders.c-products--special .swiper .swiper-button-next',
-//             prevEl: '.c-products.sliders.c-products--special .swiper .swiper-button-prev',
-//         },
-//         pagination: {
-//             el: ".c-products.sliders.c-products--special .swiper .swiper-pagination",
-//             clickable: true,
-//         },
-//         allowTouchMove: true,
-//         autoplay: {
-//             delay: 3000,
-//             disableOnInteraction: false
-//         },
-//     });
-// }
-
-function slideGallery() {
-    var thunbs = new Swiper(".c-slide-gallery .swiper-thumb", {
-        spaceBetween: 2,
-        slidesPerView: 5,
-        freeMode: false,
-        watchSlidesProgress: true,
-    });
-    var main = new Swiper(".c-slide-gallery .swiper-main", {
-        spaceBetween: 10,
-        thumbs: {
-            swiper: thunbs,
-        },
-    });
-}
-
 function animation() {
     $classArray.push($(".p-fadeinup"));
     $(".p-fadeinup").css("visibility", "hidden");
@@ -362,14 +185,109 @@ function scrollToDiv() {
     });
 }
 
-function handleBeforePrint() {
-    $(window).on('beforeprint', function () {
-        for (let i in $classArray) {
-            $.each($classArray[i], function (index, element) {
-                $(this).addClass("p-ani-fadeIn");
-            });
-        }
-        lazy.loadAll();
+function slideMainvisual() {
+    var swiper = new Swiper(".c-mainvisual .swiper .swiper-container", {
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        speed: 2000,
+        pagination: {
+            el: ".c-mainvisual .swiper .swiper-pagination",
+            clickable: true,
+        },
+        // loop: true,
+        // loopFillGroupWithBlank: true,
+        effect: "fade",
+        direction: 'horizontal',
+        lazy: {
+            loadPrevNext: true,
+        },
+        allowTouchMove: false
+    });
+}
+
+function slide() {
+    let arr_slides = $('.sliders .swiper .swiper-container');
+
+    arr_slides.each(function (index, value) {
+        let slides = `.sliders[data-index="${index}"] .swiper`,
+            slide_length = $(slides + ' .swiper-container .swiper-wrapper .swiper-slide').length;
+
+        let slide = new Swiper(slides + ' .swiper-container', {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            loop: slide_length < 4 ? false : true,
+            loopFillGroupWithBlank: false,
+            lazy: {
+                loadPrevNext: true,
+            },
+            navigation: {
+                nextEl: slides + ' .swiper-button-next',
+                prevEl: slides + ' .swiper-button-prev',
+            },
+            pagination: {
+                el: slides + " .swiper-pagination",
+                clickable: true,
+            },
+            allowTouchMove: true,
+            breakpoints: {
+                992: {
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+                    spaceBetween: 40,
+                },
+                769: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 40,
+                },
+                581: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    });
+}
+
+function slideGallery() {
+    var thunbs = new Swiper(".c-slide-gallery .swiper-thumb", {
+        spaceBetween: 2,
+        slidesPerView: 5,
+        freeMode: false,
+        watchSlidesProgress: true,
+    });
+    var main = new Swiper(".c-slide-gallery .swiper-main", {
+        spaceBetween: 10,
+        thumbs: {
+            swiper: thunbs,
+        },
+    });
+}
+
+function slideHistorys() {
+    var swiper = new Swiper(".c-historys .swiper .swiper-container", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+        centeredSlides: false,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        lazy: {
+            loadPrevNext: true,
+        },
+        navigation: {
+            nextEl: '.c-historys .swiper .swiper-button-next',
+            prevEl: '.c-historys .swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: '.c-historys .swiper .swiper-pagination',
+            type: 'fraction'
+        },
+        allowTouchMove: true
     });
 }
 
@@ -377,7 +295,7 @@ function printHTMLDemo() {
     let arr_demos = $('.c-demos>.c-demo>.demo');
 
     arr_demos.each(function (index, value) {
-        let html = $(this).children().prop('outerHTML'),
+        let html = $(this).html().trim(),
             box = $(this).next('.code');
 
         box.children('pre').text(html);
@@ -396,6 +314,17 @@ function handleCopyDemo() {
         clipboard.val(html).select();
         document.execCommand("copy");
         clipboard.remove();
+    });
+}
+
+function handleBeforePrint() {
+    $(window).on('beforeprint', function () {
+        for (let i in $classArray) {
+            $.each($classArray[i], function (index, element) {
+                $(this).addClass("p-ani-fadeIn");
+            });
+        }
+        lazy.loadAll();
     });
 }
 

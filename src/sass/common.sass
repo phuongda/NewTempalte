@@ -560,7 +560,7 @@
             letter-spacing: 5px
 
 /* footer */
-.c-info-footer
+.c-footer-banner
     @include box-100()
     font-family: 'A-OTF-R'
 
@@ -580,26 +580,103 @@
         overflow: hidden
 
         .content
-            @include box-100()
-            height: 100%
+            @include box()
+            flex-direction: column
             justify-content: center
             align-items: center
-            background-color: rgba(6, 91, 142, 30%)
+            color: white
+            text-align: center
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: 2
+            transform: translate(-50%, -50%)
+            transition: 0.5s
+            opacity: 1
+
+            &.bd
+                width: 240px
+                min-height: 180px
+                padding: 20px
+                border-width: 2px!important
+                transition: 0.4s
+
+        &>img
+            height: 100%
+            transition: 0.4s
+
+        &>span
+            width: 150px
+            height: 90px
+            @include box()
+            justify-content: center
+            align-items: center
+            border: 1px solid white
+            font-size: 2rem
+            font-weight: 500
+            color: white
+            position: absolute
+            bottom: 0
+            left: 50%
+            z-index: 3
+            transform: translate(-50%, 100%)
+            transition: 0.5s
+            opacity: 0
+
+        &::before
+            content: ""
+            width: 100%
+            height: 100%
             position: absolute
             top: 0
             left: 0
-            z-index: 2
+            z-index: 1
+            transition: 0.5s
 
-            .btn
-                @include box-100()
-                height: 100%
-                flex-direction: column
-                justify-content: center
-                align-items: center
+        &:hover
+
+            &>img
+                transform: scale(1.1)
+
+    &.have-link
+
+        .item
+
+            &:hover
+
+                .content
+                    top: 100%
+                    opacity: 0
+
+                &>span
+                    bottom: 50%
+                    transform: translate(-50%, 50%)
+                    opacity: 1
+
+    &.before-bg
+
+        .item
+
+            &::before
+                background-color: rgba(12, 37, 67, 0.3)
+
+        .item
+
+            &:hover
+
+                &::before
+                    background-color: rgba(12, 37, 67, 0.8)
+
+    &.border-animation
+
+        .item
+
+            .content
                 padding: 25px 25px 30px 25px
-                color: white
-                // position: relative
-                text-align: center
+
+                span
+                    display: none
+                    line-height: 1.8
 
                 &::before,
                 &::after
@@ -622,91 +699,24 @@
                     border-bottom: 2px solid rgb(255, 255, 255)
                     border-right: 2px solid rgb(255, 255, 255)
 
-                div
-                    border: 2px solid
+            &:hover
 
-            strong
-                // margin-bottom: 36px
-                padding-bottom: 18px
-                font-size: 2rem
-                font-weight: 500
-                line-height: 1.4
-                position: relative
+                .content
 
-                &::after
-                    content: ""
-                    width: 30px
-                    height: 1px
-                    background: white
-                    position: absolute
-                    left: 50%
-                    bottom: 0
-                    transform: translateX(-50%)
+                    h3,
+                    p
+                        display: none
 
-            span
-                margin-top: 16px
-                font-size: 1.4rem
-                font-weight: 500
+                    span
+                        display: block
 
-            img
-                width: 15px
-                @include img-cover()
-
-            p
-                width: 150px
-                height: 90px
-                @include box()
-                justify-content: center
-                align-items: center
-                margin-bottom: 0
-                border: 1px solid white
-                font-size: 2rem
-                font-weight: 500
-                color: white
-                position: absolute
-                bottom: 0
-                left: 50%
-                transform: translate(-50%, 100%)
-                z-index: 3
-                transition: 0.4s
-                opacity: 0
-
-            div
-                width: 240px
-                min-height: 180px
-                @include box()
-                flex-direction: column
-                justify-content: center
-                align-items: center
-                padding: 20px
-                position: absolute
-                top: 50%
-                transform: translateY(-50%)
-                transition: 0.4s
-                opacity: 1
-
-            &+img
-                @include img-cover()
-                transition: 0.4s
-
-        &:hover
-
-            // p
-            //     bottom: 50%
-            //     transform: translate(-50%, 50%)
-            //     opacity: 1
-
-            .content
-                // background-color: rgba(0, 0, 0, 70%)
-
-                // .btn
-
-                //     div
-                //         top: 100%
-                //         opacity: 0
-
-                &+img
-                    transform: scale(1.1)
+                    &::before,
+                    &::after
+                        width: 100%
+                        height: 99%
+                        opacity: 1
+                        -webkit-transition: width 0.2s 0.15s ease-out, height 0.15s ease-in, opacity 0s
+                        transition: width 0.2s 0.15s ease-out, height 0.15s ease-in, opacity 0s
 
 .c-footer
     @include box-100()
@@ -2750,7 +2760,7 @@
     #Y_sclorebox
         display: none
 
-    .c-info-footer
+    .c-footer-banner
 
         .item
             height: 350px
@@ -3220,7 +3230,7 @@
             //             .thumb
             //                 margin-left: auto
 
-    .c-info-footer
+    .c-footer-banner
 
         .item
             height: 250px
@@ -3313,7 +3323,7 @@
                     width: 25px
                     top: 16px
 
-    .c-info-footer
+    .c-footer-banner
 
         .item
             height: 160px!important
