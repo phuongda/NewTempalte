@@ -1465,6 +1465,42 @@
             &.wfull
                 width: 100%!important
 
+    &.shortbox-content
+
+        .contents
+            height: auto
+            position: absolute
+
+        &.box-lg
+
+            .contents
+                min-width: 458px
+                min-height: 200px
+                padding: 38px 60px 49px 60px
+                background: white
+                bottom: 0
+
+                .counter
+
+                    &::before
+                        position: absolute
+                        top: 0
+                        left: 0
+                        transform: translateY(-100%)
+                        font-size: 7.2rem
+                        line-height: 1.2
+
+        &.box-sm
+
+            .contents
+                min-height: 150px
+                justify-content: flex-start
+                padding: 12px 30px 12px 30px
+                background: $color-blue
+                left: 50px
+                bottom: 0
+                color: white
+
 /* block */
 .l-block,
 .l-blocks
@@ -1541,7 +1577,8 @@
             left: -40px
             z-index: 0
 
-    &.c-col-2
+    &.c-col-2,
+    &.c-col-55
 
         &.space40
 
@@ -1564,6 +1601,8 @@
                 .thumb
                     margin-left: 40px
                     margin-right: 0
+
+    // &.c-col-64
 
 /* block products */
 .c-date
@@ -2528,11 +2567,6 @@
     .c-action
         width: 100px
 
-    .c-banner
-
-        .contents
-            padding: 50px
-
 @media screen and (max-width: 1440px)
     .c-header
 
@@ -2588,6 +2622,60 @@
                             .thumb
                                 margin-right: 0
                                 margin-left: 0
+
+    .c-banner
+
+        .contents
+            padding: 40px
+
+            &.contents-center-bottom
+
+                &+.banner
+                    height: 430px
+
+        &.shortbox-content
+
+            &.box-lg
+
+                .contents
+
+                    .counter
+
+                        &::before
+                            font-size: 6.2rem
+
+@media screen and (max-width: 1440px) and (min-width: 992px)
+    .c-banner
+
+        .contents
+
+            .c-title
+
+                &.text
+
+                    &64
+
+                        strong
+                            font-size: 5.4rem
+
+                        small
+                            font-size: 3.4rem
+
+                    &72
+
+                        strong
+                            font-size: 6.2rem
+
+                        small
+                            font-size: 4.2rem
+
+                    &82
+
+                        strong
+                            font-size: 6.2rem
+
+                        small
+                            font-size: 4.2rem
 
 @media screen and (max-width: 1248px)
     .c-cols
@@ -2795,6 +2883,35 @@
 
         .contents
             padding: 20px
+
+            &.contents-center-bottom
+
+                &+.banner
+                    height: 210px
+
+        &.shortbox-content
+
+            &.box-lg
+
+                .contents
+                    width: 40%
+                    min-width: unset
+                    max-width: 300px
+                    min-height: unset
+                    padding: 20px 20px 40px 20px
+
+                    .counter
+
+                        &::before
+                            font-size: 5.2rem
+                            line-height: 1
+
+            &.box-sm
+
+                .contents
+                    min-height: 120px
+                    padding: 12px 20px 12px 20px
+                    left: 40px
 
     .c-products,
     .c-news
@@ -3243,6 +3360,45 @@
                     .box
                         padding: 20px
 
+    .c-banner
+
+        .contents
+
+            &.contents-center-bottom
+
+                &+.banner
+                    height: 230px
+
+        &.shortbox-content
+
+            &.box-lg
+
+                .contents
+                    width: 50%
+                    padding: 20px 20px 30px 20px
+
+                    .counter
+
+                        &::before
+                            font-size: 4.2rem
+
+            &.box-sm
+
+                .contents
+                    min-height: 100px
+                    left: 20px
+
+        &.box-sm
+
+            .contents
+                min-height: 150px
+                justify-content: flex-start
+                padding: 12px 28px 12px 32px
+                background: $color-blue
+                left: 50px
+                bottom: 0
+                color: white
+
 @media screen and (max-width: 580px)
     .c-header
         height: 70px
@@ -3314,12 +3470,6 @@
     #Y_sclorebox
         display: none
 
-    .c-banner
-        height: 200px
-
-        .contents
-            padding: 20px
-
     .c-footer-banner
 
         .item
@@ -3373,6 +3523,40 @@
 
             .c-copyrigh
                 margin-top: 60px
+
+    .c-banner
+        height: 250px
+
+        .contents
+            padding: 10px
+
+            &.contents-center-bottom
+
+                &+.banner
+                    height: 190px
+
+            .c-subtitle
+
+                &[class*="line-"]
+                    padding-left: 30px
+
+                    &::before
+                        width: 20px
+
+        &.box-content
+
+            .contents
+                width: 40%
+
+            .banner
+                width: calc(100% - 40%)
+
+        &.shortbox-content
+
+            &.box-lg
+
+                .contents
+                    width: 60%
 
     .c-tabs-list
 
@@ -3484,9 +3668,6 @@
                     &-button-prev,
                     &-button-next
                         top: 45%
-
-    .c-banner
-        height: 250px
 
 @media screen and (max-width: 480px)
     .c-header
