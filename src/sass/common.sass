@@ -1428,7 +1428,7 @@
         height: 100%
         position: absolute
         top: 0
-        left: 0
+        right: 0
 
         img
             @include img-cover()
@@ -1456,8 +1456,6 @@
 
         .banner
             width: calc(100% - 35%)
-            left: unset
-            right: 0
 
             img
                 object-position: bottom right
@@ -1471,7 +1469,18 @@
             height: auto
             position: absolute
 
-        &.box-lg
+        &.box-sm
+
+            .contents
+                min-height: 150px
+                justify-content: flex-start
+                padding: 12px 30px 12px 30px
+                background: $color-blue
+                left: 50px
+                bottom: 0
+                color: white
+
+        &.box-md
 
             .contents
                 min-width: 458px
@@ -1490,16 +1499,74 @@
                         font-size: 7.2rem
                         line-height: 1.2
 
-        &.box-sm
+        &.box-lg
+            align-items: flex-end
+
+            &::before
+                content: ""
+                width: 600px
+                height: 330px
+                background: white
+                position: absolute
+                bottom: 0
+                left: 0
+                z-index: 2
 
             .contents
-                min-height: 150px
-                justify-content: flex-start
-                padding: 12px 30px 12px 30px
-                background: $color-blue
-                left: 50px
-                bottom: 0
-                color: white
+                padding: 0 0 40px 120px
+                position: relative
+                z-index: 3
+
+                .c-title
+                    letter-spacing: 3px
+                    font-family: "Oswald-M"
+
+                    strong
+                        font-size: 9rem
+                        line-height: 1.2
+
+                .counter
+
+                    &::before
+                        position: absolute
+                        top: 0
+                        left: 0
+                        transform: translateY(-100%)
+                        font-size: 10rem
+                        line-height: 1.2
+
+    &.top-banner
+        height: 540px
+
+    &.max-width
+
+        .contents
+            width: 50%
+            max-width: 1000px
+
+        .banner
+            width: 82%
+            max-width: 1580px
+
+    &.border-banner
+
+        &::before,
+        &::after
+            content: ""
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+
+        &::before
+            width: 40px
+            background: #4EB0DB
+            z-index: 3
+
+        &::after
+            width: 10px
+            background: #201703
+            z-index: 4
 
 /* block */
 .l-block,
@@ -1559,7 +1626,12 @@
             @include box()
 
             &.max-width
-                max-width: 660px
+
+                &-660
+                    max-width: 660px
+
+                &-750
+                    max-width: 750px
 
         .txt
             width: 120px
@@ -1577,8 +1649,20 @@
             left: -40px
             z-index: 0
 
+            &.right
+                left: unset
+                right: -40px
+
     &.c-col-2,
     &.c-col-55
+
+        &:not([class*="space"])
+
+            .thumb
+                width: 50%
+
+            .contents
+                width: 50%
 
         &.space40
 
@@ -1602,7 +1686,36 @@
                     margin-left: 40px
                     margin-right: 0
 
-    // &.c-col-64
+    &.c-col-64
+
+        .thumb
+            width: 50%
+            max-width: 680px
+            height: 100%
+
+        .contents
+            width: calc(50% + 10%)
+            margin-left: -10%
+            position: relative
+            z-index: 1
+
+            &.c-box
+                padding: 35px 30px 30px 30px
+
+        &.have-txt
+
+            .contents
+                max-width: calc((50% + 10%) - 40px)
+
+                .txt
+                    width: auto
+                    height: 100%
+                    color: #cccccc
+                    line-height: 1.4
+                    top: 30px
+                    right: -10px
+                    -webkit-transform: translateX(100%)
+                    transform: translateX(100%)
 
 /* block products */
 .c-date
@@ -2635,7 +2748,7 @@
 
         &.shortbox-content
 
-            &.box-lg
+            &.box-md
 
                 .contents
 
@@ -2643,6 +2756,22 @@
 
                         &::before
                             font-size: 6.2rem
+
+@media screen and (max-width: 1536px)
+    .c-banner
+
+        &.top-banner
+
+            .contents
+                width: 100%
+                padding: 40px 40px 40px 40px
+
+        &.shortbox-content
+
+            &.box-lg
+
+                .contents
+                    padding-left: 60px
 
 @media screen and (max-width: 1440px) and (min-width: 992px)
     .c-banner
@@ -2891,7 +3020,14 @@
 
         &.shortbox-content
 
-            &.box-lg
+            &.box-sm
+
+                .contents
+                    min-height: 120px
+                    padding: 12px 20px 12px 20px
+                    left: 40px
+
+            &.box-md
 
                 .contents
                     width: 40%
@@ -2906,12 +3042,38 @@
                             font-size: 5.2rem
                             line-height: 1
 
-            &.box-sm
+            &.box-lg
+                height: 400px
+
+                &::before
+                    width: 350px
+                    height: 230px
 
                 .contents
-                    min-height: 120px
-                    padding: 12px 20px 12px 20px
-                    left: 40px
+                    padding-left: 40px
+
+                    .c-title
+
+                        strong
+                            font-size: 5rem
+
+                    .counter
+
+                        &::before
+                            font-size: 6rem
+
+        &.top-banner
+            height: 440px
+
+        &.max-width
+            height: 300px
+
+            .contents
+                width: 100%
+                padding: 20px
+
+            .banner
+                width: 70%
 
     .c-products,
     .c-news
@@ -3017,25 +3179,53 @@
             .c-tabs-list
                 justify-content: flex-start
 
-    .c-cols.c-col-2
+    .c-cols
 
-        &.justify-content-between
+        &.c-col-2,
+        &.c-col-55
 
-            .thumb
-                width: calc(50% - 10px)
-
-            .contents
-                width: calc(50% - 10px)
-
-        &:not(.justify-content-between)
-
-            &.space-40
+            &.justify-content-between
 
                 .thumb
-                    width: 50%
+                    width: calc(50% - 10px)
 
                 .contents
-                    width: 50%
+                    width: calc(50% - 10px)
+
+            &:not(.justify-content-between)
+
+                &.space-40
+
+                    .thumb
+                        width: 50%
+
+                    .contents
+                        width: 50%
+
+        &.c-col-64
+            width: 100%
+            max-width: 680px
+            position: relative
+            margin-left: auto
+            margin-right: auto
+
+            .thumb
+                width: 100%
+                max-width: 680px!important
+                height: auto
+                margin-bottom: 0!important
+
+            .contents
+                width: 100%
+                max-width: 680px!important
+                margin-left: 0
+                position: unset
+
+                &.c-box
+                    padding: 25px 20px 20px 20px
+
+            &.have-txt
+                width: calc(100% - 40px)
 
     .c-contact
 
@@ -3371,7 +3561,13 @@
 
         &.shortbox-content
 
-            &.box-lg
+            &.box-sm
+
+                .contents
+                    min-height: 100px
+                    left: 20px
+
+            &.box-md
 
                 .contents
                     width: 50%
@@ -3382,11 +3578,26 @@
                         &::before
                             font-size: 4.2rem
 
-            &.box-sm
+            &.box-lg
+                height: 300px
+
+                &::before
+                    width: 220px
+                    height: 160px
 
                 .contents
-                    min-height: 100px
-                    left: 20px
+                    padding-left: 20px
+                    padding-bottom: 20px
+
+                    .c-title
+
+                        strong
+                            font-size: 3.4rem
+
+                    .counter
+
+                        &::before
+                            font-size: 4.4rem
 
         &.box-sm
 
@@ -3398,6 +3609,17 @@
                 left: 50px
                 bottom: 0
                 color: white
+
+        &.top-banner
+            height: 300px
+
+        &.border-banner
+
+            &::before
+                width: 20px
+
+            &::after
+                width: 5px
 
 @media screen and (max-width: 580px)
     .c-header
@@ -3553,10 +3775,35 @@
 
         &.shortbox-content
 
-            &.box-lg
+            &.box-md
 
                 .contents
                     width: 60%
+
+            &.box-lg
+                height: 200px
+
+                &::before
+                    width: 170px
+                    height: 130px
+
+                .contents
+
+                    .c-title
+
+                        strong
+                            font-size: 2.4rem
+
+                    .counter
+
+                        &::before
+                            font-size: 3.4rem
+
+        &.top-banner
+            height: 240px
+
+        &.max-width
+            height: 200px
 
     .c-tabs-list
 
