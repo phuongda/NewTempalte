@@ -738,6 +738,7 @@
 
 .c-footer
     @include box-100()
+    padding: 100px 0 100px 0
     background-size: cover
     background-position: top center
     background-repeat: no-repeat
@@ -749,14 +750,13 @@
         content: ""
         width: 100%
         height: 100%
-        // background: rgba(12, 37, 67, 94%)
+        background: rgba(12, 37, 67, 0.94)
         // background: linear-gradient(to bottom, #0872B2, #065B8E)
-        background: $color-green
-        opacity: 0.9
         position: absolute
         top: 0
         left: 0
         z-index: 0
+        opacity: 0.9
 
     a
         color: white
@@ -767,53 +767,27 @@
     [class*=l-container]
         @include box()
         justify-content: space-between
-        padding: 96px 0 89px 0
         z-index: 2
 
     &__left
         @include box-100()
-        max-width: 530px
+        max-width: 454px
         flex: 1
         flex-direction: column
-        // justify-content: center
         font-weight: 500
         font-family: "A-OTF-R"
 
     &__middle
         @include box-100()
-        max-width: 464px
+        max-width: 440px
+        flex: 1
         flex-direction: column
-        padding-top: 0
-        // font-family: 'A-OTF-R'
 
         h3
-            margin-bottom: 14px
+            margin-bottom: 15px
             padding-left: 10px
             font-size: 2.4rem
             line-height: 1.8
-
-        img
-            max-width: 100%
-            margin-bottom: 30px
-            border-radius: 10px
-
-        a
-            @include box-100()
-            max-width: 176px
-            justify-content: space-between
-            align-items: center
-            margin-left: 10px
-
-            &:not(:last-child)
-                margin-bottom: 10px
-
-            // &:last-child
-            //     margin-bottom: 38px
-
-            i
-                width: 40px
-                height: 10px
-                margin-left: 10px
 
         h4
             padding-left: 10px
@@ -832,15 +806,17 @@
             font-size: 1.6rem
             line-height: 1.8
 
+        img
+            width: 360px
+            margin-bottom: 30px
+
     &__right
-        @include box-100()
-        max-width: 375px
-        min-height: 500px
-        flex: 1
+        @include box()
+        max-width: 440px
+        // flex: 1
         justify-content: flex-end
         align-items: flex-start
         align-content: space-between
-        // padding-top: 10px
 
         .c-qr
             padding: 19px 16px 19px 14px
@@ -862,11 +838,20 @@
             span
                 font-size: 1.3rem
 
+    &__bottom
+        @include box-100()
+        justify-content: flex-end
+        padding-top: 60px
+
+        .c-copyright
+            margin-bottom: 0
+            font-size: 1.4rem
+            font-weight: 500
+            // font-family: 'A-OTF-R'
+            text-align: center
+
     &__logo
-        // @include box-100()
-        flex-direction: column
-        margin-bottom: 16px
-        font-family: "A-OTF-R"
+        margin-bottom: 30px
 
         h2
             @include box()
@@ -896,53 +881,51 @@
             width: auto
             height: 100%
 
-        i
+        .c-icon
             display: block
 
-            &.ic-logo
-                width: 272px
-                height: 49px
+            &.ic
 
-    &__slogan
-        margin-bottom: 60px
-
-        p
-            margin-bottom: 5px
-            font-size: 1.5rem
-            line-height: 1.4
+                &-logo
+                    width: 272px
+                    height: 49px
 
     &__about
-        margin-bottom: 61px
+        margin-bottom: 40px
 
         p
-            font-size: 2rem
-            line-height: 1.4
+            font-size: 1.8rem
+            line-height: 1.8
 
     &__contacts
         @include box-100()
         flex-direction: column
 
-        span
+        .item
             @include box-100()
-            flex-direction: column
-            margin-bottom: 22px
+            align-items: baseline
+            margin-bottom: 10px
             font-size: 1.6rem
             line-height: 1.8
 
             a
-                font-size: 2rem
+                font-size: 2.6rem
 
             &:last-child
                 margin-bottom: 0
 
-        p
-            font-size: 1.4rem
-            line-height: 1.8
+        &.item-column
+
+            .item
+                flex-direction: column
+
+                a
+                    font-size: 2rem
 
     &__address
         @include box-100()
         flex-direction: column
-        margin-bottom: 21px
+        margin-bottom: 20px
         line-height: 1.8
 
         p
@@ -950,50 +933,6 @@
 
             &:last-child
                 margin-bottom: 0
-
-    &__menu
-        @include box()
-        flex-direction: column
-
-        a
-            width: auto
-            min-width: 200px
-            padding-left: 40px
-            font-size: 1.8rem
-            font-weight: 500
-            line-height: 1.8
-            font-family: "A-OTF-R"
-            position: relative
-
-            &:not(:last-child)
-                margin-bottom: 11px
-
-            &::before
-                content: ""
-                width: 20px
-                height: 1px
-                background-color: white
-                position: absolute
-                top: 15px
-                left: 0
-
-    &__menu2
-        min-height: 260px
-        @include box()
-        flex-direction: column
-        align-items: center
-        padding: 18px 58px
-        border-left: 1px solid
-
-        li
-            width: 100%
-            min-width: 111px
-            font-size: 1.4rem
-            line-height: 1.8
-            position: relative
-
-            &:not(:last-child)
-                margin-bottom: 20px
 
     &__social
         @include box-100()
@@ -1021,20 +960,69 @@
                 &.ic-youtube
                     width: 24px
 
-    &-bottom
+    &__lisks
         @include box-100()
-        justify-content: flex-end
+        flex-direction: column
+        margin-left: 10px
 
-        .c-copyright
-            margin: 83px 0 0 0
-            font-size: 1.4rem
-            font-weight: 500
-            // font-family: 'A-OTF-R'
-            text-align: center
+        .item
+            @include box()
+            justify-content: space-between
+            align-items: center
 
-    .bg
-        top: 0
-        z-index: 1
+            &:not(:last-child)
+                margin-bottom: 10px
+
+            a
+                @include box()
+                align-items: baseline
+
+            .c-icon
+                margin-left: 10px
+
+                &.ic
+
+                    &-arrowlong-right
+                        width: 40px
+                        height: 10px
+
+    &__menu
+        @include box()
+        flex-direction: column
+
+        li
+            min-width: 200px
+            padding-left: 40px
+            position: relative
+
+            &::before
+                content: ""
+                width: 20px
+                height: 1px
+                background-color: white
+                position: absolute
+                top: 15px
+                left: 0
+
+            &:not(:last-child)
+                margin-bottom: 10px
+
+            a
+                font-size: 1.8rem
+                font-weight: 500
+                line-height: 1.8
+                font-family: "A-OTF-R"
+
+    &.copyright-bg
+        padding-bottom: 0
+
+        .c-footer__bottom
+            min-height: 200px
+            margin-top: 100px
+            background: white
+
+            .c-copyright
+                color: $color-text
 
 /* mainvisual */
 .c-mainvisual
@@ -2680,6 +2668,33 @@
     .c-action
         width: 100px
 
+    .c-footer
+        padding-left: 20px
+        padding-right: 20px
+
+        &.copyright-bg
+
+            .c-footer__bottom
+                width: calc(100% + 40px)
+                margin-left: -20px
+                margin-right: -20px
+
+@media screen and (max-width: 1536px)
+    .c-banner
+
+        &.top-banner
+
+            .contents
+                width: 100%
+                padding: 40px 40px 40px 40px
+
+        &.shortbox-content
+
+            &.box-lg
+
+                .contents
+                    padding-left: 60px
+
 @media screen and (max-width: 1440px)
     .c-header
 
@@ -2757,21 +2772,25 @@
                         &::before
                             font-size: 6.2rem
 
-@media screen and (max-width: 1536px)
-    .c-banner
+    .c-footer
 
-        &.top-banner
+        &__left
+            width: 50%
+            flex: auto
 
-            .contents
-                width: 100%
-                padding: 40px 40px 40px 40px
+        &__middle
+            width: 50%
+            flex: auto
+            margin-top: 60px
+            order: 1
 
-        &.shortbox-content
+        &__right
+            width: 50%
+            max-width: unset
+            justify-content: flex-start
 
-            &.box-lg
-
-                .contents
-                    padding-left: 60px
+        &__bottom
+            margin-top: 40px
 
 @media screen and (max-width: 1440px) and (min-width: 992px)
     .c-banner
@@ -3233,10 +3252,13 @@
             font-size: 2.8rem
 
     .c-footer
+        padding-top: 70px
+        padding-bottom: 70px
 
-        .l-container-1520
+        [class*=l-container]
             flex-direction: column
-            padding: 70px 20px 70px 20px
+            padding-right: 0
+            padding-left: 0
 
         &__left
             width: 100%
@@ -3246,13 +3268,15 @@
 
         &__right
             display: none
-            width: 100%
-            padding-top: 50px
 
-        &-bottom
+        &__bottom
             min-height: auto
             justify-content: center
-            padding: 0
+
+            &.copyright-bg
+
+                .c-footer__bottom
+                    margin-top: 70px
 
 @media screen and (max-width: 768px)
     [class*=l-container] [class*=l-container]
@@ -3720,9 +3744,8 @@
             //         font-size: 1.2rem
 
     .c-footer
-
-        .l-container-1520
-            padding: 50px 20px 50px 20px
+        padding-top: 50px
+        padding-bottom: 50px
 
         &__logo
 
@@ -3740,11 +3763,6 @@
 
         &__address
             margin-bottom: 20px
-
-        &-bottom
-
-            .c-copyrigh
-                margin-top: 60px
 
     .c-banner
         height: 250px
