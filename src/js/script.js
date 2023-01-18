@@ -9,8 +9,10 @@ let header = $(".c-header"),
     hash_id = '';
 
 let callback_finish = function () {
-    let position = $(hash_id).offset().top;
-    $("html,body").animate({ scrollTop: position - offset }, 1000);
+    if (hash_id) {
+        let position = $(hash_id).offset().top;
+        $("html,body").animate({ scrollTop: position - offset }, 1000);
+    }
 };
 
 let lazy = new LazyLoad({
@@ -295,10 +297,11 @@ function printHTMLDemo() {
     let arr_demos = $('.c-demos>.c-demo>.demo');
 
     arr_demos.each(function (index, value) {
-        let html = $(this).html().trim(),
+        let html = $(this).html().replaceAll('                        ', '').trim(),
             box = $(this).next('.code');
 
-        box.children('pre').text(html);
+        box.children('pre').append('<code></code>');
+        box.children('pre').children('code').text(html);
         box.append(`<a class="btncopy">Copy</a>`);
     });
 }
@@ -307,7 +310,7 @@ function handleCopyDemo() {
     let btn = $('.c-demos>.c-demo>.code>.btncopy');
 
     btn.click(function () {
-        let html = $(this).siblings('pre').text(),
+        let html = $(this).siblings('pre').children('code').text(),
             clipboard = $("<input>");
 
         $("body").append(clipboard);

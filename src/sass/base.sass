@@ -996,38 +996,59 @@ img
             height: 10px
 
 .u-highlight
-    position: relative
-
-    &::after
-        content: ''
-        width: 100%
-        height: 1px
-        background: $color-green
-        position: absolute
-        left: 0
-        bottom: -5px
-        z-index: -1
+    padding-bottom: 5px
+    background-image: linear-gradient($color-green, $color-green)
+    background-position: 0 100%
+    background-size: 100% 1px
+    background-repeat: no-repeat
 
     &.highlight-sm
-
-        &::after
-            height: 1px
+        background-size: 100% 1px
 
     &.highlight-md
-
-        &::after
-            height: 3px
+        background-size: 100% 3px
 
     &.highlight-lg
-
-        &::after
-            height: 6px
+        background-size: 100% 6px
 
     &.spill
+        margin-left: -10px
+        margin-right: -10px
+        padding-left: 10px
+        padding-right: 10px
 
-        &::after
-            width: calc(100% + 30px)
-            left: -15px
+    // position: relative
+
+    // &::after
+    //     content: ''
+    //     width: 100%
+    //     height: 1px
+    //     background: $color-green
+    //     position: absolute
+    //     left: 0
+    //     bottom: -5px
+    //     z-index: -1
+
+    // &.highlight-sm
+
+    //     &::after
+    //         height: 1px
+
+    // &.highlight-md
+
+    //     &::after
+    //         height: 3px
+
+    // &.highlight-lg
+
+    //     &::after
+    //         height: 6px
+
+    // &.spill
+
+    //     &::after
+    //         width: calc(100% + 30px)
+    //         left: -15px
 
 .l-titles
     @include box-100()
@@ -2126,6 +2147,17 @@ ul
                     width: 40px
 
             &-left
+
+                &.h25
+
+                    &::after
+                        top: 5px
+
+                &.h35
+
+                    &::after
+                        height: 32px
+                        top: 0
 
                 &.h45
 
