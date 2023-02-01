@@ -102,11 +102,11 @@ function stickyHeader() {
         });
     }
 
-    wp.scroll(function () {
-        let scroll = wp.scrollTop();
-        if (scroll >= offset_top) header.addClass('fixed');
-        else header.removeClass('fixed');
-    });
+    // wp.scroll(function () {
+    //     let scroll = wp.scrollTop();
+    //     if (scroll >= offset_top) header.addClass('fixed');
+    //     else header.removeClass('fixed');
+    // });
 }
 
 function btnMenuToggle() {
