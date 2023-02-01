@@ -93,23 +93,20 @@ function stickyHeader() {
     if ($('main.p-top').length) {
         let offset_mainvisual = $('.c-mainvisual').height();
         let scroll = wp.scrollTop();
-        let action = $('.c-action');
 
         if (scroll < offset_mainvisual) header.addClass('transparent');
         wp.scroll(function () {
             scroll = wp.scrollTop();
             if (scroll >= offset_mainvisual) header.removeClass('transparent');
             else header.addClass('transparent');
-            // if (scroll >= offset_mainvisual) header.removeClass('transparent'), action.fadeOut();
-            // else header.addClass('transparent'), action.fadeIn();
         });
     }
 
-    // wp.scroll(function() {
-    //     let scroll = wp.scrollTop();
-    //     if (scroll >= 0) header.addClass('fixed');
-    //     else header.removeClass('fixed');
-    // });
+    wp.scroll(function () {
+        let scroll = wp.scrollTop();
+        if (scroll >= offset_top) header.addClass('fixed');
+        else header.removeClass('fixed');
+    });
 }
 
 function btnMenuToggle() {
@@ -332,7 +329,7 @@ function handleBeforePrint() {
 }
 
 $(function () {
-    // stickyHeader();
+    stickyHeader();
     animation();
     btnMenuToggle();
     scrollToDiv();

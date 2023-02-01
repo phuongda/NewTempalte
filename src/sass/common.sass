@@ -8,11 +8,154 @@
 /* header */
 .c-header
     @include box-100()
-    height: 100px
-    justify-content: space-between
-    background: #ffffff
     align-items: center
+    background: white
     transition: .5s
+
+    &__logo
+        font-family: "A-OTF-R"
+
+        img
+            width: auto
+            height: 100%
+
+            &.logo-active
+                display: none
+
+        i
+            display: block
+
+            &.ic-logo
+                width: 272px
+                height: 49px
+
+        &:hover
+            opacity: 0.5
+
+    &__slogan
+        display: inline-block
+        margin-left: 60px
+        font-weight: 700
+        line-height: 1.4
+
+    &__action
+        height: 100%
+        flex: 1
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        padding: 0 20px
+
+    &__menu
+        @include box()
+
+        li
+            min-width: 110px
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 10px 25px
+            line-height: 1.4
+
+        a
+            display: flex
+            flex-direction: column
+            font-size: 1.4rem
+            position: relative
+            color: #030303
+            transition: .5s
+
+            span
+                font-size: 1rem
+                color: #CCCCCC
+
+            &:hover
+                opacity: 0.5
+
+        &.menu-lg
+
+            li
+
+                &::before
+                    height: 40px
+
+            a
+                font-size: 1.7rem
+
+        &.space
+
+            li
+                padding: 10px 15px
+
+                &:not(:last-child)
+                    margin-right: 20px
+
+        &.border-menu
+
+            li
+                position: relative
+
+                &::before
+                    content: ""
+                    width: 2px
+                    min-height: 30px
+                    background: $color-text
+                    position: absolute
+                    top: 50%
+                    left: 0
+                    transform: translateY(-50%)
+                    transition: .5s
+
+        &.color-hover
+
+            li
+
+                &:hover
+
+                    a
+                        color: $color-green
+                        opacity: 1
+
+                        span
+                            color: $color-green
+
+                    &::before
+                        background: $color-green
+
+    &__mail
+        width: 120px
+        height: 100%
+        @include box()
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        padding: 20px 21px
+        background: $color-green
+        font-size: 1.5rem
+        line-height: 1.4
+        color: white
+
+        i
+            margin-bottom: 10px
+
+        &:hover
+            color: white
+            opacity: 0.6
+
+        &.outline
+            border: 2px solid $color-green
+
+            &:hover
+                background: transparent
+                color: $color-green
+                opacity: 1
+
+                .ic-email
+                    background-image: url("../img/common/ic-email-green.svg")
+
+    &.have-contents
+        padding-right: 0
 
     &.fixed
         position: fixed
@@ -22,7 +165,6 @@
 
         &+.clear
             width: 100%
-            margin-top: 100px
 
     &.transparent
         background: transparent
@@ -96,55 +238,6 @@
                 span
                     background-color: white
 
-    .l-container
-        @include box-100()
-
-    &__logo
-        font-family: "A-OTF-R"
-
-        &:hover
-            opacity: 0.5
-
-        h1
-            font-size: 3.2rem
-            font-weight: 500
-            line-height: 1
-            color: $color-green
-
-        span
-            font-size: 1.4rem
-            font-weight: 500
-            color: $color-green
-
-        img
-            width: auto
-            height: 100%
-
-            &.logo-active
-                display: none
-
-        i
-            display: block
-
-            &.ic-logo
-                width: 272px
-                height: 49px
-
-    &__action
-        height: 100%
-        flex: 1
-        display: flex
-        justify-content: flex-end
-        align-items: center
-        padding: 0 0 0 30px
-
-    &__slogan
-        display: inline-block
-        margin-left: 30px
-        font-weight: 700
-        line-height: 1.4
-        color: $color-blue
-
     &__contact
         @include box()
 
@@ -178,79 +271,6 @@
 
             &:hover
                 opacity: 0.5
-
-    &__action
-        height: 100%
-        display: flex
-        flex: 1
-        justify-content: flex-end
-        align-items: center
-        padding: 0 10px
-
-    &__menu
-        width: 100%
-        height: 100vh
-        display: none
-        flex-direction: column
-        justify-content: center
-        padding: 100px 50px 50px 50px
-        background: $color-blue
-        font-family: 'A-OTF-R'
-        position: absolute
-        top: 0
-        left: 0
-        z-index: -1
-        transition: 0.4s
-
-        li
-            @include box-100()
-            flex-direction: column
-            align-items: center
-            padding: 12px 20px
-            font-size: 2.6rem
-            line-height: 1.4
-
-            &:not(:last-child)
-                border: 0
-                // border-bottom: 1px solid
-                // border-color: white!important
-
-            a,
-            span
-                color: white!important
-                transition: 0.4s
-
-                &::after
-                    content: unset
-
-                &:hover
-                    opacity: 0.5
-
-            ul
-                display: none
-                margin-bottom: 10px
-                padding: 2px 0
-                // transition: 0.4s
-
-                li
-                    padding: 4px 20px
-                    font-size: 2rem
-
-                // &:hover,
-                // &:active,
-                // &:focus
-                //     display: block
-
-            // a:hover,
-            // span:hover,
-            // a:active,
-            // span:active,
-            // a:focus,
-            // span:focus
-            //     opacity: .5
-
-            //     &~ul
-            //         display: block
 
     &.is-show
         color: white
@@ -2616,9 +2636,8 @@
 @media screen and (min-width: 1537px)
     .c-header
         height: 120px
-
-        &__logo
-            margin-left: 50px
+        padding-left: 50px
+        padding-right: 50px
 
         &__mail
             width: 120px
@@ -2626,9 +2645,6 @@
             i
                 width: 32px
                 height: 25px
-
-        &__menu
-            padding-right: 17px
 
         &.fixed
 
@@ -2664,20 +2680,19 @@
 @media screen and (max-width: 1536px)
     .c-header
         height: 100px
+        padding-left: 20px
+        padding-right: 20px
 
         &.fixed
 
             &+.clear
                 margin-top: 100px
 
-        &__menu
-            padding-right: 20px
+        // &__menu
+        //     padding-right: 20px
 
-        &__logo
-            margin-left: 20px
-
-        &__mail
-            width: 100px
+        // &__mail
+        //     width: 100px
 
     .c-mainvisual
 
@@ -3817,7 +3832,7 @@
             margin-bottom: 20px
 
     .c-banner
-        height: 250px
+        height: 200px
 
         .contents
             padding: 10px
@@ -3825,7 +3840,7 @@
             &.contents-center-bottom
 
                 &+.banner
-                    height: 190px
+                    height: 140px
 
             .c-subtitle
 
