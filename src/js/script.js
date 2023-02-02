@@ -57,7 +57,6 @@ function animation() {
 
     $(window).on("load scroll", function () {
         for (let i in $classArray) {
-
             $.each($classArray[i], function (index, element) {
                 aniFunc($(this), index, i);
             });
@@ -90,27 +89,39 @@ function aniFunc($target, junban, type) {
 function stickyHeader() {
     let wp = $(window);
 
-    if ($('main.p-top').length) {
-        let offset_mainvisual = $('.c-mainvisual').height();
-        let scroll = wp.scrollTop();
+    header.each(function (index, value) {
+        let item = $(value),
+            offset_item = $(item).offset().top,
+            scroll = wp.scrollTop();
 
-        if (scroll < offset_mainvisual) header.addClass('transparent');
+        if (scroll >= offset_item) $(item).addClass('fixed');
+
         wp.scroll(function () {
             scroll = wp.scrollTop();
-            if (scroll >= offset_mainvisual) header.removeClass('transparent');
-            else header.addClass('transparent');
-        });
-    }
 
-    // wp.scroll(function () {
-    //     let scroll = wp.scrollTop();
-    //     if (scroll >= offset_top) header.addClass('fixed');
-    //     else header.removeClass('fixed');
-    // });
+            if (scroll >= offset_item) $(item).addClass('fixed');
+            else $(item).removeClass('fixed');
+        });
+
+        if ($('main.p-top').length) {
+            let offset_mainvisual = $('.c-mainvisual').height();
+
+            if (scroll < offset_mainvisual) item.addClass('transparent');
+
+            wp.scroll(function () {
+                scroll = wp.scrollTop();
+
+                if (scroll >= offset_mainvisual) item.removeClass('transparent');
+                else item.addClass('transparent');
+            });
+        }
+    });
 }
 
 function btnMenuToggle() {
-    $('.btn-toggle').click(function () {
+    $('.menu-toggle').click(function (e) {
+        e.stopPropagation();
+
         let that = $(this);
         let header = $('.c-header');
         let menu = $('.c-menu');
@@ -124,6 +135,14 @@ function btnMenuToggle() {
             header.removeClass('on');
             menu.removeClass('is-show');
         }
+
+        $(document).one('click', function (e) {
+            if (!$(e.target).is('.menu-toggle, .c-menu')) {
+                that.removeClass('change');
+                header.removeClass('on');
+                menu.removeClass('is-show');
+            }
+        });
     })
 }
 
@@ -133,7 +152,7 @@ function handleCollapsible() {
             $('.c-collapsible>.header.show').removeClass('show');
             $(this).next('.content').slideToggle();
         }
-    })
+    });
 }
 
 function scrollByHash() {
