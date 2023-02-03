@@ -120,7 +120,7 @@ function stickyHeader() {
 
 function btnMenuToggle() {
     $('.menu-toggle').click(function (e) {
-        e.stopPropagation();
+        e.preventDefault();
 
         let that = $(this);
         let header = $('.c-header');
@@ -130,19 +130,35 @@ function btnMenuToggle() {
             that.addClass('change');
             header.addClass('on');
             menu.addClass('is-show');
+
+            $(document).one('click', function closeMenu(e) {
+                // console.log(1);
+                // if (menu.has(e.target).length === 0 &&
+                //     $('.menu-toggle').has(e.target).length === 0) {
+                //     that.removeClass('change');
+                //     header.removeClass('on');
+                //     menu.removeClass('is-show');
+                // } else if (menu.hasClass('is-show')) {
+                //     $(document).one('click', closeMenu);
+                // }
+            });
         } else {
             that.removeClass('change');
             header.removeClass('on');
             menu.removeClass('is-show');
         }
 
-        $(document).one('click', function (e) {
-            if (!$(e.target).is('.menu-toggle, .c-menu')) {
-                that.removeClass('change');
-                header.removeClass('on');
-                menu.removeClass('is-show');
-            }
-        });
+        // $(document).one('click', function closeMenu(e) {
+        //     if ($('.menu-toggle, .c-menu').has(e.target).length === 0) {
+        //         that.removeClass('change');
+        //         header.removeClass('on');
+        //         menu.removeClass('is-show');
+        //         console.log(1);
+        //     } else {
+        //         $(document).one('click', closeMenu);
+        //         console.log(2);
+        //     }
+        // });
     })
 }
 
